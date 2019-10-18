@@ -38,8 +38,9 @@
     "rxdb": "^8.7.0",
     "rxjs": "^6.5.3",
     "serve": "^11.2.0",
+    "typescript": "^3.6.4",
     "yarn": "^1.19.1"
-  }, 
+  },
   "homepage": "./",
   "main": "public/electron.js",
   "scripts": {

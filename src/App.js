@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import * as RxDB from 'rxdb'; 
-import { schema } from './data/Schema'
+import * as RxDB from 'rxdb';
+import {QueryChangeDetector} from 'rxdb';
+import { schema } from './data/Schema';
 
 import { ToastContainer, toast } from 'react-toastify';
 // The following line is not needed for react-toastify v3, only for v2.2.1
@@ -14,12 +15,12 @@ import * as moment from 'moment';
 // QueryChangeDetector.enable();
 // QueryChangeDetector.enableDebugging();
 
-  
 RxDB.plugin(require('pouchdb-adapter-idb'));
 RxDB.plugin(require('pouchdb-adapter-http'));
 
 const syncURL = 'http://localhost:5984/';
-const dbName = 'iservicedb';
+const dbName = 'iservice';
+
 class App extends Component {
 
   constructor(props) {
