@@ -28,6 +28,7 @@
   "dependencies": {
     "electron-is-dev": "^1.1.0",
     "moment": "^2.24.0",
+    "portscanner": "^2.2.0",
     "pouchdb-adapter-http": "^7.1.1",
     "pouchdb-adapter-idb": "^7.1.1",
     "pouchdb-server": "^4.2.0",

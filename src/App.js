@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import * as RxDB from 'rxdb';
-import {QueryChangeDetector} from 'rxdb';
+// import {QueryChangeDetector} from 'rxdb';
 import { schema } from './data/Schema';
 
 import { ToastContainer, toast } from 'react-toastify';

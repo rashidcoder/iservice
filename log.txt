@@ -454,3 +454,134 @@
 [Fri, 18 Oct 2019 19:34:29 GMT] [info] [<0.000.0>] 127.0.0.1 - - PUT /iservice/_local/HwKjWRZ2Hdjoyogr9aDesg%3D%3D 201
 [Fri, 18 Oct 2019 19:34:29 GMT] [info] [<0.000.0>] 127.0.0.1 - - PUT /iservice/_local/Mvi6gbirmC58dBInKgxdig%3D%3D 201
 [Fri, 18 Oct 2019 19:35:40 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_changes?style=all_docs&feed=longpoll&heartbeat=10000&since=2&limit=98 200
+[Fri, 18 Oct 2019 19:56:29 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:5984/
+[Fri, 18 Oct 2019 19:56:29 GMT] [info] [<0.000.0>] database files will be saved to ./db
+[Fri, 18 Oct 2019 19:56:29 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:5984/_utils for the Fauxton UI.
+[Fri, 18 Oct 2019 19:56:58 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/ 404
+[Fri, 18 Oct 2019 19:56:59 GMT] [info] [<0.000.0>] 127.0.0.1 - - PUT /iservice/ 201
+[Fri, 18 Oct 2019 19:56:59 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 304
+[Fri, 18 Oct 2019 19:56:59 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 304
+[Fri, 18 Oct 2019 19:57:00 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/HwKjWRZ2Hdjoyogr9aDesg%3D%3D? 404
+[Fri, 18 Oct 2019 19:57:00 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/Mvi6gbirmC58dBInKgxdig%3D%3D? 404
+[Fri, 18 Oct 2019 19:57:00 GMT] [info] [<0.000.0>] 127.0.0.1 - - PUT /iservice/_local/Mvi6gbirmC58dBInKgxdig%3D%3D 201
+[Fri, 18 Oct 2019 19:57:00 GMT] [info] [<0.000.0>] 127.0.0.1 - - POST /iservice/_revs_diff 200
+[Fri, 18 Oct 2019 19:57:00 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_changes?style=all_docs&since=0&limit=100 304
+[Fri, 18 Oct 2019 19:57:00 GMT] [info] [<0.000.0>] 127.0.0.1 - - POST /iservice/_bulk_docs 201
+[Fri, 18 Oct 2019 19:57:00 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/Mvi6gbirmC58dBInKgxdig%3D%3D? 200
+[Fri, 18 Oct 2019 19:57:00 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/HwKjWRZ2Hdjoyogr9aDesg%3D%3D? 404
+[Fri, 18 Oct 2019 19:57:00 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_changes?style=all_docs&feed=longpoll&heartbeat=10000&since=0&limit=100 200
+[Fri, 18 Oct 2019 19:57:00 GMT] [info] [<0.000.0>] 127.0.0.1 - - PUT /iservice/_local/HwKjWRZ2Hdjoyogr9aDesg%3D%3D 201
+[Fri, 18 Oct 2019 19:57:00 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/Mvi6gbirmC58dBInKgxdig%3D%3D? 304
+[Fri, 18 Oct 2019 19:57:00 GMT] [info] [<0.000.0>] 127.0.0.1 - - PUT /iservice/_local/Mvi6gbirmC58dBInKgxdig%3D%3D 201
+[Fri, 18 Oct 2019 19:58:19 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_changes?style=all_docs&feed=longpoll&heartbeat=10000&since=2&limit=98 200
+[Fri, 18 Oct 2019 19:58:22 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/ 200
+[Fri, 18 Oct 2019 19:58:22 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 304
+[Fri, 18 Oct 2019 19:58:22 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 304
+[Fri, 18 Oct 2019 19:58:22 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/HwKjWRZ2Hdjoyogr9aDesg%3D%3D? 200
+[Fri, 18 Oct 2019 19:58:22 GMT] [info] [<0.000.0>] 127.0.0.1 - - POST /iservice/_revs_diff 200
+[Fri, 18 Oct 2019 19:58:22 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/Mvi6gbirmC58dBInKgxdig%3D%3D? 200
+[Fri, 18 Oct 2019 19:58:22 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/HwKjWRZ2Hdjoyogr9aDesg%3D%3D? 304
+[Fri, 18 Oct 2019 19:58:22 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_changes?style=all_docs&since=2&limit=100 200
+[Fri, 18 Oct 2019 19:58:22 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/Mvi6gbirmC58dBInKgxdig%3D%3D? 304
+[Fri, 18 Oct 2019 19:58:29 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_changes?style=all_docs&feed=longpoll&heartbeat=10000&since=2&limit=100 200
+[Fri, 18 Oct 2019 19:58:39 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:5984/
+[Fri, 18 Oct 2019 19:58:39 GMT] [info] [<0.000.0>] database files will be saved to ./db
+[Fri, 18 Oct 2019 19:58:39 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:5984/_utils for the Fauxton UI.
+[Fri, 18 Oct 2019 19:58:47 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/ 200
+[Fri, 18 Oct 2019 19:58:47 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 304
+[Fri, 18 Oct 2019 19:58:47 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 304
+[Fri, 18 Oct 2019 19:58:47 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/HwKjWRZ2Hdjoyogr9aDesg%3D%3D? 304
+[Fri, 18 Oct 2019 19:58:47 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/Mvi6gbirmC58dBInKgxdig%3D%3D? 304
+[Fri, 18 Oct 2019 19:58:47 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_changes?style=all_docs&since=2&limit=100 304
+[Fri, 18 Oct 2019 19:58:47 GMT] [info] [<0.000.0>] 127.0.0.1 - - POST /iservice/_revs_diff 200
+[Fri, 18 Oct 2019 19:58:47 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/Mvi6gbirmC58dBInKgxdig%3D%3D? 304
+[Fri, 18 Oct 2019 19:58:47 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/HwKjWRZ2Hdjoyogr9aDesg%3D%3D? 304
+[Fri, 18 Oct 2019 19:59:09 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_changes?style=all_docs&feed=longpoll&heartbeat=10000&since=2&limit=100 200
+[Fri, 18 Oct 2019 19:59:11 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/ 304
+[Fri, 18 Oct 2019 19:59:11 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 304
+[Fri, 18 Oct 2019 19:59:11 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 304
+[Fri, 18 Oct 2019 19:59:11 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/HwKjWRZ2Hdjoyogr9aDesg%3D%3D? 304
+[Fri, 18 Oct 2019 19:59:11 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/Mvi6gbirmC58dBInKgxdig%3D%3D? 304
+[Fri, 18 Oct 2019 19:59:11 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_changes?style=all_docs&since=2&limit=100 304
+[Fri, 18 Oct 2019 19:59:11 GMT] [info] [<0.000.0>] 127.0.0.1 - - POST /iservice/_revs_diff 200
+[Fri, 18 Oct 2019 19:59:11 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/Mvi6gbirmC58dBInKgxdig%3D%3D? 304
+[Fri, 18 Oct 2019 19:59:11 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/HwKjWRZ2Hdjoyogr9aDesg%3D%3D? 304
+[Fri, 18 Oct 2019 19:59:11 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_changes?style=all_docs&feed=longpoll&heartbeat=10000&since=2&limit=100 200
+[Fri, 18 Oct 2019 19:59:18 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:5984/
+[Fri, 18 Oct 2019 19:59:18 GMT] [info] [<0.000.0>] database files will be saved to ./db
+[Fri, 18 Oct 2019 19:59:18 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:5984/_utils for the Fauxton UI.
+[Fri, 18 Oct 2019 19:59:24 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/ 200
+[Fri, 18 Oct 2019 19:59:24 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 304
+[Fri, 18 Oct 2019 19:59:24 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 304
+[Fri, 18 Oct 2019 19:59:24 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/HwKjWRZ2Hdjoyogr9aDesg%3D%3D? 304
+[Fri, 18 Oct 2019 19:59:24 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/Mvi6gbirmC58dBInKgxdig%3D%3D? 304
+[Fri, 18 Oct 2019 19:59:24 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_changes?style=all_docs&since=2&limit=100 304
+[Fri, 18 Oct 2019 19:59:24 GMT] [info] [<0.000.0>] 127.0.0.1 - - POST /iservice/_revs_diff 200
+[Fri, 18 Oct 2019 19:59:24 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/Mvi6gbirmC58dBInKgxdig%3D%3D? 304
+[Fri, 18 Oct 2019 19:59:24 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/HwKjWRZ2Hdjoyogr9aDesg%3D%3D? 304
+[Fri, 18 Oct 2019 19:59:57 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_changes?style=all_docs&feed=longpoll&heartbeat=10000&since=2&limit=100 200
+[Fri, 18 Oct 2019 20:00:07 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:5984/
+[Fri, 18 Oct 2019 20:00:07 GMT] [info] [<0.000.0>] database files will be saved to ./db
+[Fri, 18 Oct 2019 20:00:07 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:5984/_utils for the Fauxton UI.
+[Fri, 18 Oct 2019 20:00:15 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/ 200
+[Fri, 18 Oct 2019 20:00:15 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 304
+[Fri, 18 Oct 2019 20:00:15 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 304
+[Fri, 18 Oct 2019 20:00:15 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/HwKjWRZ2Hdjoyogr9aDesg%3D%3D? 304
+[Fri, 18 Oct 2019 20:00:15 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/Mvi6gbirmC58dBInKgxdig%3D%3D? 304
+[Fri, 18 Oct 2019 20:00:15 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_changes?style=all_docs&since=2&limit=100 304
+[Fri, 18 Oct 2019 20:00:15 GMT] [info] [<0.000.0>] 127.0.0.1 - - POST /iservice/_revs_diff 200
+[Fri, 18 Oct 2019 20:00:15 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/Mvi6gbirmC58dBInKgxdig%3D%3D? 304
+[Fri, 18 Oct 2019 20:00:15 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/HwKjWRZ2Hdjoyogr9aDesg%3D%3D? 304
+[Fri, 18 Oct 2019 20:00:28 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_changes?style=all_docs&feed=longpoll&heartbeat=10000&since=2&limit=100 200
+[Fri, 18 Oct 2019 20:00:32 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/ 304
+[Fri, 18 Oct 2019 20:00:32 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 304
+[Fri, 18 Oct 2019 20:00:32 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 304
+[Fri, 18 Oct 2019 20:00:32 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/HwKjWRZ2Hdjoyogr9aDesg%3D%3D? 304
+[Fri, 18 Oct 2019 20:00:32 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/Mvi6gbirmC58dBInKgxdig%3D%3D? 304
+[Fri, 18 Oct 2019 20:00:32 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_changes?style=all_docs&since=2&limit=100 304
+[Fri, 18 Oct 2019 20:00:32 GMT] [info] [<0.000.0>] 127.0.0.1 - - POST /iservice/_revs_diff 200
+[Fri, 18 Oct 2019 20:00:32 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/Mvi6gbirmC58dBInKgxdig%3D%3D? 304
+[Fri, 18 Oct 2019 20:00:32 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/HwKjWRZ2Hdjoyogr9aDesg%3D%3D? 304
+[Fri, 18 Oct 2019 20:00:45 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_changes?style=all_docs&feed=longpoll&heartbeat=10000&since=2&limit=100 200
+[Fri, 18 Oct 2019 20:02:29 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:5984/
+[Fri, 18 Oct 2019 20:02:29 GMT] [info] [<0.000.0>] database files will be saved to ./db
+[Fri, 18 Oct 2019 20:02:29 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:5984/_utils for the Fauxton UI.
+[Fri, 18 Oct 2019 20:03:31 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/ 200
+[Fri, 18 Oct 2019 20:03:31 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 304
+[Fri, 18 Oct 2019 20:03:31 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 304
+[Fri, 18 Oct 2019 20:03:31 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/HwKjWRZ2Hdjoyogr9aDesg%3D%3D? 304
+[Fri, 18 Oct 2019 20:03:31 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/Mvi6gbirmC58dBInKgxdig%3D%3D? 304
+[Fri, 18 Oct 2019 20:03:31 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_changes?style=all_docs&since=2&limit=100 304
+[Fri, 18 Oct 2019 20:03:31 GMT] [info] [<0.000.0>] 127.0.0.1 - - POST /iservice/_revs_diff 200
+[Fri, 18 Oct 2019 20:03:31 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/Mvi6gbirmC58dBInKgxdig%3D%3D? 304
+[Fri, 18 Oct 2019 20:03:31 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/HwKjWRZ2Hdjoyogr9aDesg%3D%3D? 304
+[Fri, 18 Oct 2019 20:04:02 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_changes?style=all_docs&feed=longpoll&heartbeat=10000&since=2&limit=100 200
+[Fri, 18 Oct 2019 20:05:45 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:5984/
+[Fri, 18 Oct 2019 20:05:45 GMT] [info] [<0.000.0>] database files will be saved to ./db
+[Fri, 18 Oct 2019 20:05:45 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:5984/_utils for the Fauxton UI.
+[Fri, 18 Oct 2019 20:06:04 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/ 200
+[Fri, 18 Oct 2019 20:06:04 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 304
+[Fri, 18 Oct 2019 20:06:04 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 304
+[Fri, 18 Oct 2019 20:06:04 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/HwKjWRZ2Hdjoyogr9aDesg%3D%3D? 304
+[Fri, 18 Oct 2019 20:06:04 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/Mvi6gbirmC58dBInKgxdig%3D%3D? 304
+[Fri, 18 Oct 2019 20:06:04 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_changes?style=all_docs&since=2&limit=100 304
+[Fri, 18 Oct 2019 20:06:04 GMT] [info] [<0.000.0>] 127.0.0.1 - - POST /iservice/_revs_diff 200
+[Fri, 18 Oct 2019 20:06:04 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/Mvi6gbirmC58dBInKgxdig%3D%3D? 304
+[Fri, 18 Oct 2019 20:06:04 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_local/HwKjWRZ2Hdjoyogr9aDesg%3D%3D? 304
+[Fri, 18 Oct 2019 20:06:15 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/ 304
+[Fri, 18 Oct 2019 20:06:17 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/css/styles-a9623008fc27e79da2388441deeacfab.css 304
+[Fri, 18 Oct 2019 20:06:17 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/js/bundle-34997e32896293a1fa5d71f79eb1b4f7.js 304
+[Fri, 18 Oct 2019 20:06:18 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_session 304
+[Fri, 18 Oct 2019 20:06:18 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_session 304
+[Fri, 18 Oct 2019 20:06:18 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 304
+[Fri, 18 Oct 2019 20:06:18 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/fonts/fauxtonicon5.woff 304
+[Fri, 18 Oct 2019 20:06:18 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/img/pouchdb-site.png 304
+[Fri, 18 Oct 2019 20:06:18 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_all_dbs?_=1571429178193 200
+[Fri, 18 Oct 2019 20:06:18 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_all_dbs?startkey=%22%22&endkey=%22%E9%A6%99%22&limit=30&_=1571429178194 200
+[Fri, 18 Oct 2019 20:06:19 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_users?_=1571429178196 200
+[Fri, 18 Oct 2019 20:06:19 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice?_=1571429178197 200
+[Fri, 18 Oct 2019 20:06:19 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_replicator?_=1571429178195 200
+[Fri, 18 Oct 2019 20:06:20 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/fonts/fontawesome-webfont.woff 304
+[Fri, 18 Oct 2019 20:06:20 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/ 304
+[Fri, 18 Oct 2019 20:06:20 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/img/pouchdb-favicon.png 200
+[Fri, 18 Oct 2019 20:07:12 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_changes?style=all_docs&feed=longpoll&heartbeat=10000&since=2&limit=100 200
