@@ -585,3 +585,57 @@
 [Fri, 18 Oct 2019 20:06:20 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/ 304
 [Fri, 18 Oct 2019 20:06:20 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/img/pouchdb-favicon.png 200
 [Fri, 18 Oct 2019 20:07:12 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_changes?style=all_docs&feed=longpoll&heartbeat=10000&since=2&limit=100 200
+[Sat, 19 Oct 2019 20:25:45 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:5984/
+[Sat, 19 Oct 2019 20:25:45 GMT] [info] [<0.000.0>] database files will be saved to ./db
+[Sat, 19 Oct 2019 20:25:45 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:5984/_utils for the Fauxton UI.
+[Sat, 19 Oct 2019 20:25:47 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/ 200
+[Sat, 19 Oct 2019 20:25:47 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/css/styles-a9623008fc27e79da2388441deeacfab.css 200
+[Sat, 19 Oct 2019 20:25:48 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/js/bundle-34997e32896293a1fa5d71f79eb1b4f7.js 200
+[Sat, 19 Oct 2019 20:25:48 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_session 200
+[Sat, 19 Oct 2019 20:25:49 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_session 304
+[Sat, 19 Oct 2019 20:25:49 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 200
+[Sat, 19 Oct 2019 20:25:49 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/img/pouchdb-site.png 200
+[Sat, 19 Oct 2019 20:25:49 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/fonts/fauxtonicon5.woff 200
+[Sat, 19 Oct 2019 20:25:49 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_all_dbs?_=1571516748823 200
+[Sat, 19 Oct 2019 20:25:49 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_all_dbs?startkey=%22%22&endkey=%22%E9%A6%99%22&limit=30&_=1571516748824 200
+[Sat, 19 Oct 2019 20:25:49 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_replicator?_=1571516748825 200
+[Sat, 19 Oct 2019 20:25:49 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_users?_=1571516748826 200
+[Sat, 19 Oct 2019 20:25:49 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice?_=1571516748827 200
+[Sat, 19 Oct 2019 20:25:49 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/fonts/fontawesome-webfont.woff 200
+[Sat, 19 Oct 2019 20:25:49 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/ 304
+[Sat, 19 Oct 2019 20:25:50 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/img/pouchdb-favicon.png 200
+[Sat, 19 Oct 2019 20:25:59 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_all_dbs 200
+[Sat, 19 Oct 2019 20:26:00 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_all_dbs 304
+[Sat, 19 Oct 2019 20:26:08 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_membership 200
+[Sat, 19 Oct 2019 20:26:08 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/ 304
+[Sat, 19 Oct 2019 20:26:09 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_node/node1@127.0.0.1/_config 200
+[Sat, 19 Oct 2019 20:26:09 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/ 304
+[Sat, 19 Oct 2019 20:26:10 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_active_tasks 200
+[Sat, 19 Oct 2019 20:26:10 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/ 304
+[Sat, 19 Oct 2019 20:26:12 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_all_dbs?_=1571516748828 200
+[Sat, 19 Oct 2019 20:26:12 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/ 304
+[Sat, 19 Oct 2019 20:26:12 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_replicator?_=1571516748829 200
+[Sat, 19 Oct 2019 20:26:12 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_users?_=1571516748830 200
+[Sat, 19 Oct 2019 20:26:12 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice?_=1571516748831 200
+[Sat, 19 Oct 2019 20:26:14 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/img/couchdb-logo.png 200
+[Sat, 19 Oct 2019 20:26:14 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/ 304
+[Sat, 19 Oct 2019 20:26:14 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/img/github.png 200
+[Sat, 19 Oct 2019 20:26:14 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/img/googleplus.png 200
+[Sat, 19 Oct 2019 20:26:14 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/img/asf-feather-logo.png 200
+[Sat, 19 Oct 2019 20:26:14 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/img/twitter.png 200
+[Sat, 19 Oct 2019 20:26:14 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/img/linkedin.png 200
+[Sat, 19 Oct 2019 20:26:22 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_all_dbs?_=1571516748832 200
+[Sat, 19 Oct 2019 20:26:22 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/ 304
+[Sat, 19 Oct 2019 20:26:22 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_replicator?_=1571516748833 200
+[Sat, 19 Oct 2019 20:26:22 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_users?_=1571516748834 200
+[Sat, 19 Oct 2019 20:26:22 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice?_=1571516748835 200
+[Sat, 19 Oct 2019 20:26:23 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_all_docs?startkey=%22_design%2F%22&endkey=%22_design0%22&include_docs=true&limit=501 200
+[Sat, 19 Oct 2019 20:26:23 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_all_docs?limit=21 200
+[Sat, 19 Oct 2019 20:26:23 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_all_docs?startkey=%22%22&endkey=%22%E9%A6%99%22&limit=30&_=1571516748836 200
+[Sat, 19 Oct 2019 20:26:23 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/ 304
+[Sat, 19 Oct 2019 20:26:28 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /iservice/_index? 200
+[Sat, 19 Oct 2019 20:26:28 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/dashboard.assets/img/couch-watermark.png 200
+[Sat, 19 Oct 2019 20:26:28 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/ 304
+[Mon, 21 Oct 2019 13:17:24 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:5984/
+[Mon, 21 Oct 2019 13:17:24 GMT] [info] [<0.000.0>] database files will be saved to ./db
+[Mon, 21 Oct 2019 13:17:24 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:5984/_utils for the Fauxton UI.

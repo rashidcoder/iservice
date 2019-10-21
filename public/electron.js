@@ -21,8 +21,8 @@ function createWindow() {
     } else {
       console.log("port is in use " + status)
 
-      const exec = require('child_process').exec
-      exec("pouchdb-server -d ./db")
+      // const exec = require('child_process').exec
+      // exec("pouchdb-server -d ./db")
     }
 
   })

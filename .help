@@ -3,3 +3,5 @@ netstat -a -n -o
 kill pid 
 
 git reset --hard c14809fa
+npm install --save pouchdb
+yarn electron-dev
