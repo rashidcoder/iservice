@@ -1,0 +1,28 @@
+sidebar {
+title : "",
+items: {
+    {
+    text: "",
+    child: {
+        text: "",
+        link : ""
+    }
+    },
+    {
+    text: "",
+    child: {
+        text: "",
+        link : ""
+    }
+    },
+ 
+    {
+    text: "",
+    child: {
+        text: "",
+        link : ""
+    }
+    },
+ 
+}
+}

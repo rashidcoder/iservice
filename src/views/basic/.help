@@ -1,0 +1,43 @@
+1. input.jsx [ type, name, id , class,]
+2. button.jsx[type, name, id , class,value,text]
+3. label.jsx [  class ,text, for ] 
+4. select.jsx [ , name, id , class,placeholder,countryOptions[]]
+5. textarea.jsx [  name,type, id , class cols,rows,placeholder]
+
+
+-----------------------------------------------------------
+1. input.jsx [ type, name, id , class]
+
+Explantion
+
+these attributes are added in input state you can change these attributes
+ by changing the object of input having fields Type of input
+  Name represent the Name i-e FirstName or last name 
+class is use to customize the input through our own css 
+
+2. button.jsx[type, name, id , class,value,text]
+
+Explantion
+
+these attributes are added in input state you can change these attributes
+ by changing the object of button having fields Type of button
+  Name: represent the Name i-e btn-submit 
+class: is use to customize the button through our own css 
+Value : initally the is assigned the state '' later we will setstate i-e update the state onclickEvent
+
+
+3. label.jsx [  class ,text, for ] 
+
+class: is use to customize the label through our own css 
+text: is use to assign the label Name i-e FirstName or LastName or Address etc
+for : label for
+
+4. select.jsx [ , name, id , class,placeholder,countryOptions[]]
+
+placeholder: represents the default value of select i-e select any 
+countryOptions[]: an array of country option which will populate the values of select 
+
+5 textarea.jsx [  name,type, id , class cols,rows,placeholder]
+
+cols: representS numbers of rows of textarea
+rows: represents the numbers of cols of textarea

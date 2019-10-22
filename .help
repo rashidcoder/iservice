@@ -5,3 +5,5 @@ kill pid
 git reset --hard c14809fa
 npm install --save pouchdb
 yarn electron-dev
+npm install semantic-ui-react --save-dev
+yarn add semantic-ui-css
