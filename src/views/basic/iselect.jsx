@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Select } from "semantic-ui-react";
+import { Form } from "semantic-ui-react";
 export class ISelect extends Component {
   constructor(props) {
     super(props);
@@ -23,15 +24,26 @@ export class ISelect extends Component {
   }
   render() {
     return (
-      <Select
-        class={this.state.select.class}
-        name={this.state.select.name}
-        placeholder={this.state.select.placeholder}
-
-        options={this.state.countryOptions}
-      />
+      <Form.Field
+control={Select}
+options={this.state.countryOptions}
+label={{ children: 'Select Truck Type', htmlFor: 'form-select-control-gender' }}
+placeholder={this.props.placeholder}
+search
+searchInput={{ id: 'form-select-control-gender' }}
+/>
+  
     );
   }
 }
 
 export default ISelect;
+
+/*   <Select
+        class={this.state.select.class}
+        name={this.state.select.name}
+        placeholder={this.state.select.placeholder}
+
+        options={this.state.countryOptions}
+  />
+  */

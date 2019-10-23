@@ -26,3 +26,16 @@ items: {
  
 }
 }
+
+                    ****************************************************************************************************
+
+Accordian: feature is added in sidebar menu one state is extra added in array
+           which is activeIndex on the bases of which menu ups and down on click 
+           event .
+           this activeindex has value which varys from 0 to our number of elements 
+           and each sidebar object has value i-e 0 , 1 etc
+
+Code:      For Official Code of Accordian vist the link below            
+
+https://react.semantic-ui.com/modules/accordion/#types-standard 
+           

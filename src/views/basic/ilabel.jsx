@@ -21,7 +21,7 @@ export class ILabel extends Component {
           class={this.state.label.class}
           for={this.state.label.for}
         >
-          {this.state.label.text}
+          {this.props.text}
         </label>
       </div>
     );

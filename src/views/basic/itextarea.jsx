@@ -24,7 +24,7 @@ export class ITextArea extends Component {
           cols={this.state.textarea.cols}
           rows={this.state.textarea.rows}
           class={this.state.textarea.class}
-          placeholder={this.state.textarea.placeholder}
+          placeholder={this.props.label}
           />
         
     )
