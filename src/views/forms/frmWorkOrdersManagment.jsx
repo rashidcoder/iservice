@@ -17,6 +17,20 @@ import ISelect from "../basic/iselect";
 import IInput from "../basic/input";
 import ITable from "../table/itable";
 class FrmWorkOrdersManagment extends Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+      table : {
+        title: ["Data", "Status", "Customer", "Required Truck or Trailer", "Parts"," Labor","Total"],
+        data: [
+          ["04/03/1997", "wating", "Trango", "Kenworth T-60", "225$","14$","392$"],
+          ["04/03/1997", "wating", "Trango", "Kenworth T-60", "225$","14$","392$"],
+        ] 
+    } 
+    }
+  }
+  
   render() {
     return (
       <Form>
@@ -24,11 +38,7 @@ class FrmWorkOrdersManagment extends Component {
         <Form.Group widths={2}>
         <IInput label={"Search"} />
         </Form.Group>
-        <ITable header1={"Date"}
-        header2={"Status"}
-        header3={"Customer"}
-        header4={"Required truck or trailer"}
-        header5={"Parts"}
+        <ITable data={this.state.table}
         />
       </Form>
     );

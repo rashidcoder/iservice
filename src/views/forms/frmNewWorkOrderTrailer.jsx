@@ -18,6 +18,21 @@ import ISelect from "../basic/iselect";
 import IInput from "../basic/input";
 import ITable from "../table/itable";
 class FrmNewWorkOrderTrailer extends Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+      table : {
+        title: ["Task", "Employee", "Category", "Part", "Part Price"," Price"],
+        data: [
+          ["Electricity", "Valdas", "General", "Rear Right", "Rear left"," Price"],
+          ["Suspension", "Valdas", "Resturation", "Tree", "Rear Right"," Price"],
+          ["Suspension", "Valdas", "Resturation", "Tree", "Rear Right"," Price"]
+        ] 
+    } 
+    }
+  }
+  
   render() {
     return (
       <Form >
@@ -75,10 +90,7 @@ class FrmNewWorkOrderTrailer extends Component {
           <IInput label={"Budget"} widths={4}/>
         </Form.Group>
         <ITable header1={"Task"}
-        header2={"Empolyee"}
-        header3={"Category"}
-        header4={"Part"}
-        header5={"Part Price"}
+        data={this.state.table}
         />
         <Form.Group>
           <ILabel text={"Client Information"} />

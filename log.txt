@@ -678,3 +678,6 @@
 [Thu, 24 Oct 2019 04:23:24 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:5984/
 [Thu, 24 Oct 2019 04:23:24 GMT] [info] [<0.000.0>] database files will be saved to ./db
 [Thu, 24 Oct 2019 04:23:24 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:5984/_utils for the Fauxton UI.
+[Thu, 24 Oct 2019 11:00:07 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:5984/
+[Thu, 24 Oct 2019 11:00:07 GMT] [info] [<0.000.0>] database files will be saved to ./db
+[Thu, 24 Oct 2019 11:00:07 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:5984/_utils for the Fauxton UI.

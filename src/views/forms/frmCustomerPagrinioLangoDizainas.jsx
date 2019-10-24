@@ -18,6 +18,26 @@ import ISelect from "../basic/iselect";
 import IInput from "../basic/input";
 import ITable from "../table/itable";
 class FrmCustomerPagrinioLangoDizainas extends Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+      table : {
+        title: ["Company", "Telephone", "City", "Prov/State", "Name","Address","Priority"],
+        data: [
+          ["Grain Translanta", "267-257-5445", "lemont", "IL", "Volodia"," Baisogaios 21","Heigh"],
+          ["Grain Translanta", "267-257-5445", "lemont", "IL", "Volodia"," Baisogaios 21","Heigh"],
+          ["", "", "", "", " ", " ", " "],
+          ["", "", "", "", " ", " ", " "],
+          ["", "", "", "", " ", " ", " "],
+          ["", "", "", "", " ", " ", " "],
+          ["", "", "", "", " ", " ", " "],
+          ["", "", "", "", " ", " ", " "],
+        ] 
+    }
+    }
+  }
+  
   render() {
     return (
       <Form>
@@ -25,11 +45,7 @@ class FrmCustomerPagrinioLangoDizainas extends Component {
         <Form.Group widths={2}>
         <IInput label={"Search"} />
         </Form.Group>
-        <ITable header1={"Category"}
-        header2={"Telephone"}
-        header3={"City"}
-        header4={"Prov/State"}
-        header5={"Name"}
+        <ITable data={this.state.table}
         />
       </Form>
     );

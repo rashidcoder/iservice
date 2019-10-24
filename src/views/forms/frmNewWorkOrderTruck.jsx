@@ -22,23 +22,18 @@ class FrmNewWorkOrderTruck extends Component {
     super(props)
   
     this.state = {
-      
+       table : {
+        title: ["Task", "Employee", "Category", "Part", "Part Price"," Cost/Hours"],
+        data: [
+          ["Suspension", "Valdas", "General", "Suspension", "50$","50$"],
+          ["Suspension", "Valdas", "Restuation","Ball joint",  "50$","50$"]
+        ] 
+    }
     }
   }
   
   render() {
-    // Dont Delete this array i-e ar
-    const ar ={
-      table: {
-        title: ["Task", "Employee", "Category", "Part", "Part Price"],
-
-        data: [
-          ["Electricity", "Valdas", "General", "Rear Right", "Rear left"],
-          ["Suspension", "Valdas", "Resturation", "Tree", "Rear Right"],
-          ["Suspension", "Valdas", "Resturation", "Tree", "Rear Right"]
-        ]
-      }
-    }
+    
     return (
       <Form>
         <ILabel text={"Create New Work Order"} />
@@ -97,11 +92,7 @@ class FrmNewWorkOrderTruck extends Component {
           <IInput label={"Budget"} />
         </Form.Group>
         <ITable
-        header1={'Task'}
-        header2={'Employee'}
-        header3={'Category'}
-        header4={'Part'}
-        header5={'Part Price'}
+        data={this.state.table}
         />
         <Form.Group>
           <ILabel text={"Client Information"} />
@@ -146,3 +137,21 @@ class FrmNewWorkOrderTruck extends Component {
 }
 
 export default FrmNewWorkOrderTruck;
+/*
+<ITable
+        header1={'Task'}
+        header2={'Employee'}
+        header3={'Category'}
+        header4={'Part'}
+        header5={'Part Price'}
+        />
+
+        table : {
+        title: ["Task", "Employee", "Category", "Part", "Part Price"," Price"],
+        data: [
+          ["Electricity", "Valdas", "General", "Rear Right", "Rear left"," Price"],
+          ["Suspension", "Valdas", "Resturation", "Tree", "Rear Right"," Price"],
+          ["Suspension", "Valdas", "Resturation", "Tree", "Rear Right"," Price"]
+        ] 
+    }
+*/

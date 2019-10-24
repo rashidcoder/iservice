@@ -17,6 +17,20 @@ import ISelect from "../basic/iselect";
 import IInput from "../basic/input";
 import ITable from "../table/itable";
 class FrmModifyWorkOrder extends Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+      table : {
+        title: ["Task", "Employee", "Category", "Part", "Part Price"," Price"],
+        data: [
+          ["Suspension", "Valdas", "Resturation", "Tree", "Rear Right"," Price"],
+          ["Suspension", "Valdas", "Resturation", "Tree", "Rear Right"," Price"]
+        ] 
+    }
+    }
+  }
+  
   render() {
     return (
       <Form>
@@ -75,11 +89,7 @@ class FrmModifyWorkOrder extends Component {
           <IInput label={"Plan service Data"} />
           <IInput label={"Budget"} />
         </Form.Group>
-        <ITable header1={"Task"}
-        header2={"Empolyee"}
-        header3={"Category"}
-        header4={"Part"}
-        header5={"Part Price"}
+        <ITable data={this.state.table}
         />
 
         <Grid>

@@ -18,6 +18,23 @@ import IInput from "../basic/input";
 import ITable from "../table/itable";
 import IAdd from "../basic/iadd";
 class FrmAddNewCustomer extends Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       table : {
+        title: ["Name", "Telephone", "Email", "Fax", "Telephone(alt)"],
+        data: [
+          ["", "", "", "", " "],
+          ["", "", "", "", " "],
+          ["", "", "", "", " "],
+          ["", "", "", "", " "],
+          ["", "", "", "", " "],
+
+        ] 
+    }
+    }
+  }
   render() {
     return (
       <Form>
@@ -85,11 +102,7 @@ class FrmAddNewCustomer extends Component {
           <IAdd text={"Add more Contacts"} />
         </Form.Group>
         <ITable
-          header1={"Name"}
-          header2={"Telephone"}
-          header3={"Email"}
-          header4={"Fax"}
-          header5={"Telephone"}
+        data={this.state.table}
         />
         <Form.Group>
           <ILabel text={"Comments"} />
