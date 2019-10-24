@@ -32,10 +32,10 @@ class App extends Component {
           <ITabs/>
           */}
         <Grid>
-          <Grid.Column width={3}>
+          <Grid.Column width={2}>
             <ISidebar />
           </Grid.Column>
-          <Grid.Column width={13}>
+          <Grid.Column width={14}>
             <ITabs />
           </Grid.Column>
         </Grid>

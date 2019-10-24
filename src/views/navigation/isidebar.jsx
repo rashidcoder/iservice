@@ -154,19 +154,13 @@ export class ISidebar extends Component {
 
     });
     return (
-
-
-
-      
       <Sidebar
         as={Menu}
         animation="overlay"
         icon="labeled"
-        
         vertical
         visible
         width="thin" >
-
        { parent }
       </Sidebar>
     );

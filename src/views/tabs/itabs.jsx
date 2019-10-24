@@ -13,47 +13,29 @@ export class ITabs extends Component {
     this.state = {
       tabs: [
         {
-          title: "New Work Order",
-          No: 1
+          title: " Create New Work Order Truck",
+        },
+        {
+          title: "Create New Work Order Trailer",
+          
         },
         {
           title: "Work Order Managment",
-          No: 2
+          
         },
         {
-          title: "New Customer",
-          No: 3
-        },
-        {
-          title: "Customers",
-          No: 4
+          title: " Modify Work Order",
+          
         },
 
         {
-          title: "Booking ",
-          No: 5
+          title: "Customers Pagrindino lango diazainas",
+          
         },
         {
-          title: "Employees",
-          No: 6
+          title: "Add New Customer",
+          
         },
-        {
-          title: "Reminder",
-          No: 7
-        },
-
-        {
-          title: "New Supplier",
-          No: 8
-        },
-        {
-          title: "Suppliers",
-          No: 9
-        },
-        {
-          title: "Settings",
-          No: 10
-        }
       ]
     };
   }
@@ -63,13 +45,7 @@ export class ITabs extends Component {
       const title = this.state.tabs[i].title;
       tabPanes.push({
         menuItem: title,
-        render: () => <Tab.Pane>{
-
-
-          this.dumyTabPane()} 
-
-
-          </Tab.Pane>
+        render: () => <Tab.Pane>{this.dumyTabPane({i})}</Tab.Pane>
       });
     }
     // this.state.tabs.forEach(tab=> {
@@ -77,13 +53,37 @@ export class ITabs extends Component {
     //
     return <Tab panes={tabPanes} />;
   }
-  dumyTabPane() {
+  dumyTabPane({i}) {
+    switch (i) {
+      case 0:
+        return <FrmNewWorkOrderTruck/>;
+        break;
+        case 1:
+           return <FrmNewWorkOrderTrailer/>;
+          break;
+    
+          case 2:
+            return <FrmWorkOrdersManagment/>;
+            break;
+            case 3:
+            return <FrmModifyWorkOrder/>;
+            break;
+            case 4:
+            return <FrmCustomerPagrinioLangoDizainas/>;
+            break;
+            case 5:
+            return <FrmAddNewCustomer />;
+            break;
+      
+      default:
+        break;
+    }
     //return <FrmNewWorkOrderTruck/>
     //return <FrmNewWorkOrderTrailer/>
     //return <FrmWorkOrdersManagment/>
     //return <FrmModifyWorkOrder/>
     //return <FrmCustomerPagrinioLangoDizainas/>
-    return <FrmAddNewCustomer />;
+    //return <FrmAddNewCustomer />;
   }
 }
 export default ITabs;
