@@ -1,66 +1,89 @@
-import React, { Component } from "react"
-import { Tab, Button } from "semantic-ui-react" 
-import FrmNewWorkOrder from "../forms/frmNewWorkOrder"
+import React, { Component } from "react";
+import { Tab, Button } from "semantic-ui-react";
+import FrmNewWorkOrderTruck from "../forms/frmNewWorkOrderTruck";
+import FrmNewWorkOrderTrailer from "../forms/frmNewWorkOrderTrailer";
+import FrmModifyWorkOrder from "../forms/frmModifyWorkOrder";
+import FrmCustomerPagrinioLangoDizainas from "../forms/frmCustomerPagrinioLangoDizainas";
+import FrmAddNewCustomer from "../forms/frmAddNewCustomer";
+import FrmWorkOrdersManagment from "../forms/frmWorkOrdersManagment";
 
 export class ITabs extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       tabs: [
         {
-          title: "New Work Order"
+          title: "New Work Order",
+          No: 1
         },
         {
-          title: "Work Order Managment"
+          title: "Work Order Managment",
+          No: 2
         },
         {
-          title: "New Customer"
+          title: "New Customer",
+          No: 3
         },
         {
-          title: "Customers"
-        },
-
-        {
-          title: "Booking "
-        },
-        {
-          title: "Employees"
-        },
-        {
-          title: "Reminder"
+          title: "Customers",
+          No: 4
         },
 
         {
-          title: "New Supplier"
+          title: "Booking ",
+          No: 5
         },
         {
-          title: "Suppliers"
+          title: "Employees",
+          No: 6
         },
         {
-          title: "Settings"
+          title: "Reminder",
+          No: 7
+        },
+
+        {
+          title: "New Supplier",
+          No: 8
+        },
+        {
+          title: "Suppliers",
+          No: 9
+        },
+        {
+          title: "Settings",
+          No: 10
         }
-      ],
-      
-    }
+      ]
+    };
   }
-  render() { 
-    const tabPanes = [] 
-    for (let i = 0; i < this.state.tabs.length;i++) {
-      const title = this.state.tabs[i].title 
-      tabPanes.push({ menuItem:  title, render: () => <Tab.Pane>  {this.dumyTabPane()}  </Tab.Pane>})
+  render() {
+    const tabPanes = [];
+    for (let i = 0; i < this.state.tabs.length; i++) {
+      const title = this.state.tabs[i].title;
+      tabPanes.push({
+        menuItem: title,
+        render: () => <Tab.Pane>{
+
+
+          this.dumyTabPane()} 
+
+
+          </Tab.Pane>
+      });
     }
     // this.state.tabs.forEach(tab=> {
-     
-
     // })
-      // 
-    
-    return <Tab panes={tabPanes} />
+    //
+    return <Tab panes={tabPanes} />;
   }
-
   dumyTabPane() {
-    return <FrmNewWorkOrder/>
-    
+    //return <FrmNewWorkOrderTruck/>
+    //return <FrmNewWorkOrderTrailer/>
+    //return <FrmWorkOrdersManagment/>
+    //return <FrmModifyWorkOrder/>
+    //return <FrmCustomerPagrinioLangoDizainas/>
+    return <FrmAddNewCustomer />;
   }
 }
-export default ITabs
+export default ITabs;

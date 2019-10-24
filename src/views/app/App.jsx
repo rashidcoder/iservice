@@ -11,7 +11,7 @@ import ITextArea from "../basic/itextarea";
 import IAdd from "../basic/iadd";
 import ITable from "../table/itable";
 import ITabs from "../tabs/itabs";
-import FrmNewWorkOrder from "../forms/frmNewWorkOrder";
+import FrmNewWorkOrder from "../forms/frmNewWorkOrderTruck";
 import { Grid } from "semantic-ui-react";
 
 class App extends Component {

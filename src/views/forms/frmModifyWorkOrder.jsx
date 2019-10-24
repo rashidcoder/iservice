@@ -4,7 +4,6 @@ import ISidebar from "../navigation/isidebar";
 import ITabs from "../tabs/itabs";
 import ILabel from "../basic/ilabel";
 import ITextArea from "../basic/itextarea";
-
 import {
   Button,
   Checkbox,
@@ -17,70 +16,96 @@ import {
 import ISelect from "../basic/iselect";
 import IInput from "../basic/input";
 import ITable from "../table/itable";
-class FrmNewWorkOrder extends Component {
+class FrmModifyWorkOrder extends Component {
   render() {
     return (
-      <Form unstackable>
-        <ILabel text={"Create New Work Order"} />
+      <Form>
+        <ILabel text={"Modify Work Order"} />
+        <Form.Group widths={2}>
+          <ISelect text={"Select Truck or Trailer  Types"} placeholder={"Truck"} />
+        </Form.Group>
         <Form.Group>
           <ILabel text={"Truck Information"} />
         </Form.Group>
         <Form.Group>
           <ISelect text={"Truck Types"} placeholder={"Truck Types"} />
         </Form.Group>
-        <Form.Group widths={2}>
+        <Form.Group widths={4}>
           <IInput label={"Truck Brand"} />
           <IInput label={"Model"} />
           <IInput label={"Unite ID"} />
         </Form.Group>
-        <Form.Group widths={2}>
+        <Form.Group widths={4}>
           <IInput label={"License"} />
           <IInput label={"V.I.N"} />
           <IInput label={"Engine Number"} />
         </Form.Group>
-        <Form.Group widths={2}>
+        <Form.Group widths={4}>
           <IInput label={"Manufacture Year"} />
           <IInput label={"Engine Capacity"} />
           <IInput label={"Truck Color"} />
         </Form.Group>
         <Grid>
           <Grid.Row>
-            <Grid.Column width={8}>
+            <Grid.Column width={6}>
               <ILabel text={"Last Read"} />
               <Form.Group inline>
-          <IInput label={"Hours"} />
-        </Form.Group>
-        <Form.Group inline>
-          <IInput label={"Odometer"} />
-        </Form.Group>
+                <IInput label={"Hours"} />
+              </Form.Group>
+              <Form.Group inline>
+                <IInput label={"Odometer"} />
+              </Form.Group>
             </Grid.Column>
-            <Grid.Column width={8}>
+            <Grid.Column width={6}>
               <ILabel text={"Current"} />
               <Form.Group inline>
-          <IInput label={"Hours"} />
-        </Form.Group>
-        <Form.Group inline>
-          <IInput label={"Odometer"} />
-        </Form.Group>
+                <IInput label={"Hours"} />
+              </Form.Group>
+              <Form.Group inline>
+                <IInput label={"Odometer"} />
+              </Form.Group>
             </Grid.Column>
           </Grid.Row>
         </Grid>
         <Form.Group>
-        <ILabel text={"Work Information"} />
+          <ILabel text={"Work Information"} />
         </Form.Group>
-        <Form.Group widths={2}>
+        <Form.Group widths={4}>
           <ISelect text={"Priority"} placeholder={"Priority"} />
           <IInput label={"Plan service Data"} />
           <IInput label={"Budget"} />
         </Form.Group>
-        <ITable/>
+        <ITable header1={"Task"}
+        header2={"Empolyee"}
+        header3={"Category"}
+        header4={"Part"}
+        header5={"Part Price"}
+        />
+
+        <Grid>
+          <Grid.Row>
+            <Grid.Column width={8}></Grid.Column>
+            <Grid.Column width={8}>
+              <Form.Group widths={4}>
+                <IInput label={"Parts"} />
+                <IInput label={"Labor"} />
+                <IInput label={"Total"} />
+              </Form.Group>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+
         <Form.Group>
           <ILabel text={"Client Information"} />
         </Form.Group>
-        <Form.Group width={2}>
-          <IInput label={"Name"} />
-          <IInput label={"Company"} />
-          <ISelect text={"Customer Type"} placeholder={"Customer Type"} />
+        <Form.Group width={6}>
+          <IInput label={"Name"} width={4} />
+          <IInput label={"Company"} width={4} />
+          <ISelect
+            text={"Customer Type"}
+            placeholder={"Customer Type"}
+            width={4}
+          />
         </Form.Group>
         <Form.Group>
           <IInput label={"City"} width={4} />
@@ -107,10 +132,9 @@ class FrmNewWorkOrder extends Component {
           <ILabel text={"Comments"} />
         </Form.Group>
         <ITextArea label={"Comments"} />
-
       </Form>
     );
   }
 }
 
-export default FrmNewWorkOrder;
+export default FrmModifyWorkOrder;

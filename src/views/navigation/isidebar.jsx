@@ -17,11 +17,11 @@ export class ISidebar extends Component {
           child: [
             {
               text: "New Work Order",
-              link: "www.google.com"
+              link: "1"
             },
             {
               text: "Work Order Managment",
-              link: "#"
+              link: "2"
             }
           ]
         },
@@ -129,7 +129,7 @@ export class ISidebar extends Component {
         childItems.push(
           <Accordion.Content active={activeIndex === item.activeIndex}>
           <p>
-          <a href={item_ch.link}> {item_ch.text} </a> 
+          <a href={item_ch.link} > {item_ch.text} </a> 
           </p>
         </Accordion.Content>
         );
@@ -149,8 +149,6 @@ export class ISidebar extends Component {
         </Accordion.Title>
         {childItems}
          </Accordion>
-         {/* {item.text} */}
-        {/*  {childItems}*/}
         </Menu.Item>
       );
 
@@ -164,7 +162,7 @@ export class ISidebar extends Component {
         as={Menu}
         animation="overlay"
         icon="labeled"
-        inverted
+        
         vertical
         visible
         width="thin" >

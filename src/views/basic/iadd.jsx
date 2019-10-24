@@ -18,7 +18,8 @@ export class IAdd extends Component {
   render() {
     const styles = {
       backgroundColor: "transparent",
-      border: "none"
+      border: "none",
+      marginTop:"37px"
     };
     return (
       <span>
@@ -29,7 +30,7 @@ export class IAdd extends Component {
         >
           <Icon name="plus" />
         </button>
-        {this.state.iadd.text}
+        {this.props.text}
       </span>
     );
   }

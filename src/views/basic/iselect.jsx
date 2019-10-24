@@ -27,8 +27,9 @@ export class ISelect extends Component {
       <Form.Field
 control={Select}
 options={this.state.countryOptions}
-label={{ children: 'Select Truck Type', htmlFor: 'form-select-control-gender' }}
+label={{ children: this.props.text, htmlFor: 'form-select-control-gender' }}
 placeholder={this.props.placeholder}
+width={this.props.width}
 search
 searchInput={{ id: 'form-select-control-gender' }}
 />
