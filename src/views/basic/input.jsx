@@ -3,30 +3,17 @@ import { Form } from "semantic-ui-react";
 import React, { Component } from "react";
 
 export class IInput extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      input: {
-        type: "text",
-        id: "firstName",
-        placeholder: "name",
-        name: "firstName",
-        class: "iInput"
-      }
-    };
-  }
-
   render() {
     return (
       <Form.Input
-        class={this.state.input.iInput}
-        name={this.state.input.name}
-        type={this.state.input.type}
-        id={this.state.input.id}
+        class={this.props.class}
+        name={this.props.name}
+        type="text"
+        id={this.props.id}
         label={this.props.label}
         placeholder={this.props.label}
         width={this.props.width}
+        icon={{ name: this.props.icon }}
       />
     );
   }

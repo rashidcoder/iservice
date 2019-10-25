@@ -1,50 +1,66 @@
 import { Grid } from "semantic-ui-react";
 import React, { Component } from "react";
-import ISidebar from "../navigation/isidebar";
-import ITabs from "../tabs/itabs";
 import ILabel from "../basic/ilabel";
 import ITextArea from "../basic/itextarea";
 
-import {
-  Button,
-  Checkbox,
-  Form,
-  Input,
-  Radio,
-  Select,
-  TextArea
-} from "semantic-ui-react";
+import { Form } from "semantic-ui-react";
 import ISelect from "../basic/iselect";
 import IInput from "../basic/input";
 import ITable from "../table/itable";
+import IButton from "../basic/ibutton";
 class FrmNewWorkOrderTrailer extends Component {
   constructor(props) {
-    super(props)
-  
+    super(props);
+
     this.state = {
-      table : {
-        title: ["Task", "Employee", "Category", "Part", "Part Price"," Price"],
+      table: {
+        title: ["Task", "Employee", "Category", "Part", "Part Price", " Price"],
         data: [
-          ["Electricity", "Valdas", "General", "Rear Right", "Rear left"," Price"],
-          ["Suspension", "Valdas", "Resturation", "Tree", "Rear Right"," Price"],
-          ["Suspension", "Valdas", "Resturation", "Tree", "Rear Right"," Price"]
-        ] 
-    } 
-    }
+          [
+            "Electricity",
+            "Valdas",
+            "General",
+            "Rear Right",
+            "Rear left",
+            " Price"
+          ],
+          [
+            "Suspension",
+            "Valdas",
+            "Resturation",
+            "Tree",
+            "Rear Right",
+            " Price"
+          ],
+          [
+            "Suspension",
+            "Valdas",
+            "Resturation",
+            "Tree",
+            "Rear Right",
+            " Price"
+          ]
+        ]
+      }
+    };
   }
-  
+
   render() {
     return (
-      <Form >
-        <ILabel text={"Create New Work Order"} />
+      <Form>
+        <ILabel text={"Create New Work Order"} class={"ui header"} />
         <Form.Group widths={2}>
-          <ISelect text={"Select Trailer Types"} placeholder={"Trailer"}/>
+          <ISelect text={"Select Trailer Types"} placeholder={"Trailer"} />
         </Form.Group>
         <Form.Group>
-          <ILabel text={"Trailer Information"} />
+          <ILabel text={"Trailer Information"} class={"ui header"} />
         </Form.Group>
         <Form.Group>
-          <ISelect text={"Select Truck Type"} placeholder={"Trailer Types"} width={4}/>
+          <ISelect
+            text={"Select Truck Type"}
+            placeholder={"Trailer Types"}
+            width={4}
+          />
         </Form.Group>
         <Form.Group widths={4}>
           <IInput label={"Trailer Brand"} />
@@ -53,7 +69,7 @@ class FrmNewWorkOrderTrailer extends Component {
         </Form.Group>
         <Form.Group widths={4}>
           <IInput label={"License"} />
-          <IInput label={"V.I.N"}  />
+          <IInput label={"V.I.N"} />
         </Form.Group>
         <Form.Group widths={4}>
           <IInput label={"Manufacture Year"} />
@@ -64,41 +80,45 @@ class FrmNewWorkOrderTrailer extends Component {
             <Grid.Column width={6}>
               <ILabel text={"Last Read"} />
               <Form.Group inline>
-          <IInput label={"Odometer"} />
-        </Form.Group>
-        <Form.Group inline>
-          <IInput label={"Hours"} />
-        </Form.Group>
+                <IInput label={"Odometer"} />
+              </Form.Group>
+              <Form.Group inline>
+                <IInput label={"Hours"} />
+              </Form.Group>
             </Grid.Column>
             <Grid.Column width={6}>
               <ILabel text={"Current"} />
               <Form.Group inline>
-          <IInput label={"Odometer"} />
-        </Form.Group>
-        <Form.Group inline>
-          <IInput label={"Hours"} />
-        </Form.Group>
+                <IInput label={"Odometer"} />
+              </Form.Group>
+              <Form.Group inline>
+                <IInput label={"Hours"} />
+              </Form.Group>
             </Grid.Column>
           </Grid.Row>
         </Grid>
         <Form.Group>
-        <ILabel text={"Work Information"} />
+          <ILabel text={"Work Information"} class={"ui header"} />
         </Form.Group>
         <Form.Group widths={4}>
-          <ISelect text={"Priority"} placeholder={"Priority"} widths={4}/>
-          <IInput label={"Plan service Data"} widths={4}/>
-          <IInput label={"Budget"} widths={4}/>
+          <ISelect text={"Priority"} placeholder={"Priority"} widths={4} />
+          <IInput label={"Plan service Data"} widths={4} />
+          <IInput label={"Budget"} widths={4} />
         </Form.Group>
-        <ITable header1={"Task"}
-        data={this.state.table}
-        />
+
+        <IButton text="Add jobs" id={"btnAddJobs"} align={"right"} />
+        <ITable header1={"Task"} data={this.state.table} />
         <Form.Group>
-          <ILabel text={"Client Information"} />
+          <ILabel text={"Client Information"} class={"ui header"} />
         </Form.Group>
         <Form.Group width={6}>
-          <IInput label={"Name"}width={4} />
-          <IInput label={"Company"} width={4}/>
-          <ISelect text={"Customer Type"} placeholder={"Customer Type"} width={4}/>
+          <IInput label={"Name"} width={4} />
+          <IInput label={"Company"} width={4} />
+          <ISelect
+            text={"Customer Type"}
+            placeholder={"Customer Type"}
+            width={4}
+          />
         </Form.Group>
         <Form.Group>
           <IInput label={"City"} width={4} />
@@ -119,13 +139,20 @@ class FrmNewWorkOrderTrailer extends Component {
           <IInput label={"Extension"} width={2} />
         </Form.Group>
         <Form.Group>
-          <ILabel text={"Additional Information"} />
+          <ILabel text={"Additional Information"} class={"ui header"} />
         </Form.Group>
         <Form.Group>
-          <ILabel text={"Comments"} />
+          <ILabel text={"Comments"} class={"ui header"} />
         </Form.Group>
-        <ITextArea label={"Comments"} />
+        <Form.Group>
+          <ITextArea label={"Comments"} />
+        </Form.Group>
 
+        <IButton
+          text="Check work order"
+          id={"btnCheckWorkOrder"}
+          align={"right"}
+        />
       </Form>
     );
   }

@@ -1,20 +1,14 @@
 import React, { Component } from "react";
 import { Table } from "semantic-ui-react";
 export class ITable extends Component {
-  constructor(props) {
-    super(props);
- 
-  }
-
   render() {
-
     const head = [];
     const dataRow = [];
     const table = this.props.data;
+
     table.title.forEach(str => {
       head.push(<Table.HeaderCell>{str}</Table.HeaderCell>);
     });
-
     table.data.forEach(arr => {
       const data = [];
       arr.forEach(str => {
@@ -24,56 +18,14 @@ export class ITable extends Component {
     });
 
     return (
-      <Table singleLine>
-              
-      <Table.Header>
-        <Table.Row>{head}</Table.Row>
-      </Table.Header>
-      <Table.Body>{dataRow}</Table.Body>
-    </Table>
+      <Table celled inverted selectable>
+        <Table.Header>
+          <Table.Row>{head}</Table.Row>
+        </Table.Header>
+        <Table.Body>{dataRow}</Table.Body>
+      </Table>
     );
   }
 }
 
 export default ITable;
-
-/*
-                                                        Dont Delete this 
-
-      
-      <Table.Header>
-        <Table.Row>
-        <Table.HeaderCell>{this.props.header1}</Table.HeaderCell>
-          <Table.HeaderCell>{this.props.header2}</Table.HeaderCell>
-          <Table.HeaderCell>{this.props.header3}</Table.HeaderCell>
-          <Table.HeaderCell>{this.props.header4}</Table.HeaderCell>
-          <Table.HeaderCell>{this.props.header5}</Table.HeaderCell>
-
-        </Table.Row>
-      </Table.Header>
-  
-      <Table.Body>
-        <Table.Row>
-          <Table.Cell>John Lilki</Table.Cell>
-          <Table.Cell>September 14, 2013</Table.Cell>
-          <Table.Cell>jhlilk22@yahoo.com</Table.Cell>
-          <Table.Cell>No</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>Jamie Harington</Table.Cell>
-          <Table.Cell>January 11, 2014</Table.Cell>
-          <Table.Cell>jamieharingonton@yahoo.com</Table.Cell>
-          <Table.Cell>Yes</Table.Cell>
-          <Table.Cell>No</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>Jill Lewis</Table.Cell>
-          <Table.Cell>May 11, 2014</Table.Cell>
-          <Table.Cell>jilsewris22@yahoo.com</Table.Cell>
-          <Table.Cell>Yes</Table.Cell>
-          <Table.Cell>No</Table.Cell>
-        </Table.Row>
-      </Table.Body>
-    </Table>
-
-*/

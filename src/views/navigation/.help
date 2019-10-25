@@ -1,3 +1,6 @@
+.item .title {
+    text-align: left;
+}
 sidebar {
 title : "",
 items: {

@@ -1,4 +1,4 @@
-module.exports = [require.resolve('./.webpack.config.js')]
+module.exports = [require.resolve('.webpack.config.js')]
 
 // define child rescript
 module.exports = config => {

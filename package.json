@@ -5,10 +5,11 @@
   "devDependencies": {
     "@rescripts/cli": "^0.0.13",
     "@rescripts/rescript-env": "^0.0.11",
-    "concurrently": "^4.1.0",
+    "concurrently": "^4.1.0", 
     "electron": "^6.0.12",
-    "electron-builder": "^21.2.0",
-    "semantic-ui-react": "^0.88.1",
+    "electron-builder": "^21.2.0", 
+    "node-sass": "^4.13.0", 
+    "semantic-ui-react": "^0.88.1", 
     "wait-on": "^3.2.0"
   },
   "build": {
@@ -39,6 +40,7 @@
     "react-toastify": "^5.4.0",
     "rxdb": "^8.7.0",
     "rxjs": "^6.5.3",
+    "semantic-ui-css": "^2.4.1",
     "serve": "^11.2.0",
     "typescript": "^3.6.4",
     "yarn": "^1.19.1"
@@ -46,7 +48,7 @@
   "homepage": "./",
   "main": "public/electron.js",
   "scripts": {
-    "electron-dev": "concurrently \"pouchdb-server -d ./db\" \"yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-dev": "concurrently \"yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "start": "react-scripts start",
     "build": "react-scripts build && electron-builder",
     "test": "react-scripts test",

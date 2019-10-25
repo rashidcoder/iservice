@@ -1,19 +1,16 @@
 import React, { Component } from "react";
-import { Label, Button } from "semantic-ui-react";
-import { Header, Icon, Image, Menu, Segment, Sidebar } from "semantic-ui-react";
-import { Accordion } from 'semantic-ui-react'
-import { workOrders } from "../../data/Schema";
+import { Icon, Menu, Sidebar } from "semantic-ui-react";
+import { Accordion } from "semantic-ui-react";
 export class ISidebar extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-       
       sidebar: [
         {
           text: "New work",
-          icon:'',
-          activeIndex:0,
+          icon: "",
+          activeIndex: 0,
           child: [
             {
               text: "New Work Order",
@@ -27,8 +24,8 @@ export class ISidebar extends Component {
         },
         {
           text: "Customer",
-          icon:'',
-          activeIndex:1,
+          icon: "",
+          activeIndex: 1,
           child: [
             {
               text: "New Customer",
@@ -42,8 +39,8 @@ export class ISidebar extends Component {
         },
         {
           text: "Calender",
-          icon:'',
-          activeIndex:2,
+          icon: "",
+          activeIndex: 2,
           child: [
             {
               text: "Booking ",
@@ -61,8 +58,8 @@ export class ISidebar extends Component {
         },
         {
           text: "Supplier",
-          icon:'',
-          activeIndex:4,
+          icon: "",
+          activeIndex: 4,
           child: [
             {
               text: "New Supplier",
@@ -76,8 +73,8 @@ export class ISidebar extends Component {
         },
         {
           text: "Parts",
-          icon:'',
-          activeIndex:5,
+          icon: "",
+          activeIndex: 5,
           child: [
             {
               text: "xyz",
@@ -86,9 +83,9 @@ export class ISidebar extends Component {
           ]
         },
         {
-          text: "Equiptments",
-          icon:'',
-          activeIndex:6,
+          text: "Equipment",
+          icon: "",
+          activeIndex: 6,
           child: [
             {
               text: "xyz",
@@ -98,8 +95,8 @@ export class ISidebar extends Component {
         },
         {
           text: "Settings",
-          icon:'',
-          activeIndex:7,
+          icon: "",
+          activeIndex: 7,
           child: [
             {
               text: "xyz",
@@ -112,67 +109,59 @@ export class ISidebar extends Component {
   }
 
   handleClick = (e, titleProps) => {
-    const { index } = titleProps
-    const { activeIndex } = this.state
-    const newIndex = activeIndex === index ? -1 : index
+    const { index } = titleProps;
+    const { activeIndex } = this.state;
+    const newIndex = activeIndex === index ? -1 : index;
 
-    this.setState({ activeIndex: newIndex })
-  }
+    this.setState({ activeIndex: newIndex });
+  };
 
   render() {
-    const { activeIndex } = this.state
-    
+    const { activeIndex } = this.state;
+
     const parent = [];
     this.state.sidebar.forEach(item => {
-      const childItems =[];
+      const childItems = [];
       item.child.forEach(item_ch => {
         childItems.push(
           <Accordion.Content active={activeIndex === item.activeIndex}>
-          <p>
-          <a href={item_ch.link}> {item_ch.text} </a> 
-          </p>
-        </Accordion.Content>
+            <a href={item_ch.link}> {item_ch.text} </a>
+          </Accordion.Content>
         );
       });
       parent.push(
-        <Menu.Item as="a">
-          <Icon name="home" />
-          <Accordion>
-          <Accordion.Title
-          active={activeIndex === item.activeIndex}
-          index={item.activeIndex}
-          onClick={this.handleClick}
-         >
-          <Icon name='dropdown' 
-          />
-          {item.text} 
-        </Accordion.Title>
-        {childItems}
-         </Accordion>
-         {/* {item.text} */}
-        {/*  {childItems}*/}
+        <Menu.Item as="a" key={item.activeIndex}>
+          {/*<Icon name="truck icon" />*/}
+
+          <Accordion inverted>
+            <Accordion.Title
+              active={activeIndex === item.activeIndex}
+              index={item.activeIndex}
+              onClick={this.handleClick}
+            >
+              <Icon name="dropdown" />
+              {item.text}
+            </Accordion.Title>
+            {childItems}
+          </Accordion>
+          {/* {item.text} */}
+          {/*  {childItems}*/}
         </Menu.Item>
       );
-
     });
     return (
-
-
-
-      
       <Sidebar
         as={Menu}
         animation="overlay"
         icon="labeled"
-        
+        direction=""
+        inverted
         vertical
         visible
-        width="thin" >
-
-       { parent }
+      >
+        {parent}
       </Sidebar>
     );
   }
 }
 export default ISidebar;
-

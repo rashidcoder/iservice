@@ -7,3 +7,6 @@ npm install --save pouchdb
 yarn electron-dev
 npm install semantic-ui-react --save-dev
 yarn add semantic-ui-css
+
+
+\"pouchdb-server -d ./db\" 

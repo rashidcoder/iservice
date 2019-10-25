@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import ILabel from "../basic/ilabel";
-import { Form } from "semantic-ui-react";
+import { Form} from "semantic-ui-react";
 import IInput from "../basic/input";
 import ITable from "../table/itable";
-class FrmCustomerPagrinioLangoDizainas extends Component {
+import ILabel from "../basic/ilabel";
+class FrmSupplierPargindinoLangoDizainas extends Component {
   constructor(props) {
     super(props);
 
@@ -51,7 +51,10 @@ class FrmCustomerPagrinioLangoDizainas extends Component {
   render() {
     return (
       <Form>
-        <ILabel text={"Customer Pagrinio Lango Dizainas"} class={"ui header"} />
+        <ILabel
+          text={"Supplier Pargindino Lango Dizainas"}
+          class={"ui header"}
+        />
         <Form.Group widths={2}>
           <IInput label={"Search"} icon={"search"} />
         </Form.Group>
@@ -61,4 +64,4 @@ class FrmCustomerPagrinioLangoDizainas extends Component {
   }
 }
 
-export default FrmCustomerPagrinioLangoDizainas;
+export default FrmSupplierPargindinoLangoDizainas;

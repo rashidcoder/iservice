@@ -11,29 +11,27 @@ export class ISelect extends Component {
         class: "iSelect",
         placeholder: "Select any option"
       },
-      countryOptions: [
-        { key: "af", value: "af", text: "Afghanistan" },
-        { key: "ax", value: "ax", text: "Aland Islands" },
-        { key: "al", value: "al", text: "Albania" },
-        { key: "dz", value: "dz", text: "Algeria" },
-        { key: "as", value: "as", text: "American Samoa" },
-        { key: "ad", value: "ad", text: "Andorra" },
-        { key: "ao", value: "ao", text: "Angola" }
+      Options: [
+        { key: "truck", value: "1", text: "Truck" },
+        { key: "trailer", value: "2", text: "Trailer" }
       ]
     };
   }
   render() {
     return (
+      
       <Form.Field
-control={Select}
-options={this.state.countryOptions}
-label={{ children: this.props.text, htmlFor: 'form-select-control-gender' }}
-placeholder={this.props.placeholder}
-width={this.props.width}
-search
-searchInput={{ id: 'form-select-control-gender' }}
-/>
-  
+        control={Select}
+        options={this.state.Options}
+        label={{
+          children: this.props.text,
+          htmlFor: "form-select-control-gender"
+        }}
+        placeholder='Select any Option'
+        width={this.props.width}
+        search
+        searchInput={{ id: "form-select-control-gender" }}
+      />
     );
   }
 }
