@@ -48,9 +48,9 @@ class FrmWorkOrdersManagment extends Component {
       <Form>
         <ILabel text={"Create New Work Order"} class={"ui header"} />
         <Form.Group widths={2}>
-          <IInput label={"Search"} icon={"search"} />
+          <IInput name={"txtSearch"}  id={"txtSearch"} label={"Search"} icon={"search"} />
         </Form.Group>
-        <ITable data={this.state.table} />
+        <ITable data={this.state.table} i={"tblWorkOrderManagment"} name={"tblWorkOrderManagment"} />
       </Form>
     );
   }

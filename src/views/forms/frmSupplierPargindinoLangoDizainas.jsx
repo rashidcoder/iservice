@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form} from "semantic-ui-react";
+import { Form } from "semantic-ui-react";
 import IInput from "../basic/input";
 import ITable from "../table/itable";
 import ILabel from "../basic/ilabel";
@@ -56,9 +56,9 @@ class FrmSupplierPargindinoLangoDizainas extends Component {
           class={"ui header"}
         />
         <Form.Group widths={2}>
-          <IInput label={"Search"} icon={"search"} />
+          <IInput name={"txtSearch"} id={"txtSearch"} label={"Search"} icon={"search"} />
         </Form.Group>
-        <ITable data={this.state.table} />
+        <ITable name={"tblSupplierPagrindinioLangoDizaines"} id={"tblSupplierPagrindinioLangoDizaines"} data={this.state.table} />
       </Form>
     );
   }

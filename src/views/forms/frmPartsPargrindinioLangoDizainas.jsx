@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from "react";import { Grid } from "semantic-ui-react";
 import { Form } from "semantic-ui-react";
 import IInput from "../basic/input";
 import ITable from "../table/itable";
@@ -31,14 +31,26 @@ class FrmPartsPargrindinioLangoDizainas extends Component {
           class={"ui header"}
         />
         <Form.Group widths={2}>
-          <IInput label={"Enter key word for search"} icon={'search'} />
+          <IInput name={"txtSearch"} id={"txtSearch"} label={"Enter key word for search"} icon={'search'} />
         </Form.Group>
         <Form.Group>
-          <ISelect placeholder={"Category"} width={4} />
-          <ISelect placeholder={"Types"} width={4} />
+          <ISelect name={"selectCategory"} id={"selectCategory"} placeholder={"Category"} width={4} />
+          <ISelect  name={"selectType"} id={"selectType"} placeholder={"Types"} width={4} />
+      
         </Form.Group>
-        <IButton text="Add New Parts" id={"btnAddNewParts"} align={"right"} />
-        <ITable data={this.state.table} />
+        <Grid>
+          <Grid.Row >
+          <Grid.Column width={14}>
+          </Grid.Column>
+          <Grid.Column width={2}>
+          <Form.Group >
+          <IButton name={"btnAddParts"} text="Add New Parts" id={"btnAddParts"} align={"right"} />  
+        </Form.Group>
+        </Grid.Column>
+          </Grid.Row>
+          </Grid>
+        
+        <ITable data={this.state.table} name={"tblPartsPagrindinioLangoDizainas"} id={"tblPartsPagrindinioLangoDizainas"} />
       </Form>
     );
   }

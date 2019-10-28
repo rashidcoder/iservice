@@ -17,7 +17,7 @@ export class ISidebar extends Component {
               link: "www.google.com"
             },
             {
-              text: "Work Order Managment",
+              text: "Work Order Mgts",
               link: "#"
             }
           ]
@@ -117,6 +117,11 @@ export class ISidebar extends Component {
   };
 
   render() {
+    
+    var styles ={
+    
+      width:'172px'
+    }
     const { activeIndex } = this.state;
 
     const parent = [];
@@ -158,6 +163,7 @@ export class ISidebar extends Component {
         inverted
         vertical
         visible
+        style={styles}
       >
         {parent}
       </Sidebar>

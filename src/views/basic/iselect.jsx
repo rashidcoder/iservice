@@ -31,6 +31,8 @@ export class ISelect extends Component {
         width={this.props.width}
         search
         searchInput={{ id: "form-select-control-gender" }}
+        id={this.props.id}
+        name={this.props.name}
       />
     );
   }

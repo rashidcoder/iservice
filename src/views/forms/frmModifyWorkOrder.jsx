@@ -41,50 +41,47 @@ class FrmModifyWorkOrder extends Component {
       <Form>
         <ILabel text={"Modify Work Order"} class={"ui header"} />
         <Form.Group widths={2}>
-          <ISelect
-            text={"Select Truck or Trailer  Types"}
-            placeholder={"Truck"}
-          />
+          <ISelect name={"selectTruckTypes"} id={"selectTruckTypes"} text={"Select Truck Types"} placeholder={"Truck"} />
         </Form.Group>
         <Form.Group>
           <ILabel text={"Truck Information"} class={"ui header"} />
         </Form.Group>
         <Form.Group>
-          <ISelect text={"Truck Types"} placeholder={"Truck Types"} />
+          <ISelect  name={"selectTruckTypes"} id={"selectTruckTypes"}  text={"Select Truck Types"} placeholder={"Truck Types"} />
         </Form.Group>
         <Form.Group widths={4}>
-          <IInput label={"Truck Brand"} />
-          <IInput label={"Model"} />
-          <IInput label={"Unite ID"} />
+          <IInput name={"txtTruckBrand"} id={"txtTruckBrand"} label={"Truck Brand"} />
+          <IInput name={"txtModel "} id={"txtmodel"} label={"Model"} />
+          <IInput name={"txtUniteId "} id={"txtUniteId"} label={"Unite ID"} />
         </Form.Group>
         <Form.Group widths={4}>
-          <IInput label={"License"} />
-          <IInput label={"V.I.N"} />
-          <IInput label={"Engine Number"} />
+          <IInput name={"txtLicense"} id={"txtLicense"} label={"License"} />
+          <IInput name={"txtVIN"} id={"txtVIN"} label={"V.I.N"} />
+          <IInput name={"txtEngineNumber"} id={"txtEngineNumber"} label={"Engine Number"} />
         </Form.Group>
         <Form.Group widths={4}>
-          <IInput label={"Manufacture Year"} />
-          <IInput label={"Engine Capacity"} />
-          <IInput label={"Truck Color"} />
+          <IInput name={"txtManufactureYear"} id={"txtManufactureYear"} label={"Manufacture Year"} />
+          <IInput name={"txtEngineCapacity"} id={"txtEngineCapacity"} label={"Engine Capacity"} />
+          <IInput name={"txtTruckColor"} id={"txtTruckColor"} label={"Truck Color"} />
         </Form.Group>
         <Grid>
           <Grid.Row>
             <Grid.Column width={6}>
-              <ILabel text={"Last Read"} class={"ui header"} />
+              <ILabel text={"Current"} class={"ui header"} />
               <Form.Group inline>
-                <IInput label={"Hours"} />
+                <IInput name={"txtCurrentOrdmeter"} id={"txtCurrentOrdmeter"} label={"Odometer"} />
               </Form.Group>
               <Form.Group inline>
-                <IInput label={"Odometer"} />
+                <IInput name={"txtCurrentHours"} id={"txtCurrentHours"} label={"Hours"} />
               </Form.Group>
             </Grid.Column>
             <Grid.Column width={6}>
-              <ILabel text={"Current"} class={"ui header"} />
+              <ILabel text={"Last Read"} class={"ui header"} />
               <Form.Group inline>
-                <IInput label={"Hours"} />
+                <IInput name={"txtLastOdometer"} id={"txtLastOdometer"} label={"Odometer"} />
               </Form.Group>
               <Form.Group inline>
-                <IInput label={"Odometer"} />
+                <IInput name={"txtLastHours"} id={"txtLastHours"} label={"Hours"} />
               </Form.Group>
             </Grid.Column>
           </Grid.Row>
@@ -93,55 +90,70 @@ class FrmModifyWorkOrder extends Component {
           <ILabel text={"Work Information"} class={"ui header"} />
         </Form.Group>
         <Form.Group widths={4}>
-          <ISelect text={"Priority"} placeholder={"Priority"} />
-          <IInput label={"Plan service Data"} />
-          <IInput label={"Budget"} />
+          <ISelect name={"selectPriority"} id={"selectPriority"} text={"Priority"} placeholder={"Priority"} />
+          <IInput name={"txtPlaneServiceData"} id={"txtPlaneServiceData"} label={"Plan service Data"} />
+          <IInput name={"txtBudget"} id={"txtBudget"} label={"Budget"} />
         </Form.Group>
-        <IButton text="Add jobs" id={"btnAddJobs"} align={"right"} />
-        <ITable data={this.state.table} />
-
+        <Grid>
+          <Grid.Row>
+            <Grid.Column width={14}></Grid.Column>
+            <Grid.Column width={2}>
+              <Form.Group>
+                <IButton
+                  name={"btnAddJobs"}
+                  text="Add jobs"
+                  id={"btnAddJobs"}
+                  align={"right"}
+                />
+              </Form.Group>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+        <ITable name={"tblWorkOrderTruck"} id={"tblWorkOrderTruck"} data={this.state.table} />
         <Grid>
           <Grid.Row>
             <Grid.Column width={8}></Grid.Column>
             <Grid.Column width={8}>
               <Form.Group widths={4}>
-                <IInput label={"Parts"} />
-                <IInput label={"Labor"} />
-                <IInput label={"Total"} />
+                <IInput name={"txtParts"} id={"txtParts"} label={"Parts"} />
+                <IInput name={"txtLabor"}  id={"txtLabor"}label={"Labor"} />
+                <IInput name={"txtTotal"}  id={"txtTotal"}label={"Total"} />
               </Form.Group>
             </Grid.Column>
           </Grid.Row>
         </Grid>
 
+        
         <Form.Group>
           <ILabel text={"Client Information"} class={"ui header"} />
         </Form.Group>
         <Form.Group width={6}>
-          <IInput label={"Name"} width={4} />
-          <IInput label={"Company"} width={4} />
+          <IInput name={"txtName"} id={"txtName"} label={"Name"} width={4} />
+          <IInput name={"txtCompany"} id={"txtCompany"} label={"Company"} width={4} />
           <ISelect
             text={"Customer Type"}
             placeholder={"Customer Type"}
             width={4}
+            name={"selectCustomerType"} id={"selectCustomerType"}
           />
         </Form.Group>
         <Form.Group>
-          <IInput label={"City"} width={4} />
-          <IInput label={"Prov/State"} width={2} />
-          <IInput label={"Address"} width={6} />
-          <IInput label={"Zip/Postal code"} width={2} />
-          <IInput label={"Country"} width={2} />
+          <IInput name={"txtCity"} id={"txtCity"} label={"City"} width={4} />
+          <IInput name={"txtProvince"} id={"txtProvince"} label={"Prov/State"} width={2} />
+          <IInput name={"txtAddress"} id={"txtAddress"} label={"Address"} width={6} />
+          <IInput name={"txtZip"} id={"txtZip"} label={"Zip/Postal code"} width={2} />
+          <IInput name={"txtCountry"} id={"txtCountry"} label={"Country"} width={2} />
         </Form.Group>
         <Form.Group>
-          <IInput label={"Email"} width={4} />
-          <IInput label={"Telephone"} width={4} />
-          <IInput label={"Fax"} width={4} />
+          <IInput name={"txtEmail"} id={"txtEmail"} label={"Email"} width={4} />
+          <IInput name={"txtTelephone"} id={"txtTelephone"} label={"Telephone"} width={4} />
+          <IInput name={"txtFax"} id={"txtFax"} label={"Fax"} width={4} />
         </Form.Group>
 
         <Form.Group>
-          <IInput label={"Toll Free"} width={4} />
-          <IInput label={"Telephone"} width={4} />
-          <IInput label={"Extension"} width={2} />
+          <IInput name={"txtTollFree"} id={"txtTollFree"} label={"Toll Free"} width={4} />
+          <IInput name={"txtTelephone"} id={"TxtTelephone"} label={"Telephone"} width={4} />
+          <IInput name={"txtExtension"} id={"txtExtension"} label={"Extension"} width={2} />
         </Form.Group>
         <Form.Group>
           <ILabel text={"Additional Information"} class={"ui header"} />
@@ -150,14 +162,23 @@ class FrmModifyWorkOrder extends Component {
           <ILabel text={"Comments"} class={"ui header"} />
         </Form.Group>
         <Form.Group>
-          <ITextArea label={"Comments"} />
+          <ITextArea name={"txtComment"} id={"txtLabel"} label={"Comments"} />
         </Form.Group>
-
-        <IButton
-          text="Check work order"
-          id={"btnCheckWorkOrder"}
-          align={"right"}
-        />
+        <Grid>
+          <Grid.Row>
+            <Grid.Column width={14}></Grid.Column>
+            <Grid.Column width={2}>
+              <Form.Group>
+                <IButton
+                  text="Check work order"
+                  id={"btnCheckWorkOrder"}
+                  align={"right"}
+                  name={"btnCheckWorkOrder"}
+                />
+              </Form.Group>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
       </Form>
     );
   }
