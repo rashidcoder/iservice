@@ -34,10 +34,10 @@ class FrmAddNewCustomer extends Component {
           <ILabel text={"Customer Information"} class={"ui header"} />
         </Form.Group>
         <Form.Group width={6}>
-          <IInput name={"txtName"} id={"txtName"} label={"Name"} width={4} />
+          <IInput name={"txtCustomerName"} id={"txtCustomerName"} label={"Name"} width={4} />
           <IInput
-            name={"txtCompany"}
-            id={"txtCompany"}
+            name={"txtCustomerCompany"}
+            id={"txtCustomerCompany"}
             label={"Company"}
             width={4}
           />
@@ -50,37 +50,37 @@ class FrmAddNewCustomer extends Component {
           />
         </Form.Group>
         <Form.Group>
-          <IInput name={"txtCity"} id={"txtCity"} label={"City"} width={4} />
+          <IInput name={"txtCustomerCity"} id={"txtCustomerCity"} label={"City"} width={4} />
           <IInput
-            name={"txtProvince"}
-            id={"txtProvince"}
+            name={"txtCustomerProvince"}
+            id={"txtCustomerProvince"}
             label={"Prov/State"}
             width={2}
           />
           <IInput
-            name={"txtAddress"}
-            id={"txtAddress"}
+            name={"txtCustomerAddress"}
+            id={"txtCustomerAddress"}
             label={"Address"}
             width={6}
           />
           <IInput
-            name={"txtZip"}
-            id={"txtZip"}
+            name={"txtCustomerZip"}
+            id={"txtCustomerZip"}
             label={"Zip/Postal code"}
             width={2}
           />
           <IInput
-            name={"txtCountry"}
-            id={"txtCountry"}
+            name={"txtCustomerCountry"}
+            id={"txtCustomerCountry"}
             label={"Country"}
             width={2}
           />
         </Form.Group>
         <Form.Group>
-          <IInput name={"txtEmail"} id={"txtEmail"} label={"Email"} width={4} />
+          <IInput name={"txtCustomerEmail"} id={"txtCustomerEmail"} label={"Email"} width={4} />
           <IInput
-            name={"txtTelephone"}
-            id={"txtTelephone"}
+            name={"txtCustomerTelephone1"}
+            id={"txtCustomerTelephone1"}
             label={"Telephone"}
             width={4}
           />
@@ -89,20 +89,20 @@ class FrmAddNewCustomer extends Component {
 
         <Form.Group>
           <IInput
-            name={"txtTollFree"}
-            id={"txtTollFree"}
+            name={"txtCustomerTollFree"}
+            id={"txtCustomerTollFree"}
             label={"Toll Free"}
             width={4}
           />
           <IInput
-            name={"txtTelephone"}
-            id={"TxtTelephone"}
+            name={"txtCustomerTelephone2"}
+            id={"txtCustomerTelephone2"}
             label={"Telephone"}
             width={4}
           />
           <IInput
-            name={"txtExtension"}
-            id={"txtExtension"}
+            name={"txtCustomerExtension"}
+            id={"txtCustomerExtension"}
             label={"Extension"}
             width={2}
           />
@@ -154,35 +154,35 @@ class FrmAddNewCustomer extends Component {
           <ILabel text={"Add more contacts"} class={"ui header"} />
         </Form.Group>
         <Form.Group>
-          <IInput label={"Name"} width={4} />
+          <IInput name={"txtAdditionalName"} id={"txtAdditionalName"} label={"Name"} width={4} />
         </Form.Group>
         <Form.Group>
-          <IInput name={"txtEmail"} id={"txtEmail"} label={"Email"} width={4} />
+          <IInput name={"txtAdditionalEmail"} id={"txtAdditionalEmail"} label={"Email"} width={4} />
           <IInput
-            name={"txtTelephone"}
-            id={"txtTelephone"}
+            name={"txtAdditionalTelephone1"}
+            id={"txtAdditionalTelephone1"}
             label={"Telephone"}
             width={4}
           />
-          <IInput name={"txtFax"} id={"txtFax"} label={"Fax"} width={4} />
+          <IInput name={"txtAdditionalFax"} id={"txtAdditionalFax"} label={"Fax"} width={4} />
         </Form.Group>
 
         <Form.Group>
           <IInput
-            name={"txtTollFree"}
-            id={"txtTollFree"}
+            name={"txtAdditionalTollFree"}
+            id={"txtAdditionalTollFree"}
             label={"Toll Free"}
             width={4}
           />
           <IInput
-            name={"txtTelephone"}
-            id={"TxtTelephone"}
+            name={"txtAdditionalTelephone2"}
+            id={"TxtAdditionalTelephone2"}
             label={"Telephone"}
             width={4}
           />
           <IInput
-            name={"txtExtension"}
-            id={"txtExtension"}
+            name={"txtAdditionalExtension"}
+            id={"txtAdditionalExtension"}
             label={"Extension"}
             width={2}
           />

@@ -16,7 +16,6 @@ export class ITable extends Component {
       });
       dataRow.push(<Table.Row> {data} </Table.Row>);
     });
-
     return (
       <Table celled inverted selectable>
         <Table.Header>

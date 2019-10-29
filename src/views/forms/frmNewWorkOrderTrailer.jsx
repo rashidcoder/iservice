@@ -218,8 +218,8 @@ class FrmNewWorkOrderTrailer extends Component {
         <Form.Group>
           <IInput name={"txtEmail"} id={"txtEmail"} label={"Email"} width={4} />
           <IInput
-            name={"txtTelephone"}
-            id={"txtTelephone"}
+            name={"txtTelephone1"}
+            id={"txtTelephone1"}
             label={"Telephone"}
             width={4}
           />
@@ -234,8 +234,8 @@ class FrmNewWorkOrderTrailer extends Component {
             width={4}
           />
           <IInput
-            name={"txtTelephone"}
-            id={"TxtTelephone"}
+            name={"txtTelephone2"}
+            id={"TxtTelephone2"}
             label={"Telephone"}
             width={4}
           />

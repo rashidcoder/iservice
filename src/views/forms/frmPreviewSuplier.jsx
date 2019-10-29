@@ -29,26 +29,26 @@ class FrmPreviewSuplier extends Component {
           <ILabel text={"Supplier Information"} class={"ui header"} />
         </Form.Group>
         <Form.Group width={6}>
-          <IInput name={"txtName"} id={"txtName"} label={"Name"} width={4} />
-          <IInput name={"txtCompany"} id={"txtCompany"} label={"Company"} width={4} />
+          <IInput name={"txtSupplierName"} id={"txtSupplierName"} label={"Name"} width={4} />
+          <IInput name={"txtSupplierCompany"} id={"txtSupplierCompany"} label={"Company"} width={4} />
         </Form.Group>
         <Form.Group>
-          <IInput name={"txtCity"} id={"txtCity"} label={"City"} width={4} />
-          <IInput name={"txtProvince"} id={"txtProvince"} label={"Prov/State"} width={2} />
-          <IInput name={"txtAddress"} id={"txtAddress"} label={"Address"} width={6} />
-          <IInput name={"txtZip"} id={"txtZip"} label={"Zip/Postal code"} width={2} />
-          <IInput name={"txtCountry"} id={"txtCountry"} label={"Country"} width={2} />
+          <IInput name={"txtSupplierCity"} id={"txtSupplierCity"} label={"City"} width={4} />
+          <IInput name={"txtSupplierProvince"} id={"txtSupplierProvince"} label={"Prov/State"} width={2} />
+          <IInput name={"txtSupplierAddress"} id={"txtSupplierAddress"} label={"Address"} width={6} />
+          <IInput name={"txtSupplierZip"} id={"txtSupplierZip"} label={"Zip/Postal code"} width={2} />
+          <IInput name={"txtSupplierCountry"} id={"txtSupplierCountry"} label={"Country"} width={2} />
         </Form.Group>
         <Form.Group>
-          <IInput name={"txtEmail"} id={"txtEmail"} label={"Email"} width={4} />
-          <IInput name={"txtTelephone"} id={"txtTelephone"} label={"Telephone"} width={4} />
-          <IInput name={"txtFax"} id={"txtFax"} label={"Fax"} width={4} />
+          <IInput name={"txtSupplierEmail"} id={"txtSupplierEmail"} label={"Email"} width={4} />
+          <IInput name={"txtSupplierTelephone1"} id={"txtSupplierTelephone1"} label={"Telephone"} width={4} />
+          <IInput name={"txtSupplierFax"} id={"txtSupplierFax"} label={"Fax"} width={4} />
         </Form.Group>
 
         <Form.Group>
-          <IInput name={"txtTollFree"} id={"txtTollFree"} label={"Toll Free"} width={4} />
-          <IInput name={"txtTelephone"} id={"TxtTelephone"} label={"Telephone"} width={4} />
-          <IInput name={"txtExtension"} id={"txtExtension"} label={"Extension"} width={2} />
+          <IInput name={"txtSupplierTollFree"} id={"txtSupplierTollFree"} label={"Toll Free"} width={4} />
+          <IInput name={"txtSupplierTelephone2"} id={"TxtSupplierTelephone2"} label={"Telephone"} width={4} />
+          <IInput name={"txtSupplierExtension"} id={"txtSupplierExtension"} label={"Extension"} width={2} />
         </Form.Group>
         <Form.Group>
           <ILabel text={"Billing Company"} class={"ui header"} />

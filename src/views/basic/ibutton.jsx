@@ -7,7 +7,7 @@ export class IButton extends Component {
     return (
       
         <Button
-          type='button'
+          type='submit'
           id={this.props.id}
           class={this.props.class}
           floated={this.props.align}
@@ -15,7 +15,9 @@ export class IButton extends Component {
           value={this.props.value}
         >
           {this.props.text}
+          
         </Button>
+        
     );
   }
 }

@@ -146,13 +146,13 @@ class FrmModifyWorkOrder extends Component {
         </Form.Group>
         <Form.Group>
           <IInput name={"txtEmail"} id={"txtEmail"} label={"Email"} width={4} />
-          <IInput name={"txtTelephone"} id={"txtTelephone"} label={"Telephone"} width={4} />
+          <IInput name={"txtTelephone1"} id={"txtTelephone1"} label={"Telephone"} width={4} />
           <IInput name={"txtFax"} id={"txtFax"} label={"Fax"} width={4} />
         </Form.Group>
 
         <Form.Group>
           <IInput name={"txtTollFree"} id={"txtTollFree"} label={"Toll Free"} width={4} />
-          <IInput name={"txtTelephone"} id={"TxtTelephone"} label={"Telephone"} width={4} />
+          <IInput name={"txtTelephone2"} id={"TxtTelephone2"} label={"Telephone"} width={4} />
           <IInput name={"txtExtension"} id={"txtExtension"} label={"Extension"} width={2} />
         </Form.Group>
         <Form.Group>

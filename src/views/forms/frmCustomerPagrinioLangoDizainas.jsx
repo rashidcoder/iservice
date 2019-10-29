@@ -8,6 +8,7 @@ class FrmCustomerPagrinioLangoDizainas extends Component {
     super(props);
 
     this.state = {
+      count:0,
       table: {
         title: [
           "Company",
@@ -42,20 +43,40 @@ class FrmCustomerPagrinioLangoDizainas extends Component {
           ["", "", "", "", " ", " ", " "],
           ["", "", "", "", " ", " ", " "],
           ["", "", "", "", " ", " ", " "],
+          ["", "", "", "", " ", " ", " "],
+          ["", "", "", "", " ", " ", " "],
+          ["", "", "", "", " ", " ", " "],
+          ["", "", "", "", " ", " ", " "],
+          ["", "", "", "", " ", " ", " "],
           ["", "", "", "", " ", " ", " "]
         ]
       }
+      
     };
+    
   }
+  counter(){
+    this.setState({
+count:this.state.count+1,
+    },
+    ()=>{
+      console.log('CallBack value',this.state.count)  
+    }
+    
+    );
+    console.log(this.state.count)
 
+  }
   render() {
     return (
       <Form>
         <ILabel text={"Customer Pagrinio Lango Dizainas"} class={"ui header"} />
         <Form.Group widths={2}>
-          <IInput name={"txtSearch"} id={"txtSearch"} label={"Search"} icon={"search"} />
+        <IInput name={"txtSearch"} id={"txtSearch"} label={"Search"} icon={"search"} />
         </Form.Group>
         <ITable data={this.state.table} name={"tblCustomerParrindinioLangoZizainas"} id={"tblCustomerParrindinioLangoZizainas"} />
+        <button  onClick={(event)=> this.counter()}>incerment</button>
+        {this.state.count}  
       </Form>
     );
   }
