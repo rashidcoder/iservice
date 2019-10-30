@@ -3,6 +3,7 @@ import "../../sass/App.css";
 import ISidebar from "../navigation/isidebar";
 import ITabs from "../tabs/itabs";
 import { Grid } from "semantic-ui-react";   
+import ICalendar from "../calendar/ICalendar";
 
 
 
@@ -13,11 +14,12 @@ class App extends Component {
       <div className="App">
         <Grid>
           <Grid.Column width={2}>
-            <ISidebar />
+           <ISidebar />
           </Grid.Column>
           <Grid.Column width={14}>
             <ITabs />                      
           </Grid.Column>
+          
         </Grid>
       </div>
     );

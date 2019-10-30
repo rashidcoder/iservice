@@ -11,6 +11,9 @@ import FrmSupplierPargindinoLangoDizainas from "../forms/frmSupplierPargindinoLa
 import FrmPreviewSuplier from "../forms/frmPreviewSuplier";
 import FrmAddNewSupplier from "../forms/frmAddNewSupplier";
 import FrmPartsPargrindinioLangoDizainas from "../forms/frmPartsPargrindinioLangoDizainas";
+import ICalendar from "../calendar/ICalendar";
+import { calender } from "../../data/Schema";
+import ICalander2 from "../calendar/Timechip";
 
 export class ITabs extends Component {
   constructor(props) {
@@ -50,7 +53,11 @@ export class ITabs extends Component {
         },
         {
           title: "Parts Partgrindinio Lango Dizainas"
+        },
+        {
+          title: "Calander"
         }
+
       ]
     };
   }
@@ -72,7 +79,8 @@ export class ITabs extends Component {
   dumyTabPane({ i }) {
     switch (i) {
       case 0:
-        return <FrmNewWorkOrderTruck />;
+        return <ICalendar/>
+        //return <FrmNewWorkOrderTruck />;
       case 1:
         return <FrmNewWorkOrderTrailer />;
       case 2:
@@ -93,6 +101,8 @@ export class ITabs extends Component {
         return <FrmAddNewSupplier />;
       case 10:
         return <FrmPartsPargrindinioLangoDizainas />;
+        case 11:
+        return <ICalendar/>
       default:
     }
   }
