@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import { Icon, Menu, Sidebar } from "semantic-ui-react";
+import { Icon, Menu, Sidebar, Tab } from "semantic-ui-react";
 import { Accordion } from "semantic-ui-react";
+//import { BrowserRouter,Route } from 'react-router-dom';
+import ITabs from "../tabs/itabs";
 export class ISidebar extends Component {
   constructor(props) {
     super(props);
@@ -130,6 +132,7 @@ export class ISidebar extends Component {
       item.child.forEach(item_ch => {
         childItems.push(
           <Accordion.Content active={activeIndex === item.activeIndex}>
+           {/*<Route exactpath="/" component={(props)=><ITabs {...props} title ={item_ch.text[props.match]}/>} />*/}
             <a href={item_ch.link}> {item_ch.text} </a>
           </Accordion.Content>
         );
@@ -155,6 +158,7 @@ export class ISidebar extends Component {
       );
     });
     return (
+
       <Sidebar
         as={Menu}
         animation="overlay"
@@ -163,10 +167,10 @@ export class ISidebar extends Component {
         inverted
         vertical
         visible
-        style={styles}
-      >
+        style={styles}>
         {parent}
       </Sidebar>
+
     );
   }
 }

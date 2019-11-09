@@ -11,7 +11,7 @@ import FrmSupplierPargindinoLangoDizainas from "../forms/frmSupplierPargindinoLa
 import FrmPreviewSuplier from "../forms/frmPreviewSuplier";
 import FrmAddNewSupplier from "../forms/frmAddNewSupplier";
 import FrmPartsPargrindinioLangoDizainas from "../forms/frmPartsPargrindinioLangoDizainas";
-import ICalendar from "../calendar/ICalendar";
+
 import ICalenderSchedular from "../calendar/ICalendarSchedular";
 //import { calender } from "../../data/Schema";
 export class ITabs extends Component {
@@ -77,11 +77,11 @@ export class ITabs extends Component {
   dumyTabPane({ i }) {
     switch (i) {
       case 0:
-        return <ICalendar />;
-      //return <FrmNewWorkOrderTruck />;
+        
+      return <FrmNewWorkOrderTruck />;
       case 1:
-        //     return <FrmNewWorkOrderTrailer />;
-        return <ICalenderSchedular/>
+           return <FrmNewWorkOrderTrailer />;
+        
       case 2:
         return <FrmWorkOrdersManagment />;
       case 3:
