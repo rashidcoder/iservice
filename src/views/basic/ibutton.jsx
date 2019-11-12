@@ -1,5 +1,5 @@
 import { Button } from "semantic-ui-react";
-
+import { Icon } from "semantic-ui-react";
 import React, { Component } from "react";
 
 export class IButton extends Component {
@@ -13,7 +13,10 @@ export class IButton extends Component {
           floated={this.props.align}
           name={this.props.name}
           value={this.props.value}
+          width={this.props.width}
+          
         >
+<i class={this.props.icon}></i>
           {this.props.text}
           
         </Button>

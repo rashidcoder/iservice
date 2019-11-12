@@ -3,6 +3,7 @@ import { Form } from "semantic-ui-react";
 import React, { Component } from "react";
 
 export class IInput extends Component {
+  
   render() {
     return (
       <Form.Input

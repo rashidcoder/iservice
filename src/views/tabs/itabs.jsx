@@ -13,14 +13,26 @@ import FrmAddNewSupplier from "../forms/frmAddNewSupplier";
 import FrmPartsPargrindinioLangoDizainas from "../forms/frmPartsPargrindinioLangoDizainas";
 
 import ICalenderSchedular from "../calendar/ICalendarSchedular";
+import FrmBooking from "../forms/frmBooking";
+import FrmAddnewPartLangoDlizainas from "../forms/frmAddnewPartLangoDlizainas";
+import FrmPreviewPartLangoDizainas from "../forms/frmPreviewPartLangoDizainas";
+import FrmAddNewEquipments from "../forms/frmAddNewEquipments";
+import FrmPreviewNewEquipments from "../forms/frmPreviewNewEquipments";
+import FrmEquipmentPagrindinioLangoDizainas from "../forms/frmEquipmentPagrindinioLangoDizainas";
+import FrmEquipmentinventorization from "../forms/frmEquipmentinventorization";
 //import { calender } from "../../data/Schema";
+
+var tabs = [""];
+
 export class ITabs extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
+      info: [],
       tabs: [
         {
-          title: " Create New Work Order Truck"
+          title: this.props.title
         },
         {
           title: "Create New Work Order Trailer"
@@ -55,11 +67,39 @@ export class ITabs extends Component {
         },
         {
           title: "Calander"
+        },
+        {
+          title: "Booking"
+        },
+        {
+          title: "Add New Parts Lango Dizainas"
+        },
+        {
+          title: "Preview Parts"
+        },
+        {
+          title: "Add New Equipments"
+        },
+        {
+          title: "Preview New Equipments"
+        },
+        {
+          title: "Equipment Pagrindinio Lango Dizainas"
+        },
+        {
+          title: "Equipment Inventorization"
         }
+
+
       ]
-    };
+    }; //simple value
   }
   render() {
+    if (tabs.includes(this.props.info)) {
+    } else {
+      tabs = [...tabs, ...[this.props.tab]];
+    }
+
     const tabPanes = [];
     for (let i = 0; i < this.state.tabs.length; i++) {
       const title = this.state.tabs[i].title;
@@ -68,8 +108,10 @@ export class ITabs extends Component {
         render: () => <Tab.Pane>{this.dumyTabPane({ i })}</Tab.Pane>
       });
     }
+
     return (
-      <div>
+      <div> 
+      {tabs}
         <Tab panes={tabPanes} />
       </div>
     );
@@ -77,11 +119,14 @@ export class ITabs extends Component {
   dumyTabPane({ i }) {
     switch (i) {
       case 0:
-        
-      return <FrmNewWorkOrderTruck />;
+        //     return <FrmNewWorkOrderTruck />;
+        //return <FrmEquipmentPagrindinioLangoDizainas/>
+      return <FrmEquipmentinventorization/>
+        //return <FrmAddnewPartLangoDlizainas/>
+      //  return <FrmPreviewNewEquipments/>
       case 1:
-           return <FrmNewWorkOrderTrailer />;
-        
+        return <FrmPreviewPartLangoDizainas/>
+      // <FrmNewWorkOrderTrailer />;
       case 2:
         return <FrmWorkOrdersManagment />;
       case 3:
@@ -102,7 +147,21 @@ export class ITabs extends Component {
         return <FrmPartsPargrindinioLangoDizainas />;
       case 11:
         return <ICalenderSchedular />;
-
+      case 12:
+        return <FrmBooking />;
+      case 11:
+        return <FrmAddnewPartLangoDlizainas />;
+      case 12:
+        return <FrmPreviewPartLangoDizainas />;
+      case 13:
+        return <FrmAddNewEquipments />;
+      case 14:
+        return <FrmPreviewNewEquipments />;
+        case 15:
+          return <FrmEquipmentPagrindinioLangoDizainas/>;
+          case 16:
+            return <FrmEquipmentinventorization/>;
+      
       default:
     }
   }

@@ -20,3 +20,17 @@
 .App-link {
   color: #09d3ac;
 }
+
+
+.ui.icon.menu .item { 
+  text-align: justify; 
+}
+
+.ui.icon.menu .item a {
+  text-align: center !important;
+  letter-spacing: 0;
+  color: white;
+  padding: 10px;
+  margin: 5px 0px;
+  line-height: 2;
+}
