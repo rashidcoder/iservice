@@ -20,11 +20,16 @@ private localData:EventSettingsModel ={
     
     render() {
     return (
-      <ScheduleComponent currentView='Month' 
+      <div>
+<h1 className="ui center header">Calendar main view monthly
+</h1>
+<ScheduleComponent currentView='Month' 
          eventSettings={this.localData}  >
     
     <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
     </ScheduleComponent>
+      </div>
+
   );
 }
 }

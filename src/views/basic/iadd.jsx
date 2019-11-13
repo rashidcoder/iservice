@@ -5,17 +5,6 @@ export class IAdd extends Component {
 
   render() {
     
-    var icon = "plus"
-    if(this.props.icon==="") { 
-    
-    }
-      else {
-        icon = "icon"
-      }
-   
-   
-      
-    
     const styles = {
       backgroundColor: "transparent",
       border: "none",
@@ -28,7 +17,7 @@ export class IAdd extends Component {
          name={this.props.name}
          value={this.props.value}>
            
-          <Icon name={Icon} />
+          <Icon name={this.props.icon} />
         </button>
         {this.props.text}
       </span>

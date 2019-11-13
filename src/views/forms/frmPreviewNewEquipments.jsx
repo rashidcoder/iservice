@@ -99,8 +99,7 @@ class FrmPreviewNewEquipments extends Component {
                   type={"file"}
                   name={"uploadimage"}
                   id={"uploadimage"}
-                  class="inputfile"
-                  id="uploadimage"
+                  class={"inputfile"}
                   width={4}
                 />
                 
@@ -121,8 +120,7 @@ class FrmPreviewNewEquipments extends Component {
                   type={"file"}
                   name={"uploadinvoice"}
                   id={"uploadinvoice"}
-                  class="inputinvoice"
-                  id="uploadinvoice"
+                  class={"inputinvoice"}
                   width={4}
                 />
                 

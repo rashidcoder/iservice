@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Table } from "semantic-ui-react";
-import ICheckBox from "../basic/icheckbox";
 export class ITable extends Component {
   render() {
     const head = [];

@@ -5,7 +5,6 @@ import ITextArea from "../basic/itextarea";
 import { Form } from "semantic-ui-react";
 import IInput from "../basic/input";
 import ITable from "../table/itable";
-import IAdd from "../basic/iadd";
 import ISelect from "../basic/iselect";
 
 class FrmPreviewPartLangoDizainas extends Component {
@@ -88,8 +87,7 @@ class FrmPreviewPartLangoDizainas extends Component {
                   type={"file"}
                   name={"uploadimage"}
                   id={"uploadimage"}
-                  class="inputfile"
-                  id="uploadimage"
+                  class={"inputfile"}
                   width={4}
                 />
               </Form.Group>
@@ -109,7 +107,6 @@ class FrmPreviewPartLangoDizainas extends Component {
                   name={"uploadinvoice"}
                   id={"uploadinvoice"}
                   class="inputinvoice"
-                  id="uploadinvoice"
                   width={4}
                 />
                 

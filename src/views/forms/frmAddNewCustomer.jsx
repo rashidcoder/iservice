@@ -128,6 +128,7 @@ class FrmAddNewCustomer extends Component {
             name={"btnAddmorePrices"}
             id={"btnAddmorePrices"}
             text={"Add more prices"}
+            icon={"plus"}
           />
           <IInput
             name={"txtPartsDiscount"}
@@ -138,6 +139,7 @@ class FrmAddNewCustomer extends Component {
             name={"btnAddmoreDiscount"}
             id={"btnAddmoreDiscount"}
             text={"Add more discount"}
+            icon={"plus"}
           />
           <IInput
             name={"btnLaborDiscount"}
@@ -148,6 +150,7 @@ class FrmAddNewCustomer extends Component {
             name={"btnAddmoreDiscount"}
             id={"btnAddmoreDiscount"}
             text={"Add more discount"}
+            icon={"plus"}
           />
         </Form.Group>
         <Form.Group>
@@ -190,6 +193,7 @@ class FrmAddNewCustomer extends Component {
             name={"btnAddmoreContacts"}
             id={"btnAddmoreContacts"}
             text={"Add more Contacts"}
+            icon={"plus"}
           />
         </Form.Group>
         <ITable

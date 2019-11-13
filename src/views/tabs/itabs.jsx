@@ -22,7 +22,7 @@ import FrmEquipmentPagrindinioLangoDizainas from "../forms/frmEquipmentPagrindin
 import FrmEquipmentinventorization from "../forms/frmEquipmentinventorization";
 //import { calender } from "../../data/Schema";
 
-var tabs = [""];
+var tabs = [];
 
 export class ITabs extends Component {
   constructor(props) {
@@ -97,73 +97,37 @@ export class ITabs extends Component {
   render() {
     if (tabs.includes(this.props.info)) {
     } else {
-      tabs = [...tabs, ...[this.props.tab]];
+      tabs = [...tabs,  [this.props.tab]];
     }
 
+    // const tabPanes = [];
+    // for (let i = 0; i < this.state.tabs.length; i++) {
+    //   const title = this.state.tabs[i].title;
+    //   tabPanes.push({
+    //     menuItem: "title",
+    //     render: () => <Tab.Pane>{this.dumyTabPane({ i })}</Tab.Pane>
+    //   });
+    // }
     const tabPanes = [];
-    for (let i = 0; i < this.state.tabs.length; i++) {
-      const title = this.state.tabs[i].title;
+    for (let i = 0; i <  tabs.length; i++) {
+      // const title = this.state.tabs[i].title;
+      // document.querySelector('.ui.attached.tabular.menu a.item').classList.remove('actove')
+     
+     
       tabPanes.push({
-        menuItem: title,
-        render: () => <Tab.Pane>{this.dumyTabPane({ i })}</Tab.Pane>
+        menuItem: "title " + i,
+        render: () => <Tab.Pane className={"active"}>{ tabs[i] }</Tab.Pane>
       });
+
+
+     
+  
     }
 
     return (
-      <div> 
-      {tabs}
+      <div>  
         <Tab panes={tabPanes} />
       </div>
     );
   }
-  dumyTabPane({ i }) {
-    switch (i) {
-      case 0:
-        //     return <FrmNewWorkOrderTruck />;
-        //return <FrmEquipmentPagrindinioLangoDizainas/>
-      return <FrmEquipmentinventorization/>
-        //return <FrmAddnewPartLangoDlizainas/>
-      //  return <FrmPreviewNewEquipments/>
-      case 1:
-        return <FrmPreviewPartLangoDizainas/>
-      // <FrmNewWorkOrderTrailer />;
-      case 2:
-        return <FrmWorkOrdersManagment />;
-      case 3:
-        return <FrmModifyWorkOrder />;
-      case 4:
-        return <FrmCustomerPagrinioLangoDizainas />;
-      case 5:
-        return <FrmAddNewCustomer />;
-      case 6:
-        return <FrmPreviewCustomer />;
-      case 7:
-        return <FrmSupplierPargindinoLangoDizainas />;
-      case 8:
-        return <FrmPreviewSuplier />;
-      case 9:
-        return <FrmAddNewSupplier />;
-      case 10:
-        return <FrmPartsPargrindinioLangoDizainas />;
-      case 11:
-        return <ICalenderSchedular />;
-      case 12:
-        return <FrmBooking />;
-      case 11:
-        return <FrmAddnewPartLangoDlizainas />;
-      case 12:
-        return <FrmPreviewPartLangoDizainas />;
-      case 13:
-        return <FrmAddNewEquipments />;
-      case 14:
-        return <FrmPreviewNewEquipments />;
-        case 15:
-          return <FrmEquipmentPagrindinioLangoDizainas/>;
-          case 16:
-            return <FrmEquipmentinventorization/>;
-      
-      default:
-    }
-  }
-}
-export default ITabs;
+} export default ITabs;

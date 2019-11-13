@@ -21,6 +21,8 @@ import FrmAddnewPartLangoDlizainas from "../forms/frmAddnewPartLangoDlizainas";
 import FrmPreviewPartLangoDizainas from "../forms/frmPreviewPartLangoDizainas";
 import FrmAddNewEquipments from "../forms/frmAddNewEquipments";
 import FrmPreviewNewEquipments from "../forms/frmPreviewNewEquipments";
+import FrmEquipmentPagrindinioLangoDizainas from "../forms/frmEquipmentPagrindinioLangoDizainas";
+import FrmEquipmentinventorization from "../forms/frmEquipmentinventorization";
 //import { BrowserRouter,Route } from 'react-router-dom';
 export class ISidebar extends Component {
   constructor(props) {
@@ -35,15 +37,27 @@ export class ISidebar extends Component {
           activeIndex: 0,
           child: [
             {
-              text: "New Work Order",
+              text: "New Work Order Truck",
               index: 0,
               tab: <FrmNewWorkOrderTruck />,
               link: "#"
             },
             {
-              text: "Work Order Mgts",
+              text: "New Work Order Trailer",
               index: 1,
+              tab: <FrmNewWorkOrderTrailer/>,
+              link: "#"
+            },
+            {
+              text: "Work Order Mgts",
+              index: 2,
               tab: <FrmWorkOrdersManagment />,
+              link: "#"
+            },
+            {
+              text: "Work Order Modify",
+              index: 3,
+              tab: <FrmModifyWorkOrder/>,
               link: "#"
             }
           ]
@@ -55,12 +69,20 @@ export class ISidebar extends Component {
           child: [
             {
               text: "New Customer",
-              index: 2,
+              index: 4,
+              tab: <FrmAddNewCustomer/>,
               link: "#"
             },
             {
-              text: "Customers",
-              index: 3,
+              text: "Customers Parginio",
+              tab: <FrmCustomerPagrinioLangoDizainas/>,
+              index: 5,
+              link: "#"
+            },
+            {
+              text: "Preview Customers ",
+              tab: <FrmPreviewCustomer/>,
+              index: 6,
               link: "#"
             }
           ]
@@ -72,17 +94,26 @@ export class ISidebar extends Component {
           child: [
             {
               text: "Booking ",
-              index: 4,
+              tab:<FrmBooking/>,
+              index: 7,
               link: "#"
             },
             {
               text: "Employees",
-              index: 5,
+              tab:<ICalenderSchedular/>,
+              index: 8,
               link: "#"
             },
             {
               text: "Reminder",
-              index: 6,
+              tab:<ICalenderSchedular/>,
+              index: 9,
+              link: "#"
+            },
+            {
+              text: "Add New Event",
+              tab:<ICalenderSchedular/>,
+              index: 10,
               link: "#"
             }
           ]
@@ -94,12 +125,20 @@ export class ISidebar extends Component {
           child: [
             {
               text: "New Supplier",
-              index: 7,
+              tab:<FrmAddNewSupplier/>,
+              index: 11,
               link: "#"
             },
             {
-              text: "Suppliers",
-              index: 8,
+              text: "Supplier Pargindino",
+              tab:<FrmSupplierPargindinoLangoDizainas/>,
+              index: 12,
+              link: "#"
+            },
+            {
+              text: "Preview Suppliers",
+              tab:<FrmPreviewSuplier/>,
+              index: 13,
               link: "#"
             }
           ]
@@ -110,10 +149,23 @@ export class ISidebar extends Component {
           activeIndex: 5,
           child: [
             {
-              text: "xyz",
-              index: 9,
+              text: "Add New Parts",
+              tab:<FrmAddnewPartLangoDlizainas/>,
+              index: 14,
               link: "#"
-            }
+            },
+            {
+              text: "Preview Parts",
+              tab:<FrmAddnewPartLangoDlizainas/>,
+              index: 15,
+              link: "#"
+            },
+            {
+              text: "Parts pagrindinio",
+              tab:<FrmPartsPargrindinioLangoDizainas/>,
+              index: 16,
+              link: "#"
+            },
           ]
         },
         {
@@ -122,8 +174,27 @@ export class ISidebar extends Component {
           activeIndex: 6,
           child: [
             {
-              text: "xyz",
-              index: 10,
+              text: "Add New Equipments",
+              index: 17,
+              tab: <FrmAddNewEquipments/>,
+              link: "#"
+            },
+            {
+              text: "Equipment pagrindinio",
+              tab:<FrmEquipmentPagrindinioLangoDizainas/>,
+              index: 18,
+              link: "#"
+            },
+            {
+              text: "Preview pagrindinio Inventorization",
+              tab:<FrmEquipmentinventorization/>,
+              index: 19,
+              link: "#"
+            },
+            {
+              text: "Preview Equipment",
+              tab:<FrmPreviewNewEquipments/>,
+              index: 20,
               link: "#"
             }
           ]
@@ -135,7 +206,7 @@ export class ISidebar extends Component {
           child: [
             {
               text: "xyz",
-              index: 11,
+              index: 21,
               link: "#"
             }
           ]
@@ -170,10 +241,10 @@ export class ISidebar extends Component {
           <Button
             onClick={() => {
               this.setState({ tab: item_ch.tab });
+             
             }}
           >
-            {" "}
-            {item_ch.text}{" "}
+            {item_ch.text}
           </Button>
         );
       });
