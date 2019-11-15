@@ -1,4 +1,4 @@
-import homeModal from "../views/modal/homeModal";
+import homeModal from "../models/homeModal";
  const HomeController = props => {
   const { name, fatherName, msg } = homeModal(props.data);
   console.log(name+fatherName+msg)
