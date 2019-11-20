@@ -22,7 +22,9 @@ export class ISelect extends Component {
       
       <Form.Field
         control={Select}
-        options={this.state.Options}
+        options={this.props.options}
+        value={this.props.value}
+        onChange={this.props.onChange} 
         label={{
           children: this.props.text,
           htmlFor: "form-select-control-gender"
@@ -33,10 +35,17 @@ export class ISelect extends Component {
         searchInput={{ id: "form-select-control-gender" }}
         id={this.props.id}
         name={this.props.name}
+        {...this.props}
       />
     );
   }
 }
+// name="selectCustomerType"
+//               value={this.state.formControls.gender.value}
+//               onChange={this.changeHandler}
+//               options={this.state.formControls.gender.options}
+//              
+
 
 export default ISelect;
 

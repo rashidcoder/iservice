@@ -1,10 +1,29 @@
-var msg ,  name ,fatherName;
+var  customerName1;
 var returnObj;
 
 function homeModal(props){
-  
-
+        customerName1=props.customerName  
+        console.log('modal data'+JSON.stringify(props))
+        //console.log("The customer name is ______" +customerName1)
+        //console.log("email and password values in modal is  ______" +props.data.email+props.data.phone)
+        returnObj = customerName1
     console.log("value of data is " )
+    
+            return returnObj   
+    
+}  
+export default homeModal
+
+{/*
+var msg ,  name ,fatherName, customerName1;
+var returnObj;
+
+function homeModal(props){
+        customerName1=props.customerName  
+        console.log("The customer name is ______" +props.customerName)
+        returnObj = {customerName1} 
+    console.log("value of data is " )
+
     switch(props) {
         case 1:
                 name =   "Danish "
@@ -20,13 +39,11 @@ function homeModal(props){
                 break
         default:
                 msg = "Data Not Found"
-                returnObj = {msg} 
+                returnObj = {customerName1} 
                 break
     }
-    
-  
     return returnObj
-
 }
   
 export default homeModal
+*/}

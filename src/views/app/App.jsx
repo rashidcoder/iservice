@@ -4,10 +4,12 @@ import ISidebar from "../navigation/isidebar";
 import Workshops from "../../controllers/Test"
 import HomeController from "../../controllers/danishControler";
 import IButton from "../basic/ibutton";
-
-
+import RefsForm from "../forms/dummyform";
+import Database from '../../data/db'
+// var db = new Database()
 class App extends Component {
-  constructor(props) {
+ 
+  constructor(props) { 
     super(props)
   
     this.state = {
@@ -19,6 +21,8 @@ class App extends Component {
     console.log("the set value is "+this.state.data)
     return (
       <div className="App">
+        
+  {/* <h3> {db.createDatabase()} </h3>     */}
        <ISidebar/>
        <Workshops data={"test data"}>
        { orderSnapshot =>  
@@ -44,6 +48,8 @@ class App extends Component {
        }}
        text={"Rashid Data"}
        />
+
+       
        <HomeController data={this.state.data}>
          { getdata=>
          <div>
@@ -53,9 +59,9 @@ class App extends Component {
             </div>
         }
        </HomeController>
+         */}
+       <RefsForm/>
       </div>
     );
   }
-}
-
-export default App;
+}export default App;
