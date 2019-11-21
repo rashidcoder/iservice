@@ -167,21 +167,8 @@ selectchangeHandler = (event,data) => {
 }
 
 
-
-
-
-
-
-
-
-
-
-
   handleSubmit = (e) => {
 
-
-    
-    
     console.log(JSON.stringify(this.state.formData)) 
   }
   render() {

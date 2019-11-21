@@ -1,3 +1,5 @@
+// https://rxdb.info/rx-schema.html#example
+
 export const vehicles = {
   title: "vehicles",
   version: 0,
@@ -111,7 +113,6 @@ export const clients = {
     "address", "zip_post", "country",
     "email", "telephone", "fax"]
 }
-
 
 export const workOrders = {
   title: "work orders",
