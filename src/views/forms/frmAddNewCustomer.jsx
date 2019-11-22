@@ -28,7 +28,7 @@ class FrmAddNewCustomer extends Component {
       },
       formData: {
         check: 0,
-                              // Customer Data
+        // Customer Data
         txtCustomerName: {
           value: ''
         },
@@ -42,7 +42,7 @@ class FrmAddNewCustomer extends Component {
             // { value: 'local', displayValue: 'local' },
             // { value: 'extnernal', displayValue: 'extnernal'}
             { key: "local", value: "1", text: "Local" },
-            { key: "external", value: "2", text: "External" }, 
+            { key: "external", value: "2", text: "External" },
           ]
         },
         txtCustomerCity: {
@@ -60,7 +60,7 @@ class FrmAddNewCustomer extends Component {
         txtCustomerCountry: {
           value: ''
         },
-        txtCustomerEmail:{
+        txtCustomerEmail: {
           value: ''
         },
         txtCustomerTelephone1: {
@@ -79,7 +79,7 @@ class FrmAddNewCustomer extends Component {
           value: ''
         },
 
-                                                //Billing
+        //Billing
 
         txtCreditLimit: {
           value: ''
@@ -93,7 +93,7 @@ class FrmAddNewCustomer extends Component {
         btnLaborDiscount: {
           value: ''
         },
-                                              //Add More Contact
+        //Add More Contact
         txtAdditionalName: {
           value: ''
         },
@@ -115,78 +115,85 @@ class FrmAddNewCustomer extends Component {
         txtAdditionalExtension: {
           value: ''
         },
-                                                //comments
+        //comments
         txtComments: {
           value: ''
-        
+
         },
       }
     };
   }
   changeHandler = event => {
-      
+
     const name = event.target.name;
     const value = event.target.value;
-  
+
     this.setState({
       formData: {
-          ...this.state.formData,
-          [name]: {
+        ...this.state.formData,
+        [name]: {
           ...this.state.formData[name],
           value
         }
       }
     });
-    
-}
+
+  }
 
 
 
-selectchangeHandler = (event,data) => {
-    
-  const name = event.target.name;
-  const value = data.text;
-  globalConsole = event.target
-  console.log("stringfied value of the selected option is ::"+ event.target.name+ " ::: " + data.text);
+  // selectchangeHandler = (event,data) => {
+
+  //   const name = event.target.name;
+  //   const value = data.text;
+  //   globalConsole = event.target
+  //   console.log("stringfied value of the selected option is ::"+ event.target.name+ " ::: " + data.text);
+
+
+
+  // }
+
+  selectchangeHandler = (e, { name, value }) => { 
+    const updatedControls = {
+      ...this.state.formData
+    };
+    const updatedFormElement = {
+      ...updatedControls[name]
+    };
+    updatedFormElement.value = value;
+    updatedControls[name] = updatedFormElement; 
   
-  const updatedControls = {
-    ...this.state.formData
-  };
-  const updatedFormElement = {
-    ...updatedControls[name]
-  };
-  updatedFormElement.value = value;
-  updatedControls[name] = updatedFormElement; 
+    
+    this.setState({
+      formData: updatedControls, 
+    });
 
-  
-  this.setState({
-    formData: updatedControls,
-   
-  });
+    console.log(' value of select ' + name + " is " + value) 
 
-}
+    console.log(' value of object is  ' + JSON.stringify(this.state.formData)) 
+  }
 
 
   handleSubmit = (e) => {
 
-    console.log(JSON.stringify(this.state.formData)) 
+    console.log(JSON.stringify(this.state.formData))
   }
   render() {
     return (
       <div>
-        <HomeController  formData={this.state.formData}>    
-        {getdata =>
-          <div>
-            <p>returned value: {getdata.obj.customerName}</p>
-          </div>
-        }
-      </HomeController> 
-      
-      <h1>{this.state.check}</h1>
-      
+        <HomeController formData={this.state.formData}>
+          {getdata =>
+            <div>
+              <p>returned value: {getdata.obj.customerName}</p>
+            </div>
+          }
+        </HomeController>
+
+        <h1>{this.state.check}</h1>
+
         <Form onSubmit={this.handleSubmit}>
 
-                                                                        {/*  Customer Information */}
+          {/*  Customer Information */}
 
           <ILabel text={"Add New Customer"} class={"ui header"} />
           <Form.Group>
@@ -259,9 +266,9 @@ selectchangeHandler = (event,data) => {
             />
           </Form.Group>
           <Form.Group>
-             <IInput name="txtCustomerEmail"
+            <IInput name="txtCustomerEmail"
               value={this.state.formData.txtCustomerEmail.value}
-              onChange={this.changeHandler} id={"txtCustomerEmail"} label={"Email"} width={4} /> 
+              onChange={this.changeHandler} id={"txtCustomerEmail"} label={"Email"} width={4} />
             <IInput
               name="txtCustomerTelephone1"
               value={this.state.formData.txtCustomerTelephone1.value}
@@ -301,7 +308,7 @@ selectchangeHandler = (event,data) => {
               width={2}
             />
           </Form.Group>
-                                                                              {/*  Billing */}
+          {/*  Billing */}
           <Form.Group>
             <ILabel text={"Billing"} class={"ui header"} />
           </Form.Group>
@@ -359,7 +366,7 @@ selectchangeHandler = (event,data) => {
               icon={"plus"}
             />
           </Form.Group>
-                                                                                  {/*  Add more Contacts */}
+          {/*  Add more Contacts */}
           <Form.Group>
             <ILabel text={"Add more contacts"} class={"ui header"} />
           </Form.Group>
@@ -424,7 +431,7 @@ selectchangeHandler = (event,data) => {
             id={"tblAddNewCustomer"}
           />
           <Form.Group>
-                                                                                     {/*  Contacts */}
+            {/*  Contacts */}
 
             <ILabel text={"Comments"} class={"ui header"} />
           </Form.Group>
@@ -443,7 +450,7 @@ selectchangeHandler = (event,data) => {
               <Grid.Column width={14}></Grid.Column>
               <Grid.Column width={2}>
                 <Form.Group>
-                <h1>{this.state.formData.txtCustomerName.value}</h1>
+                  <h1>{this.state.formData.txtCustomerName.value}</h1>
                   <IButton
                     text="Save"
                     id={"btnSave"}

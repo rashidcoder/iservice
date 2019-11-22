@@ -1,17 +1,16 @@
-var  customerName1;
+var customerName1;
 var returnObj;
 
-function homeModal(props){
-        customerName1=props.customerName  
-        console.log('modal data'+JSON.stringify(props))
+function homeModal(props) {
+        customerName1 = props.customerName
+        console.log('modal data' + JSON.stringify(props))
         //console.log("The customer name is ______" +customerName1)
         //console.log("email and password values in modal is  ______" +props.data.email+props.data.phone)
         returnObj = customerName1
-    console.log("value of data is " )
-    
-            return returnObj   
-    
-}  
+
+        return returnObj
+
+}
 export default homeModal
 
 {/*

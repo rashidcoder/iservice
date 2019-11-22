@@ -5,8 +5,7 @@ import homeModal from "../models/homeModal";
   const customerName= homeModal(props)
   return props.children({
     obj: {
-      customerName: customerName
-
+      customerName: customerName 
     }
   });
   

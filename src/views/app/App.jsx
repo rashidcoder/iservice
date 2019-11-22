@@ -5,7 +5,7 @@ import Workshops from "../../controllers/Test"
 import HomeController from "../../controllers/danishControler";
 import IButton from "../basic/ibutton";
 import RefsForm from "../forms/dummyform";
-import Database from '../../data/db'
+// import Database from '../../data/db'
 // var db = new Database()
 class App extends Component {
  
