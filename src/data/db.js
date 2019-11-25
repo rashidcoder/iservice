@@ -1,40 +1,72 @@
-import RxDB from 'rxdb';
- 
-class Database {
+import * as RxDB from 'rxdb'; 
+import { async } from 'q';
 
-    constructor() {
-this.db  =''
-        this.state = { 
-            dbinfo:'',
-        } 
+import * as Schema from './Schema';
+
+// RxDB.QueryChangeDetector.enableDebugging();
+
+RxDB.plugin(require('pouchdb-adapter-idb'));
+RxDB.plugin(require('pouchdb-adapter-http')); //enable syncing over http
+
+const collections = [
+    {
+        name: 'heroes',
+        schema:  {},
+        methods: {
+            hpPercent() {
+                return this.hp / this.maxHP * 100;
+            }
+        },
+        sync: true
     }
-    createDatabase() {
-        RxDB.plugin(require('pouchdb-adapter-idb'))
-        this.db = RxDB.create({
-            name: 'iservice',           // <- name
-            adapter: 'idb',          // <- storage-adapter
-            password: 'da#6pEWefG',     // <- password (optional)
-            multiInstance: true,         // <- multiInstance (optional, default: true)
-            queryChangeDetection: false,
-            ignoreDuplicate: true // <- queryChangeDetection (optional, default: false)
+];
+
+const syncURL = 'http://' + window.location.hostname + ':10102/';
+console.log('host: ' + syncURL);
+
+let dbPromise = null;
+
+const _create = async () => {
+    console.log('DatabaseService: creating database..');
+    const db = await RxDB.create({name: 'heroesreactdb', adapter: 'idb', password: 'myLongAndStupidPassword'});
+    console.log('DatabaseService: created database');
+    window['db'] = db; // write to window for debugging
+
+    // show leadership in title
+    db.waitForLeadership().then(() => {
+        console.log('isLeader now');
+        document.title = '♛ ' + document.title;
+    });
+
+    // create collections
+    console.log('DatabaseService: create collections');
+    await Promise.all(collections.map(colData => db.collection(colData)));
+
+    // hooks
+    console.log('DatabaseService: add hooks');
+    db.collections.heroes.preInsert(docObj => {
+        const { color } = docObj;
+        return db.collections.heroes.findOne({color}).exec().then(has => {
+            if (has != null) {
+                alert('another hero already has the color ' + color);
+                throw new Error('color already there');
+            }
+            return db;
         });
-        this.db.info().then(function (info) {
-          this.setState({dbinfo:info})
-        })
-        return this.state.dbinfo
-    }
+    });
 
-    getInfo() {
-        this.db.info().then(function (info) {
-            console.log(info);
-        })
-    }
+    // sync
+    console.log('DatabaseService: sync');
+    collections.filter(col => col.sync).map(col => col.name).map(colName => db[colName].sync({
+        remote: syncURL + colName + '/'
+    }));
 
+    return db;
+};
 
+const _createDB = async () => {}
+export const get = () => {
+    if (!dbPromise)
+        dbPromise = _create();
+    return dbPromise;
 }
-
-export default Database;
-
-
-
-

@@ -1,5 +1,32 @@
 // https://rxdb.info/rx-schema.html#example
 
+export const schemaNames = {
+  vehicles: '',
+  clients: '',
+  workOrders: '',
+  customers: '',
+  billings: '',
+  suppliers: '',
+  parts: '',
+  equipments: '',
+  calender: ''
+}
+export  const heroSchema = {
+  'title': 'hero schema',
+  'description': 'describes a simple hero',
+  'version': 0,
+  'type': 'object',
+  'properties': {
+      'name': {
+          'type': 'string',
+          'primary': true
+      },
+      'color': {
+          'type': 'string'
+      }
+  },
+  'required': ['color']
+};
 export const vehicles = {
   title: "vehicles",
   version: 0,
@@ -123,20 +150,7 @@ export const workOrders = {
     vehicle: {
       type: "string"
     },
-    info: {
-      type: "object",
-      properties: {
-        priority: {
-          type: "string"
-        },
-        plan_service_date: {
-          type: "string"
-        },
-        budget: {
-          type: "integer"
-        },
-      },
-    },
+ 
     client: {
       type: "string"
     },
