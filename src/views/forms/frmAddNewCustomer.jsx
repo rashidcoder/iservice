@@ -9,13 +9,14 @@ import IInput from "../basic/input";
 import ITable from "../table/itable";
 import IAdd from "../basic/iadd";
 import IButton from "../basic/ibutton";
-import HomeController from "../../controllers/danishControler";
-let globalConsole = ''
+import ControllerAddNewCustomer from "../../controllers/controllerAddNewCustomer";
+
 class FrmAddNewCustomer extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      isSubmit: false,
       table: {
         title: ["Name", "Telephone", "Email", "Fax", "Telephone(alt)"],
         data: [
@@ -129,6 +130,7 @@ class FrmAddNewCustomer extends Component {
     const value = event.target.value;
 
     this.setState({
+      isSubmit: false,
       formData: {
         ...this.state.formData,
         [name]: {
@@ -137,23 +139,11 @@ class FrmAddNewCustomer extends Component {
         }
       }
     });
-
   }
-
-
-
-  // selectchangeHandler = (event,data) => {
-
-  //   const name = event.target.name;
-  //   const value = data.text;
-  //   globalConsole = event.target
-  //   console.log("stringfied value of the selected option is ::"+ event.target.name+ " ::: " + data.text);
-
-
-
-  // }
-
-  selectchangeHandler = (e, { name, value }) => { 
+  selectchangeHandler = (e, { name, value }) => {
+    this.setState({
+      isSubmit: false,
+    })
     const updatedControls = {
       ...this.state.formData
     };
@@ -161,35 +151,41 @@ class FrmAddNewCustomer extends Component {
       ...updatedControls[name]
     };
     updatedFormElement.value = value;
-    updatedControls[name] = updatedFormElement; 
-  
-    
+    updatedControls[name] = updatedFormElement;
     this.setState({
-      formData: updatedControls, 
+      formData: updatedControls,
     });
 
-    console.log(' value of select ' + name + " is " + value) 
+    console.log(' value of select ' + name + " is " + value)
 
-    console.log(' value of object is  ' + JSON.stringify(this.state.formData)) 
+    console.log(' value of object is  ' + JSON.stringify(this.state.formData))
   }
 
 
   handleSubmit = (e) => {
-
+    this.setState({
+      isSubmit: true,
+    })
     console.log(JSON.stringify(this.state.formData))
   }
   render() {
-    return (
-      <div>
-        <HomeController formData={this.state.formData}>
-          {getdata =>
+    let control;
+    if (this.state.isSubmit) {
+      control =
+        <ControllerAddNewCustomer formData={this.state.formData}>
+          { getdata =>
             <div>
-              <p>returned value: {getdata.obj.customerName}</p>
+              <p>returned value: {getdata.obj.msg}</p>
             </div>
           }
-        </HomeController>
+        </ControllerAddNewCustomer>
+    } else {
+      control = <div></div>
+    }
+    return (
+      <div>
 
-        <h1>{this.state.check}</h1>
+        {control}
 
         <Form onSubmit={this.handleSubmit}>
 

@@ -5,35 +5,170 @@ import ITextArea from "../basic/itextarea";
 import { Form } from "semantic-ui-react";
 import IInput from "../basic/input";
 import IButton from "../basic/ibutton";
+import ControllerAddNewEqipments from "../../controllers/controllerAddNewEquipments";
 
 class FrmAddNewEquipments extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      isSubmit: false,
+      formData: {
+        txtUnit: {
+          value: '',
+        },
+        txtQuantity: {
+          value: '',
+        },
+        txtPrice: {
+          value: '',
+        },
+        txtWarranty:{
+          value:'',
+        },
+        txtTechnicalInspection: {
+          value: '',
+        },
+        txtModel: {
+          value: '',
+        },
+        txtMake: {
+          value: '',
+        },
+        txtStyle: {
+          value: '',
+        },
+        txtQuality: {
+          value: '',
+        },
+        txtDescription:{
+          value:''
+        },
+        txtSupplierName: {
+          value: ''
+        },
+        txtSupplierCompany: {
+          value: ''
+        },
+        txtSupplierCity: {
+          value: ''
+        },
+        txtSupplierProvince: {
+          value: ''
+        },
+        txtSupplierAddress: {
+          value: ''
+        },
+        txtSupplierCountry: {
+          value: ''
+        },
+        txtSupplierEmail: {
+          value: ''
+        },
+        txtSupplierTelephone1: {
+          value: ''
+        },
+        txtSupplierFax: {
+          value: ''
+        },
+        txtSupplierTollFree: {
+          value: ''
+        },
+        txtSupplierTelephone: {
+          value: ''
+        },
+        txtSupplierExtension: {
+          value: ''
+        },
+      }
+    };
   }
+
+  changeHandler = event => {
+    const name = event.target.name;
+    const value = event.target.value;
+    this.setState({
+      formData: {
+        ...this.state.formData,
+        [name]: {
+          ...this.state.formData[name],
+          value
+        }
+      }
+    });
+    console.log(JSON.stringify(this.state.formData))
+  }
+  selectchangeHandler = (e, { name, value }) => {
+    const updatedControls = {
+      ...this.state.formData
+    };
+    const updatedFormElement = {
+      ...updatedControls[name]
+    };
+    updatedFormElement.value = value;
+    updatedControls[name] = updatedFormElement;
+    this.setState({
+      formData: updatedControls,
+    });
+
+    console.log(' value of select ' + name + " is " + value)
+
+    console.log(' value of object is  ' + JSON.stringify(this.state.formData))
+  }
+
+
+  handleSubmit = (e) => {
+    this.setState({
+      isSubmit: true,
+    })
+    console.log(JSON.stringify( "UI Data"+this.state.formData))
+  }
+ 
   render() {
+    let control;
+    if (this.state.isSubmit) {
+      control =
+        <ControllerAddNewEqipments formData={this.state.formData}>
+          { getdata =>
+            <div>
+              <p>returned value: {getdata.obj.msg}</p>
+            </div>
+          }
+        </ControllerAddNewEqipments>
+    } else {
+      control = <div></div>
+    }
     return (
-      <Form>
+      <div>
+
+        {control}
+
+      <Form onSubmit={this.handleSubmit}>
         <ILabel text={"Add New Equipments"} class={"ui header"} />
         <Form.Group>
           <ILabel text={"Equipment Information"} class={"ui header"} />
         </Form.Group>
         <Form.Group widths={4}>
           <IInput
-            name={"txtUnit"}
+            name="txtUnit"
+            value={this.state.formData.txtUnit.value}
+            onChange={this.changeHandler}
             id={"txtUnit"}
             label={"Unit"}
             width={6}
           />
           <IInput
-            name={"txtQuantity"}
+            name="txtQuantity"
+            value={this.state.formData.txtQuantity.value}
+            onChange={this.changeHandler}
             id={"txtQuantity"}
             label={"Quantity"}
             width={3}
           />
           <IInput
-            name={"txtPrice"}
+            name="txtPrice"
+            value={this.state.formData.txtPrice.value}
+            onChange={this.changeHandler}
             id={"txtPrice"}
             label={"Price"}
             width={3}
@@ -41,43 +176,55 @@ class FrmAddNewEquipments extends Component {
         </Form.Group>
         <Form.Group widths={4}>
           <IInput
-            name={"txtWarranty"}
+            name="txtWarranty"
+            value={this.state.formData.txtWarranty.value}
+            onChange={this.changeHandler}
             id={"txtWarranty"}
             label={"Warranty"}
             width={4}
           />
-             <IButton
-                  text="Add Reminder"
-                  id={"btnAddReminder"}
-                  name={"btnAddReminder"}
-                  width={4}
-                />
+          <IButton
+            text="Add Reminder"
+            id={"btnAddReminder"}
+            name={"btnAddReminder"}
+            width={4}
+          />
           <IInput
-            name={"txtTechnicalInspection"}
+            name="txtTechnicalInspection"
+            value={this.state.formData.txtTechnicalInspection.value}
+            onChange={this.changeHandler}
             id={"txtTechnicalInspection"}
             label={"Technical Inspection"}
             width={4}
           />
           <IButton
-                  text="Add Reminder"
-                  id={"btnAddReminder"}
-                  name={"btnAddReminder"}
-                  width={4}
-                />
+            text="Add Reminder"
+            id={"btnAddReminder"}
+            name={"btnAddReminder"}
+            width={4}
+          />
         </Form.Group>
 
         <Form.Group>
-          <IInput name={"txtModel"} id={"txtModel"} label={"Model"} width={4} />
-          <IInput name={"txtMake"} id={"txtMake"} label={"Make"} width={4} />
-          <IInput name={"txtStyle"} id={"txtStyle"} label={"Style"} width={4} />
+          <IInput name="txtModel"
+            value={this.state.formData.txtModel.value}
+            onChange={this.changeHandler} id={"txtModel"} label={"Model"} width={4} />
+          <IInput name="txtMake"
+            value={this.state.formData.txtMake.value}
+            onChange={this.changeHandler} id={"txtMake"} label={"Make"} width={4} />
+          <IInput name="txtStyle"
+            value={this.state.formData.txtStyle.value}
+            onChange={this.changeHandler} id={"txtStyle"} label={"Style"} width={4} />
           <IInput
-            name={"txtQuality"}
+            name="txtQuality"
+            value={this.state.formData.txtQuality.value}
+            onChange={this.changeHandler}
             id={"txtQuality"}
             label={"Quality"}
             width={2}
           />
         </Form.Group>
-       
+
 
         <Grid>
           <Grid.Row>
@@ -91,17 +238,16 @@ class FrmAddNewEquipments extends Component {
                   name={"uploadimage"}
                   id={"uploadimage"}
                   class={"inputfile"}
-              
                   width={4}
                 />
-                
+
               </Form.Group>
               <Form.Group width={2} >
-                <ILabel for={"uploadimage"} icon={"ui  large camera icon"}  />
-                <ILabel for={"uploadimage"} icon={"ui large camera icon"}  />
+                <ILabel for={"uploadimage"} icon={"ui  large camera icon"} />
+                <ILabel for={"uploadimage"} icon={"ui large camera icon"} />
                 <ILabel for={"uploadimage"} icon={"ui large camera icon"} />
               </Form.Group>
-              
+
             </Grid.Column>
             <Grid.Column width={8}>
               <Form.Group>
@@ -115,11 +261,11 @@ class FrmAddNewEquipments extends Component {
                   class={"inputinvoice"}
                   width={4}
                 />
-                
+
               </Form.Group>
               <Form.Group width={2} >
-                <ILabel for={"uploadinvoice"} icon={"ui  large file icon"}  />
-                <ILabel for={"uploadinvoice"} icon={"ui large file icon"}  />
+                <ILabel for={"uploadinvoice"} icon={"ui  large file icon"} />
+                <ILabel for={"uploadinvoice"} icon={"ui large file icon"} />
                 <ILabel for={"uploadinvoice"} icon={"ui large file icon"} />
               </Form.Group>
             </Grid.Column>
@@ -134,26 +280,31 @@ class FrmAddNewEquipments extends Component {
           <ITextArea
             rows={5}
             cols={3}
-            name={"txtDescription"}
+            name="txtDescription" value={this.state.formData.txtDescription.value}
+            onChange={this.changeHandler}
             id={"txtDescription"}
             label={"Description"}
           />
         </Form.Group>
 
-        
+
         {/* Supplier Info*/}
         <Form.Group>
           <ILabel text={"Supplier Information"} class={"ui header"} />
         </Form.Group>
         <Form.Group width={6}>
           <IInput
-            name={"txtSupplierName"}
+            name="txtSupplierName"
+            value={this.state.formData.txtSupplierName.value}
+            onChange={this.changeHandler}
             id={"txtSupplierName"}
             label={"Name"}
             width={4}
           />
           <IInput
-            name={"txtSupplierCompany"}
+            name="txtSupplierCompany"
+            value={this.state.formData.txtSupplierCompany.value}
+            onChange={this.changeHandler}
             id={"txtSupplierCompany"}
             label={"Company"}
             width={4}
@@ -161,25 +312,33 @@ class FrmAddNewEquipments extends Component {
         </Form.Group>
         <Form.Group>
           <IInput
-            name={"txtSupplierCity"}
+            name="txtSupplierCity"
+            value={this.state.formData.txtSupplierCity.value}
+            onChange={this.changeHandler}
             id={"txtSupplierCity"}
             label={"City"}
             width={4}
           />
           <IInput
-            name={"txtSupplierProvince"}
+            name="txtSupplierProvince"
+            value={this.state.formData.txtSupplierProvince.value}
+            onChange={this.changeHandler}
             id={"txtSupplierProvince"}
             label={"Prov/State"}
             width={2}
           />
           <IInput
-            name={"txtSupplierAddress"}
+            name="txtSupplierAddress"
+            value={this.state.formData.txtSupplierAddress.value}
+            onChange={this.changeHandler}
             id={"txtSupplierAddress"}
             label={"Address"}
             width={6}
           />
           <IInput
-            name={"txtSupplierCountry"}
+            name="txtSupplierCountry"
+            value={this.state.formData.txtSupplierCountry.value}
+            onChange={this.changeHandler}
             id={"txtSupplierCountry"}
             label={"Country"}
             width={2}
@@ -187,19 +346,25 @@ class FrmAddNewEquipments extends Component {
         </Form.Group>
         <Form.Group>
           <IInput
-            name={"txtSupplierEmail"}
+            name="txtSupplierEmail"
+            value={this.state.formData.txtSupplierEmail.value}
+            onChange={this.changeHandler}
             id={"txtSupplierEmail"}
             label={"Email"}
             width={4}
           />
           <IInput
-            name={"txtSupplierTelephone1"}
+            name="txtSupplierTelephone1"
+            value={this.state.formData.txtSupplierTelephone1.value}
+            onChange={this.changeHandler}
             id={"txtSupplierTelephone1"}
             label={"Telephone"}
             width={4}
           />
           <IInput
-            name={"txtSupplierFax"}
+            name="txtSupplierFax"
+            value={this.state.formData.txtSupplierFax.value}
+            onChange={this.changeHandler}
             id={"txtSupplierFax"}
             label={"Fax"}
             width={4}
@@ -208,37 +373,45 @@ class FrmAddNewEquipments extends Component {
 
         <Form.Group>
           <IInput
-            name={"txtSupplierTollFree"}
+            name="txtSupplierTollFree"
+            value={this.state.formData.txtSupplierTollFree.value}
+            onChange={this.changeHandler}
             id={"txtSupplierTollFree"}
             label={"Toll Free"}
             width={4}
           />
           <IInput
-            name={"txtSupplierTelephone"}
+            name="txtSupplierTelephone"
+            value={this.state.formData.txtSupplierTelephone.value}
+            onChange={this.changeHandler}
             id={"txtSupplierTelephone"}
             label={"Telephone"}
             width={4}
           />
           <IInput
-            name={"txtSupplierExtension"}
+            name="txtSupplierExtension"
+            value={this.state.formData.txtSupplierExtension.value}
+            onChange={this.changeHandler}
             id={"txtSupplierExtension"}
             label={"Extension"}
             width={2}
           />
-                  <Form.Group>
-            
-        </Form.Group>
+          <Form.Group>
+
+          </Form.Group>
 
         </Form.Group>
         <IButton
-                  text="Save"
-                  id={"btnSave"}
-                  name={"btnSave"}
-                  align={"right"}
-                  width={4}
-                />
+          text="Save"
+          id={"btnSave"}
+          name={"btnSave"}
+          align={"right"}
+          width={4}
+        />
+      
       </Form>
-    );
-  }
-}
-export default FrmAddNewEquipments;
+         </div>
+         );
+        }
+      }
+      export default FrmAddNewEquipments;

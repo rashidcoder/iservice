@@ -7,11 +7,28 @@ import ISelect from "../basic/iselect";
 import IInput from "../basic/input";
 import ITable from "../table/itable";
 import IButton from "../basic/ibutton";
+import ControllerAddNewWorkOrder from "../../controllers/controllerAddNewWorkOrder";
 class FrmNewWorkOrderTruck extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isSubmit: false,
       formData: {                                                                                     //Truck Information
+        selectMainTypes: {
+          value: '',
+          options: [
+            { key: "Truck", value: "1", text: "Truck" },
+            { key: "Trailer", value: "2", text: "Trailer" },
+          ]
+        },
+        selectTruckTypes:{
+          value:'',
+          options: [
+            { key: "Truck", value: "1", text: "Truck" },
+            { key: "Trailer", value: "2", text: "Trailer" },
+          ]
+        },
+
         txtTruckBrand:{
           value:''
         },
@@ -51,6 +68,13 @@ class FrmNewWorkOrderTruck extends Component {
       txtLastHours: {
         value:''
     },
+    selectPriority:{
+      value:'',
+      options: [
+        { key: "First", value: "1", text: "First" },
+        { key: "Last", value: "2", text: "Last" },
+      ]
+    },
       txtPlaneServiceData: {
         value:''
     },
@@ -63,6 +87,13 @@ class FrmNewWorkOrderTruck extends Component {
         },
           txtCompany: {
             value:''
+        },
+        selectCustomerType: {
+          value: '',
+          options: [
+            { key: "local", value: "1", text: "Local" },
+            { key: "external", value: "2", text: "External" },
+          ]
         },
           txtCity: {
             value:''
@@ -135,23 +166,65 @@ class FrmNewWorkOrderTruck extends Component {
     });
     console.log(JSON.stringify(this.state.formData))
   }
-  handleSubmit = (e) => {
+  selectchangeHandler = (e, { name, value }) => { 
+    const updatedControls = {
+      ...this.state.formData
+    };
+    const updatedFormElement = {
+      ...updatedControls[name]
+    };
+    updatedFormElement.value = value;
+    updatedControls[name] = updatedFormElement;   
+    this.setState({
+      formData: updatedControls, 
+    });
 
+    console.log(' value of select ' + name + " is " + value) 
+
+    console.log(' value of object is  ' + JSON.stringify(this.state.formData)) 
+  }
+
+
+  handleSubmit = (e) => {
+    this.setState({
+      isSubmit: true,
+    })
     console.log(JSON.stringify(this.state.formData))
   }
   render() {
-
+    let control;
+    if (this.state.isSubmit) {
+      control =
+        <ControllerAddNewWorkOrder formData={this.state.formData}>
+          { getdata =>
+            <div>
+              <p>returned value: {getdata.obj.msg}</p>
+            </div>
+          }
+        </ControllerAddNewWorkOrder>
+    } else {
+      control = <div></div>
+    }
     return (
+      <div>
+
+      {control}
       <Form onSubmit={this.handleSubmit}>
         <ILabel text={"Create New Work Order"} class={"ui header"} />
         <Form.Group widths={2}>
-          <ISelect name={"selectTruckTypes"} id={"selectTruckTypes"} text={"Select Truck Types"} placeholder={"Truck"} />
+          <ISelect name="selectMainTypes"
+              value={this.state.formData.selectMainTypes.value}
+              onChange={this.selectchangeHandler} id={"selectMainTypes"} text={"Select Types"} placeholder={"Truck"} 
+              options={this.state.formData.selectMainTypes.options}
+              />
         </Form.Group>
         <Form.Group>
-          <ILabel text={"Truck Information"} class={"ui header"} />
+          <ILabel text={"Truck Information"} class={"ui header"} />    
         </Form.Group>
         <Form.Group>
-          <ISelect name={"selectTruckTypes"} id={"selectTruckTypes"} text={"Select Truck Types"} placeholder={"Truck Types"} />
+          <ISelect name="selectTruckTypes"
+              value={this.state.formData.selectTruckTypes.value}
+              onChange={this.selectchangeHandler} options={this.state.formData.selectTruckTypes.options} id={"selectTruckTypes"} text={"Select Truck Types"} placeholder={"Truck Types"} />
         </Form.Group>
 
         <Form.Group widths={4}>
@@ -196,7 +269,9 @@ class FrmNewWorkOrderTruck extends Component {
           <ILabel text={"Work Information"} class={"ui header"} />
         </Form.Group>
         <Form.Group widths={4}>
-          <ISelect name={"selectPriority"} id={"selectPriority"} text={"Priority"} placeholder={"Priority"} />
+          <ISelect name="selectPriority"
+              value={this.state.formData.selectPriority.value}
+              onChange={this.selectchangeHandler} options={this.state.formData.selectPriority.options} id={"selectPriority"} text={"Priority"} placeholder={"Priority"} />
           <IInput name="txtPlaneServiceData" value={this.state.formData.txtPlaneServiceData.value} onChange={this.changeHandler} id={"txtPlaneServiceData"} label={"Plan service Data"} />
           <IInput name="txtBudget" value={this.state.formData.txtBudget.value} onChange={this.changeHandler} id={"txtBudget"} label={"Budget"} />
         </Form.Group>
@@ -224,7 +299,10 @@ class FrmNewWorkOrderTruck extends Component {
             text={"Customer Type"}
             placeholder={"Customer Type"}
             width={4}
-            name={"selectCustomerType"} id={"selectCustomerType"}
+            name="selectCustomerType"
+              value={this.state.formData.selectCustomerType.value}
+              onChange={this.selectchangeHandler} id={"selectCustomerType"}
+              options={this.state.formData.selectCustomerType.options}
           />
 
         </Form.Group>
@@ -294,6 +372,7 @@ class FrmNewWorkOrderTruck extends Component {
         </Grid>
 
       </Form>
+      </div>
     );
   }
 }

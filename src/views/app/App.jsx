@@ -5,7 +5,8 @@ import Workshops from "../../controllers/Test"
 import HomeController from "../../controllers/danishControler";
 import IButton from "../basic/ibutton";
 import RefsForm from "../forms/dummyform";
-// import Database from '../../data/db'
+import DummyFileUpload from "../forms/dummyFileUpload";
+import  Database from "../../data/Database"
 // var db = new Database()
 class App extends Component {
  
@@ -16,7 +17,11 @@ class App extends Component {
        data: 0
     }
   }
-  
+  async componentDidMount() {
+     const db = new Database()
+     
+ 
+  }
   render() {
     console.log("the set value is "+this.state.data)
     return (
@@ -61,6 +66,8 @@ class App extends Component {
        </HomeController>
          */}
        <RefsForm/>
+       danish ali khan 
+       <DummyFileUpload/>
       </div>
     );
   }

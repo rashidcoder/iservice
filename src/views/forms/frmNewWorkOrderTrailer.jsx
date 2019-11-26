@@ -2,16 +2,17 @@ import { Grid } from "semantic-ui-react";
 import React, { Component } from "react";
 import ILabel from "../basic/ilabel";
 import ITextArea from "../basic/itextarea";
-
 import { Form } from "semantic-ui-react";
 import ISelect from "../basic/iselect";
 import IInput from "../basic/input";
 import ITable from "../table/itable";
 import IButton from "../basic/ibutton";
+import ControllerAddNewWorkOrder from "../../controllers/controllerAddNewWorkOrder";
 class FrmNewWorkOrderTrailer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isSubmit: false,
       table: {
         title: ["Task", "Employee", "Category", "Part", "Part Price", " Price"],
         data: [
@@ -44,6 +45,21 @@ class FrmNewWorkOrderTrailer extends Component {
       },
       
 formData: {
+  selectMainTypes: {
+    value: '',
+    options: [
+      { key: "Truck", value: "1", text: "Truck" },
+      { key: "Trailer", value: "2", text: "Trailer" },
+    ]
+  },
+  selectTrailerType:{
+    value:'',
+    options: [
+      { key: "Truck", value: "1", text: "Truck" },
+      { key: "Trailer", value: "2", text: "Trailer" },
+    ]
+  },
+
   txtTrailerBrand:{
     value:''
   },
@@ -77,6 +93,13 @@ formData: {
     txtLastHours: {
         value:''
       },
+      selectPriority:{
+        value:'',
+        options: [
+          { key: "First", value: "1", text: "First" },
+          { key: "Last", value: "2", text: "Last" },
+        ]
+      },
     txtPlaneServiceData: {
         value:''
       },
@@ -89,6 +112,13 @@ formData: {
   },
   txtCompany: {
     value: ''
+  },
+  selectCustomerType: {
+    value: '',
+    options: [
+      { key: "local", value: "1", text: "Local" },
+      { key: "external", value: "2", text: "External" },
+    ]
   },
   txtCity: {
     value: ''
@@ -147,19 +177,58 @@ formData: {
     });
     console.log(JSON.stringify(this.state.formData))
   }
-  handleSubmit = (e) => {
+  selectchangeHandler = (e, { name, value }) => { 
+    const updatedControls = {
+      ...this.state.formData
+    };
+    const updatedFormElement = {
+      ...updatedControls[name]
+    };
+    updatedFormElement.value = value;
+    updatedControls[name] = updatedFormElement;   
+    this.setState({
+      formData: updatedControls, 
+    });
 
+    console.log(' value of select ' + name + " is " + value) 
+
+    console.log(' value of object is  ' + JSON.stringify(this.state.formData)) 
+  }
+  handleSubmit = (e) => {
+    this.setState({
+      isSubmit: true,
+    })
     console.log(JSON.stringify(this.state.formData))
   }
   render() {
+
+    let control;
+    if (this.state.isSubmit) {
+      control =
+        <ControllerAddNewWorkOrder formData={this.state.formData}>
+          { getdata =>
+            <div>
+              <p>returned value: {getdata.obj.msg}</p>
+            </div>
+          }
+        </ControllerAddNewWorkOrder>
+    } else {
+      control = <div></div>
+    }
+
     return (
+      <div>
+      {control}
       <Form onSubmit={this.handleSubmit}>
         <ILabel text={"Create New Work Order"} class={"ui header"} />
         <Form.Group widths={2}>
           <ISelect
-            name={"selectTrailerType"}
-            id={"selectTrailerType"}
-            text={"Select Trailer Types"}
+            name="selectMainTypes"
+            value={this.state.formData.selectMainTypes.value}
+            onChange={this.selectchangeHandler}
+            options={this.state.formData.selectMainTypes.options}
+            id={"selectMainTypes"}
+            text={"Select Type"}
             placeholder={"Trailer"}
           />
         </Form.Group>
@@ -171,7 +240,9 @@ formData: {
             text={"Select Truck Type"}
             placeholder={"Trailer Types"}
             width={4}
-            name={"selectTrailerType"}
+            name="selectTrailerType"
+              value={this.state.formData.selectTrailerType.value}
+              onChange={this.selectchangeHandler} options={this.state.formData.selectTrailerType.options}
             id={"selectTrailerType"}
           />
         </Form.Group>
@@ -246,8 +317,10 @@ formData: {
         </Form.Group>
         <Form.Group widths={4}>
           <ISelect
-            name={"txtPriority"}
-            id={"txtPriority"}
+          name="selectPriority"
+          value={this.state.formData.selectPriority.value}
+          onChange={this.selectchangeHandler} options={this.state.formData.selectPriority.options}
+            id={"selectPriority"}
             text={"Priority"}
             placeholder={"Priority"}
           />
@@ -292,7 +365,11 @@ formData: {
             text={"Customer Type"}
             placeholder={"Customer Type"}
             width={4}
-            name={"selectCustomerType"} id={"selectCustomerType"}
+            n  name="selectCustomerType"
+            value={this.state.formData.selectCustomerType.value}
+            onChange={this.selectchangeHandler} 
+            options={this.state.formData.selectCustomerType.options}
+            id={"selectCustomerType"}
           />
 
         </Form.Group>
@@ -340,6 +417,7 @@ formData: {
           </Grid.Row>
         </Grid>
       </Form>
+      </div>
     );
   }
 }

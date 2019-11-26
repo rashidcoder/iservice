@@ -4,7 +4,14 @@ import { Tab } from "semantic-ui-react";
 
 export class ITabs extends Component {
 
-  handleTabChange = (e, {activeIndex}) =>  {  e.target.activeIndex = activeIndex } 
+  handleTabChange = (e, {activeIndex}) =>  { 
+     e.target.activeIndex = activeIndex
+    this.setState({
+      activeIndex: e.target.activeIndex
+    })
+    // (this.props.tabPanes.length -1 )
+    console.log(' value of active index is ' + e.target.activeIndex)
+    } 
   constructor(props) {
     super(props);
 
@@ -77,7 +84,7 @@ export class ITabs extends Component {
      
     return (
       <div>
-        <Tab  panes={this.props.tabPanes} activeIndex={(this.props.tabPanes.length -1 )} onTabChange={this.handleTabChange} />
+        <Tab  panes={this.props.tabPanes} activeIndex={ this.state.activeIndex> -1  ? this.state.activeIndex : this.props.activeIndex} onTabChange={this.handleTabChange} />
       </div>
     );
   }

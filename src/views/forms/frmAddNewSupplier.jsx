@@ -7,11 +7,13 @@ import IInput from "../basic/input";
 import ITable from "../table/itable";
 import IAdd from "../basic/iadd";
 import IButton from "../basic/ibutton";
+import ControllerAddNewSupplier from "../../controllers/controllerAddNewSupplier";
 class FrmAddNewSupplier extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      isSubmit: false,
       table: {
         title: ["Name", "Telephone", "Email", "Fax", "Telephone(alt)"],
         data: [
@@ -143,12 +145,30 @@ class FrmAddNewSupplier extends Component {
     console.log(JSON.stringify(this.state.formData)) 
 }
 handleSubmit = (e) => {
-
+  this.setState({
+    isSubmit: true,
+  })
   console.log(JSON.stringify(this.state.formData)) 
 }
 
   render() {
+    let control;
+    if (this.state.isSubmit) {
+      control =
+        <ControllerAddNewSupplier formData={this.state.formData}>
+          { getdata =>
+            <div>
+              <p>returned value: {getdata.obj.msg}</p>
+            </div>
+          }
+        </ControllerAddNewSupplier>
+    } else {
+      control = <div></div>
+    }
     return (
+      <div>
+      {control}
+
       <Form onSubmit={this.handleSubmit}>
         <ILabel text={"Add New Supplier"} class={"ui header"} />
         <Form.Group>
@@ -471,6 +491,7 @@ handleSubmit = (e) => {
           </Grid.Row>
         </Grid>
       </Form>
+      </div>
     );
   }
 }
