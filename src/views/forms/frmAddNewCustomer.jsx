@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import { Grid } from "semantic-ui-react";
 import ILabel from "../basic/ilabel";
@@ -10,7 +9,6 @@ import ITable from "../table/itable";
 import IAdd from "../basic/iadd";
 import IButton from "../basic/ibutton";
 import ControllerAddNewCustomer from "../../controllers/controllerAddNewCustomer";
-
 class FrmAddNewCustomer extends Component {
   constructor(props) {
     super(props);
@@ -160,8 +158,6 @@ class FrmAddNewCustomer extends Component {
 
     console.log(' value of object is  ' + JSON.stringify(this.state.formData))
   }
-
-
   handleSubmit = (e) => {
     this.setState({
       isSubmit: true,

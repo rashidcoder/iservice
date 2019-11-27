@@ -402,7 +402,7 @@ class FrmBooking extends Component {
             class={"checkReminderforGacage"}
           />
         </Form.Group>
-        <Form.Group>
+        <Form.Group>  
           <ICheckBox
             name={"checkSmsEmail"}
             id={"checkSmsEmail"}

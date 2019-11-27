@@ -1,11 +1,32 @@
 import * as RxDB from 'rxdb'
 import idb from 'pouchdb-adapter-idb'
-// rxdb-utils imports  
+// rxdb-utils imports
+import models from 'rxdb-utils/models'
+import collections from 'rxdb-utils/collections'
+import defaultValues from 'rxdb-utils/default-values'
+import timestamps from 'rxdb-utils/timestamps'
+import views from 'rxdb-utils/views'
+import select from 'rxdb-utils/select'
+import observables from 'rxdb-utils/observables'
+import hooks from 'rxdb-utils/hooks'
+import replication from 'rxdb-utils/replication'
+import { loglevel, loglevels } from 'rxdb-utils/logger'
 import React, { Component } from "react"
 import * as Schema from "./Schemas"
+
 // Registering the usual pouchdb plugins
 RxDB.plugin(idb)
- 
+
+// Registering rxdb-utils plugins one by one
+RxDB.plugin(models)
+RxDB.plugin(collections)
+RxDB.plugin(defaultValues)
+RxDB.plugin(timestamps)
+RxDB.plugin(views)
+RxDB.plugin(select)
+RxDB.plugin(observables)
+RxDB.plugin(hooks)
+RxDB.plugin(replication)
 
 class Database extends Component {
     constructor(props) {
@@ -13,7 +34,7 @@ class Database extends Component {
         this.models = {}
         this.state = {
             dbPromise: {},
-            database:  '',
+            database: {},
             schemas: Schema,
         }
         this.config = { 
@@ -23,7 +44,10 @@ class Database extends Component {
             multiInstance: false,
             ignoreDuplicate: true,
 
-        } 
+        }
+        window['loglevels'] = loglevels
+        loglevel(loglevels.WARN)
+
     }
 
     createDb() {
@@ -38,15 +62,13 @@ class Database extends Component {
         })
 
         promise.then((tempDb) => {
-            // tempDb.models([ {name:'vehicles',schema:Schema.vehicles}, {name:'workOrders',schema:Schema.workOrders}])
+            tempDb.models([ {name:'vehicles',schema:Schema.vehicles}, {name:'workOrders',schema:Schema.workOrders}])
             window['db'] = tempDb
             window['models'] = tempDb.models
             window['vehicles'] = tempDb.vehicles
-             .setState({
+            this.setState({
                 database: tempDb,
             })
-
-            window['statedb'] = this.state.database
         })
         // this.models = this.state.database.models([Schema.vehicles, Schema.workOrders])
         this.setState({

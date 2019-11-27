@@ -19,6 +19,8 @@ class App extends Component {
   }
   async componentDidMount() {
      const db = new Database()
+     db.createDb()
+    //  db.insert()
      
  
   }

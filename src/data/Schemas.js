@@ -1,6 +1,6 @@
 export const vehicles = {
   "title": "vehicles",
-  "version": "0",
+  "version": 0,
   "description": "describes vehicle details",
   "type": "object",
   "properties": {
@@ -115,7 +115,7 @@ export const clients = {
 
 export const workOrders = {
   "title": "work orders",
-  "version": "0",
+  "version": 0,
   "description": "describes word orders details",
   "type": "object",
   "properties": {
