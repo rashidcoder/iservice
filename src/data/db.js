@@ -1,72 +1,48 @@
-import * as RxDB from 'rxdb'; 
-import { async } from 'q';
+// var sqlite3 = require('sqlite3').verbose();
+import sqlite3 from 'sqlite3'
 
-import * as Schema from './Schema';
+var db;
 
-// RxDB.QueryChangeDetector.enableDebugging();
-
-RxDB.plugin(require('pouchdb-adapter-idb'));
-RxDB.plugin(require('pouchdb-adapter-http')); //enable syncing over http
-
-const collections = [
-    {
-        name: 'heroes',
-        schema:  {},
-        methods: {
-            hpPercent() {
-                return this.hp / this.maxHP * 100;
-            }
-        },
-        sync: true
-    }
-];
-
-const syncURL = 'http://' + window.location.hostname + ':10102/';
-console.log('host: ' + syncURL);
-
-let dbPromise = null;
-
-const _create = async () => {
-    console.log('DatabaseService: creating database..');
-    const db = await RxDB.create({name: 'heroesreactdb', adapter: 'idb', password: 'myLongAndStupidPassword'});
-    console.log('DatabaseService: created database');
-    window['db'] = db; // write to window for debugging
-
-    // show leadership in title
-    db.waitForLeadership().then(() => {
-        console.log('isLeader now');
-        document.title = '♛ ' + document.title;
-    });
-
-    // create collections
-    console.log('DatabaseService: create collections');
-    await Promise.all(collections.map(colData => db.collection(colData)));
-
-    // hooks
-    console.log('DatabaseService: add hooks');
-    db.collections.heroes.preInsert(docObj => {
-        const { color } = docObj;
-        return db.collections.heroes.findOne({color}).exec().then(has => {
-            if (has != null) {
-                alert('another hero already has the color ' + color);
-                throw new Error('color already there');
-            }
-            return db;
-        });
-    });
-
-    // sync
-    console.log('DatabaseService: sync');
-    collections.filter(col => col.sync).map(col => col.name).map(colName => db[colName].sync({
-        remote: syncURL + colName + '/'
-    }));
-
-    return db;
-};
-
-const _createDB = async () => {}
-export const get = () => {
-    if (!dbPromise)
-        dbPromise = _create();
-    return dbPromise;
+function createDb() {
+    console.log("createDb chain");
+    db = new sqlite3.Database('chain.sqlite3', createTable);
 }
+
+
+function createTable() {
+    console.log("createTable lorem");
+    db.run("CREATE TABLE IF NOT EXISTS lorem (info TEXT)", insertRows);
+}
+
+function insertRows() {
+    console.log("insertRows Ipsum i");
+    var stmt = db.prepare("INSERT INTO lorem VALUES (?)");
+
+    for (var i = 0; i < 10; i++) {
+        stmt.run("Ipsum " + i);
+    }
+
+    stmt.finalize(readAllRows);
+}
+
+function readAllRows() {
+    console.log("readAllRows lorem");
+    db.all("SELECT rowid AS id, info FROM lorem", function(err, rows) {
+        rows.forEach(function(row) {
+            console.log(row.id + ": " + row.info);
+        });
+        closeDb();
+    });
+}
+
+function closeDb() {
+    console.log("closeDb");
+    db.close();
+}
+
+export const runChainExample = () => {
+    // createDb();
+    window['sqlite'] = sqlite3
+}
+
+// runChainExample();

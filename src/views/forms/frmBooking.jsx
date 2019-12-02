@@ -108,12 +108,39 @@ class FrmBooking extends Component {
           txtExtension: {
             value: ''
           },
+          checkReminderforGacage: {
+            value: false
+          },
+          checkSmsEmail: {
+            value: false
+          },
+          checkSms: {
+            value: false
+          },
+          checkEmail: {
+            value: false
+          },
           txtComment:{
             value:'',
           }
       }
 
     };
+  }
+  
+  checkedhandleChange = event => {    
+    const name = event.target.name;
+    const value = event.target.checked;
+    this.setState({
+      formData: {
+        ...this.state.formData,
+        [name]: {
+          ...this.state.formData[name],
+          value
+        }
+      }
+    });
+    console.log(JSON.stringify(this.state.formData))
   }
   changeHandler = event => {
 
@@ -396,28 +423,37 @@ class FrmBooking extends Component {
         </Form.Group>
         <Form.Group>
           <ICheckBox
-            name={"checkReminderforGacage"}
+            name="checkReminderforGacage"
+            checked={this.state.formData.checkReminderforGacage.value}
+            onChange={this.checkedhandleChange}
             id={"checkReminderforGacage"}
             label={"Reminder for Gacage"}
             class={"checkReminderforGacage"}
           />
         </Form.Group>
-        <Form.Group>  
+        <Form.Group>
           <ICheckBox
-            name={"checkSmsEmail"}
+            name="checkSmsEmail"
+            value={this.state.formData.checkSmsEmail.value}
+            onChange={this.checkedhandleChange}
             id={"checkSmsEmail"}
             label={"Send Reminder SMS/Email to Customer"}
             class={"checkSmsEmail"}
           />
+         
           <ICheckBox
-            name={"checkSms"}
+            name="checkSms"
+            value={this.state.formData.checkSms.value}
+            onChange={this.checkedhandleChange}
             id={"checkSms"}
             class={"checkSms"}
             label={"SMS"}
           />
           
           <ICheckBox
-            name={"checkEmail"}
+            name="checkEmail"
+            value={this.state.formData.checkEmail.value}
+            onChange={this.checkedhandleChange}
             id={"checkEmail"}
             class={"checkEmail"}
             label={"Email"}

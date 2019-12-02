@@ -26,103 +26,103 @@ class FrmAddNewSupplier extends Component {
       },
       formData:{
                                                                 // New Supplier
-          txtSupplierName:{
+          suppliername:{
             value:''
           },
-          txtSupplierCompany:{
+          suppliercompany:{
             value:''
           },
-          txtSupplierCity:{
+          suppliercity:{
             value:''
           },
-          txtSupplierProvince:{
+          supplierprovince:{
             value:''
           },
-          txtSupplierAddress:{
+          supplieraddress:{
             value:''
           },
-          txtSupplierZip:{
+          supplierzip:{
             value:''
           },
-          txtSupplierCountry:{
+          suppliercountry:{
             value:''
           },
-          txtSupplierEmail:{
+          supplieremail:{
             value:''
           },
-          txtSupplierTelephone1:{
+          suppliertelephone1:{
             value:''
           },
-          txtSupplierFax:{
+          supplierfax:{
             value:''
           },
-          txtSupplierTollFree:{
+          suppliertollfree:{
             value:''
           },
-          txtSupplierTelephone2:{
+          suppliertelephone2:{
             value:''
           },
-          txtSupplierExtension:{
+          supplierextension:{
             value:''
           },
                                                                 //Billing Company 
-          txtBillingCity:{
+          billingcity:{
             value:''
           },
-          txtBillingProvince:{
+          billingprovince:{
             value:''
           },
-          txtBillingAddress:{
+          billingaddress:{
             value:''
           },
-          txtBillingZip:{
+          billingzip:{
             value:''
           },
-          txtBillingCountry:{
+          billingcountry:{
             value:''
           },
-          txtBillingEmail:{
+          billingemail:{
             value:''
           },
-          txtBillingTelephone1:{
+          billingtelephone1:{
             value:''
           },
-          txtBillingFax:{
+          billingfax:{
             value:''
           },
-          txtBillingTollFree:{
+          billingtollfree:{
             value:''
           },
-          txtBillingTelephone2:{
+          billingtelephone2:{
             value:''
           },
-          txtBillingExtension:{
+          billingtextension:{
             value:''
           },
                                                                           //Additional Contact
 
-          txtAdditionalName:{
+          additionalname:{
             value:''
           },
-          txtAdditionalEmail:{
+          additionalemail:{
             value:''
           },
-          txtAAdditionalTelephone1:{
+          additionaltelephone1:{
             value:''
           },
-          txtAdditionalFax:{
+          additionalfax:{
             value:''
           },
-          txtAdditionalTollFree:{
+          additionaltollfree:{
             value:''
           },
-          txtSupplierName:{
+          additionaltelephone2:{
+            value:''
+          }, 
+          additionalextension:{
             value:''
           },
-          txtAdditionalExtension:{
-            value:''
-          },
-          txtComment:{
+          comment:{
             value:''
           }
       }
@@ -177,18 +177,18 @@ handleSubmit = (e) => {
         <Form.Group width={6}>
         
           <IInput
-             name="txtSupplierName"
-             value={this.state.formData.txtSupplierName.value}
+             name="suppliername"
+             value={this.state.formData.suppliername.value}
              onChange={this.changeHandler}
-            id={"txtSupplierName"}
+            id={"suppliername"}
             label={"Name"}
             width={4}
           />
           <IInput
-             name="txtSupplierCompany"
-             value={this.state.formData.txtSupplierCompany.value}
+             name="suppliercompany"
+             value={this.state.formData.suppliercompany.value}
              onChange={this.changeHandler}
-            id={"txtSupplierCompany"}
+            id={"suppliercompany"}
             label={"Company"}
             width={4}
           />
@@ -196,69 +196,69 @@ handleSubmit = (e) => {
         <Form.Group>
           <IInput
           
-             name="txtSupplierCity"
-             value={this.state.formData.txtSupplierCity.value}
+             name="suppliercity"
+             value={this.state.formData.suppliercity.value}
              onChange={this.changeHandler}
-            id={"txtSupplierCity"}
+            id={"suppliercity"}
             label={"City"}
             width={4}
           />
           <IInput
-             name="txtSupplierProvince"
-             value={this.state.formData.txtSupplierProvince.value}
+             name="supplierprovince"
+             value={this.state.formData.supplierprovince.value}
              onChange={this.changeHandler}
-            id={"txtSupplierProvince"}
+            id={"supplierprovince"}
             label={"Prov/State"}
             width={2}
           />
           <IInput
-             name="txtSupplierAddress"
-             value={this.state.formData.txtSupplierAddress.value}
+             name="supplieraddress"
+             value={this.state.formData.supplieraddress.value}
              onChange={this.changeHandler}
-            id={"txtSupplierAddress"}
+            id={"supplieraddress"}
             label={"Address"}
             width={6}
           />
           <IInput
-             name="txtSupplierZip"
-             value={this.state.formData.txtSupplierZip.value}
+             name="supplierzip"
+             value={this.state.formData.supplierzip.value}
              onChange={this.changeHandler}
-            id={"txtSupplierZip"}
+            id={"supplierzip"}
             label={"Zip/Postal"}
             width={2}
           />
           <IInput
-             name="txtSupplierCountry"
-             value={this.state.formData.txtSupplierCountry.value}
+             name="suppliercountry"
+             value={this.state.formData.suppliercountry.value}
              onChange={this.changeHandler}
-            id={"txtSupplierCountry"}
+            id={"suppliercountry"}
             label={"Country"}
             width={2}
           />
         </Form.Group>
         <Form.Group>
           <IInput
-             name="txtSupplierEmail"
-             value={this.state.formData.txtSupplierEmail.value}
+             name="supplieremail"
+             value={this.state.formData.supplieremail.value}
              onChange={this.changeHandler}
-            id={"txtSupplierEmail"}
+            id={"supplieremail"}
             label={"Email"}
             width={4}
           />
           
           <IInput
-             name="txtSupplierTelephone1"
-             value={this.state.formData.txtSupplierTelephone1.value}
+             name="suppliertelephone1"
+             value={this.state.formData.suppliertelephone1.value}
              onChange={this.changeHandler}
-            id={"txtSupplierTelephone1"}
+            id={"suppliertelephone1"}
             label={"Telephone"}
             width={4}
           />
           <IInput
-             name="txtSupplierFax"
-             value={this.state.formData.txtSupplierFax.value}
+             name="supplierfax"
+             value={this.state.formData.supplierfax.value}
              onChange={this.changeHandler}
-            id={"txtSupplierFax"}
+            id={"supplierfax"}
             label={"Fax"}
             width={4}
           />
@@ -267,26 +267,26 @@ handleSubmit = (e) => {
         <Form.Group>
           <IInput
           
-             name="txtSupplierTollFree"
-             value={this.state.formData.txtSupplierTollFree.value}
+             name="suppliertollfree"
+             value={this.state.formData.suppliertollfree.value}
              onChange={this.changeHandler}
-            id={"txtSupplierTollFree"}
+            id={"suppliertollfree"}
             label={"Toll Free"}
             width={4}
           />
           <IInput
-             name="txtSupplierTelephone2"
-            value={this.state.formData.txtSupplierTelephone2.value}
+             name="suppliertelephone2"
+            value={this.state.formData.suppliertelephone2.value}
              onChange={this.changeHandler}
-            id={"txtSupplierTelephone2"}
+            id={"suppliertelephone2"}
             label={"Telephone"}
             width={4}
           />
           <IInput
-             name="txtSupplierExtension"
-             value={this.state.formData.txtSupplierExtension.value}
+             name="supplierextension"
+             value={this.state.formData.supplierextension.value}
              onChange={this.changeHandler}
-            id={"txtSupplierExtension"}
+            id={"supplierextension"}
             label={"Extension"}
             width={2}
           />
@@ -296,68 +296,68 @@ handleSubmit = (e) => {
         </Form.Group>
         <Form.Group>
           <IInput
-             name="txtBillingCity"
-             value={this.state.formData.txtBillingCity.value}
+             name="billingcity"
+             value={this.state.formData.billingcity.value}
              onChange={this.changeHandler}
-            id={"txtBillingCity"}
+            id={"billingcity"}
             label={"City"}
             width={4}
           />
           <IInput
-             name="txtBillingProvince"
-             value={this.state.formData.txtBillingProvince.value}
+             name="billingprovince"
+             value={this.state.formData.billingprovince.value}
              onChange={this.changeHandler}
-            id={"txtBillingProvince"}
+            id={"billingprovince"}
             label={"Prov/State"}
             width={2}
           />
           <IInput
-             name="txtBillingAddress"
-             value={this.state.formData.txtBillingAddress.value}
+             name="billingaddress"
+             value={this.state.formData.billingaddress.value}
              onChange={this.changeHandler}
-            id={"txtBillingAddress"}
+            id={"billingaddress"}
             label={"Address"}
             width={6}
           />
           <IInput
-             name="txtBillingZip"
-             value={this.state.formData.txtBillingZip.value}
+             name="billingzip"
+             value={this.state.formData.billingzip.value}
              onChange={this.changeHandler}
-            id={"txtBillingZip"}
+            id={"billingzip"}
             label={"Zip/Postal code"}
             width={2}
           />
           <IInput
-             name="txtBillingCountry"
-             value={this.state.formData.txtBillingCountry.value}
+             name="billingcountry"
+             value={this.state.formData.billingcountry.value}
              onChange={this.changeHandler}
-            id={"txtBillingCountry"}
+            id={"billingcountry"}
             label={"Country"}
             width={2}
           />
         </Form.Group>
         <Form.Group>
           <IInput
-             name="txtBillingEmail"
-             value={this.state.formData.txtBillingEmail.value}
+             name="billingemail"
+             value={this.state.formData.billingemail.value}
              onChange={this.changeHandler}
-            id={"txtBillingEmail"}
+            id={"billingemail"}
             label={"Email"}
             width={4}
           />
           <IInput
-             name="txtBillingTelephone1"
-             value={this.state.formData.txtBillingTelephone1.value}
+             name="billingtelephone1"
+             value={this.state.formData.billingtelephone1.value}
              onChange={this.changeHandler}
-            id={"txtBillingTelephone1"}
+            id={"billingtelephone1"}
             label={"Telephone"}
             width={4}
           />
           <IInput
-             name="txtBillingFax"
-             value={this.state.formData.txtBillingFax.value}
+             name="billingfax"
+             value={this.state.formData.billingfax.value}
              onChange={this.changeHandler}
-            id={"txtBillingFax"}
+            id={"billingfax"}
             label={"Fax"}
             width={4}
           />   
@@ -365,26 +365,26 @@ handleSubmit = (e) => {
 
         <Form.Group>
           <IInput
-             name="txtBillingTollFree"
-             value={this.state.formData.txtBillingTollFree.value}
+             name="billingtollfree"
+             value={this.state.formData.billingtollfree.value}
              onChange={this.changeHandler}
-            id={"txtBillingTollFree"}
+            id={"billingtollfree"}
             label={"Toll Free"}
             width={4}
           />
           <IInput
-             name="txtBillingTelephone2"
-             value={this.state.formData.txtBillingTelephone2.value}
+             name="billingtelephone2"
+             value={this.state.formData.billingtelephone2.value}
              onChange={this.changeHandler}
-            id={"txtBillingTelephone2"}
+            id={"billingtelephone2"}
             label={"Telephone"}
             width={4}
           />
           <IInput
-             name="txtBillingExtension"
-             value={this.state.formData.txtBillingExtension.value}
+             name="billingtextension"
+             value={this.state.formData.billingtextension.value}
              onChange={this.changeHandler}
-            id={"txtBillingExtension"}
+            id={"billingtextension"}
             label={"Extension"}
             width={2}
           />
@@ -395,63 +395,63 @@ handleSubmit = (e) => {
         </Form.Group>
         <Form.Group>
           <IInput
-             name="txtAdditionalName"
-             value={this.state.formData.txtAdditionalName.value}
+             name="additionalname"
+             value={this.state.formData.additionalname.value}
              onChange={this.changeHandler}
-            id={"txtAdditionalName"}
+            id={"additionalname"}
             label={"Name"}
             width={4}
           />
         </Form.Group>
         <Form.Group>
           <IInput
-             name="txtAdditionalEmail"
-             value={this.state.formData.txtAdditionalEmail.value}
+             name="additionalemail"
+             value={this.state.formData.additionalemail.value}
              onChange={this.changeHandler}
-            id={"txtAdditionalEmail"}
+            id={"additionalemail"}
             label={"Email"}
             width={4}
           />
           <IInput
-             name="txtAAdditionalTelephone1"
-             value={this.state.formData.txtAAdditionalTelephone1.value}
+             name="additionaltelephone1"
+             value={this.state.formData.additionaltelephone1.value}
              onChange={this.changeHandler}
-            id={"txtAAdditionalTelephone1"}
+            id={"additionaltelephone1"}
             label={"Telephone"}
             width={4}
           />
           
           <IInput
-             name="txtAdditionalFax"
-             value={this.state.formData.txtAdditionalFax.value}
+             name="additionalfax"
+             value={this.state.formData.additionalfax.value}
              onChange={this.changeHandler}
-            id={"txtAdditionalFax"}
+            id={"additionalfax"}
             label={"Fax"}
             width={4}
           />
         </Form.Group>
         <Form.Group>
           <IInput
-             name="txtAdditionalTollFree"
-             value={this.state.formData.txtAdditionalTollFree.value}
+             name="additionaltollfree"
+             value={this.state.formData.additionaltollfree.value}
              onChange={this.changeHandler}
-            id={"txtAdditionalTollFree"}
+            id={"additionaltollfree"}
             label={"Toll Free"}
             width={4}
           />
           <IInput
-             name="txtAdditionalTelephone2"
-             value={this.state.formData.txtSupplierName.value}
+             name="additionaltelephone2"
+             value={this.state.formData.additionaltelephone2.value}
              onChange={this.changeHandler}
-            id={"txtAdditionalTelephone2"}
+            id={"additionaltelephone2"}
             label={"Telephone"}
             width={4}
           />
           <IInput
-             name="txtAdditionalExtension"
-             value={this.state.formData.txtAdditionalExtension.value}
+             name="additionalextension"
+             value={this.state.formData.additionalextension.value}
              onChange={this.changeHandler}
-            id={"txtAdditionalExtension"}
+            id={"additionalextension"}
             label={"Extension"}
             width={2}
           />
@@ -471,9 +471,9 @@ handleSubmit = (e) => {
           <ILabel text={"Comments"} class={"ui header"} />
         </Form.Group>
         <Form.Group>
-          <ITextArea name="txtComment"
-             value={this.state.formData.txtComment.value}
-             onChange={this.changeHandler} id={"txtComment"} label={"Comments"} />
+          <ITextArea name="comment"
+             value={this.state.formData.comment.value}
+             onChange={this.changeHandler} id={"comment"} label={"Comments"} />
         </Form.Group>
         <Grid>
           <Grid.Row>
@@ -497,3 +497,25 @@ handleSubmit = (e) => {
 }
 
 export default FrmAddNewSupplier;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

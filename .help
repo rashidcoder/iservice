@@ -1,6 +1,7 @@
 
 netstat -a -n -o
 kill pid 
+Set-ExecutionPolicy RemoteSigned
 
 git reset --hard c14809fa
 npm install --save pouchdb
