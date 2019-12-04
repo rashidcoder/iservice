@@ -30,9 +30,11 @@
     "dependencies": {
         "@syncfusion/ej2-react-schedule": "^17.3.19",
         "@types/react": "^16.9.11",
+        "aws-sdk": "^2.581.0",
         "electron-is-dev": "^1.1.0",
         "json-stringify-safe": "^5.0.1",
         "moment": "^2.24.0",
+        "pg-hstore": "^2.3.3",
         "portscanner": "^2.2.0",
         "react": "^16.10.2",
         "react-dom": "^16.10.2",

@@ -102,11 +102,17 @@ class FrmBooking extends Component {
           txtTollFree: {
             value: ''
           },
-          TxtTelephone2: {
+          txtTelephone2: {
             value: ''
           },
           txtExtension: {
             value: ''
+          },
+          txtDate:{
+            value:''
+          },
+          txtTime:{
+            value:''
           },
           checkReminderforGacage: {
             value: false
@@ -127,6 +133,7 @@ class FrmBooking extends Component {
 
     };
   }
+  
   
   checkedhandleChange = event => {    
     const name = event.target.name;
@@ -183,8 +190,9 @@ class FrmBooking extends Component {
     })
     console.log(JSON.stringify(this.state.formData))
   }
-
+  
    render() {
+     
     let control;
     if (this.state.isSubmit) {
       control =
@@ -387,10 +395,10 @@ class FrmBooking extends Component {
             width={4}
           />
           <IInput
-            name="TxtTelephone2"
-            value={this.state.formData.TxtTelephone2.value}
+            name="txtTelephone2"
+            value={this.state.formData.txtTelephone2.value}
             onChange={this.changeHandler}
-            id={"TxtTelephone2"}
+            id={"txtTelephone2"}
             label={"Telephone"}
             width={4}
           />
@@ -405,20 +413,26 @@ class FrmBooking extends Component {
         </Form.Group>
 
         <Form.Group>
-          <ILabel text={"Date"} class={"ui header"} />
+          <ILabel text={"Date And Time "} class={"ui header"} />
         </Form.Group>
         <Form.Group widths={3}>
-          <IButton
-            text={"Pick Date"}
-            name={"btnPickDate"}
-            id={"btnPickDate"}
-            align={"left"}
+          <IInput 
+          name={"txtDate"}
+          type={"date"}
+          value={this.state.formData.txtDate.value}
+          onChange={this.changeHandler}
+          id={"txtDate"}
+          label={"Date"}
+          width={4}
           />
-          <IButton
-            text={"Pick Time"}
-            name={"btnPickTime"}
-            id={"btnPickTime"}
-            align={"left"}
+          <IInput 
+          name={"txtTime"}
+          type={"Time"}
+          value={this.state.formData.txtTime.value}
+          onChange={this.changeHandler}
+          id={"txtTime"}
+          label={"Time"}
+          width={4}
           />
         </Form.Group>
         <Form.Group>
@@ -481,6 +495,7 @@ class FrmBooking extends Component {
             </Grid.Column>
           </Grid.Row>
         </Grid>
+
       </Form>
       </div>
     );

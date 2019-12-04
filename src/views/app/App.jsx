@@ -7,7 +7,7 @@ import IButton from "../basic/ibutton";
 import RefsForm from "../forms/dummyform";
 import DummyFileUpload from "../forms/dummyFileUpload";
 
-import * as Database from '../../data/dbsqlite'
+//import * as Database from '../../data/dbsqlite'
 class App extends Component {
 
   constructor(props) {
@@ -19,6 +19,7 @@ class App extends Component {
       color: 'red'
     }
 
+    console.log(" 1 this is constructor")
   }
 
   addHero = async () => {
@@ -35,9 +36,21 @@ class App extends Component {
   }
   async componentDidMount() {
     // runChainExample()
-    Database.start()
+  //   Database.sequelize()
+  }
+  componentDidMount(){
+    console.log(" 3 this is componentDIdMount")
+  }
+  componentWillUnmount(){
+    console.log("4 this is componentWillUnmont")
+  }
+  
+  componentDidCatch(){
+    console.log(" 5 this is componentDidCatch")
   }
   render() {
+    
+    console.log("2 this is render")
     console.log("the set value is " + this.state.data)
     // this.addHero()
     return (
