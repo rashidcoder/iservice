@@ -83,7 +83,7 @@ class FrmAddNewEquipments extends Component {
       }
     };
   }
-
+  
   changeHandler = event => {
     const name = event.target.name;
     const value = event.target.value;
@@ -123,12 +123,13 @@ class FrmAddNewEquipments extends Component {
     })
     console.log(JSON.stringify( "UI Data"+this.state.formData))
   }
- 
+
   render() {
+    const { isSubmit, formData} = this.state
     let control;
-    if (this.state.isSubmit) {
+    if (isSubmit) {
       control =
-        <ControllerAddNewEqipments formData={this.state.formData}>
+        <ControllerAddNewEqipments formData={formData}>
           { getdata =>
             <div>
               <p>returned value: {getdata.obj.msg}</p>
@@ -151,7 +152,7 @@ class FrmAddNewEquipments extends Component {
         <Form.Group widths={4}>
           <IInput
             name="txtUnit"
-            value={this.state.formData.txtUnit.value}
+            value={formData.txtUnit.value}
             onChange={this.changeHandler}
             id={"txtUnit"}
             label={"Unit"}
@@ -159,7 +160,7 @@ class FrmAddNewEquipments extends Component {
           />
           <IInput
             name="txtQuantity"
-            value={this.state.formData.txtQuantity.value}
+            value={formData.txtQuantity.value}
             onChange={this.changeHandler}
             id={"txtQuantity"}
             label={"Quantity"}
@@ -167,7 +168,7 @@ class FrmAddNewEquipments extends Component {
           />
           <IInput
             name="txtPrice"
-            value={this.state.formData.txtPrice.value}
+            value={formData.txtPrice.value}
             onChange={this.changeHandler}
             id={"txtPrice"}
             label={"Price"}
@@ -177,7 +178,7 @@ class FrmAddNewEquipments extends Component {
         <Form.Group widths={4}>
           <IInput
             name="txtWarranty"
-            value={this.state.formData.txtWarranty.value}
+            value={formData.txtWarranty.value}
             onChange={this.changeHandler}
             id={"txtWarranty"}
             label={"Warranty"}
@@ -191,7 +192,7 @@ class FrmAddNewEquipments extends Component {
           />
           <IInput
             name="txtTechnicalInspection"
-            value={this.state.formData.txtTechnicalInspection.value}
+            value={formData.txtTechnicalInspection.value}
             onChange={this.changeHandler}
             id={"txtTechnicalInspection"}
             label={"Technical Inspection"}
@@ -207,17 +208,17 @@ class FrmAddNewEquipments extends Component {
 
         <Form.Group>
           <IInput name="txtModel"
-            value={this.state.formData.txtModel.value}
+            value={formData.txtModel.value}
             onChange={this.changeHandler} id={"txtModel"} label={"Model"} width={4} />
           <IInput name="txtMake"
-            value={this.state.formData.txtMake.value}
+            value={formData.txtMake.value}
             onChange={this.changeHandler} id={"txtMake"} label={"Make"} width={4} />
           <IInput name="txtStyle"
-            value={this.state.formData.txtStyle.value}
+            value={formData.txtStyle.value}
             onChange={this.changeHandler} id={"txtStyle"} label={"Style"} width={4} />
           <IInput
             name="txtQuality"
-            value={this.state.formData.txtQuality.value}
+            value={formData.txtQuality.value}
             onChange={this.changeHandler}
             id={"txtQuality"}
             label={"Quality"}
@@ -280,7 +281,7 @@ class FrmAddNewEquipments extends Component {
           <ITextArea
             rows={5}
             cols={3}
-            name="txtDescription" value={this.state.formData.txtDescription.value}
+            name="txtDescription" value={formData.txtDescription.value}
             onChange={this.changeHandler}
             id={"txtDescription"}
             label={"Description"}
@@ -295,7 +296,7 @@ class FrmAddNewEquipments extends Component {
         <Form.Group width={6}>
           <IInput
             name="txtSupplierName"
-            value={this.state.formData.txtSupplierName.value}
+            value={formData.txtSupplierName.value}
             onChange={this.changeHandler}
             id={"txtSupplierName"}
             label={"Name"}
@@ -303,7 +304,7 @@ class FrmAddNewEquipments extends Component {
           />
           <IInput
             name="txtSupplierCompany"
-            value={this.state.formData.txtSupplierCompany.value}
+            value={formData.txtSupplierCompany.value}
             onChange={this.changeHandler}
             id={"txtSupplierCompany"}
             label={"Company"}
@@ -313,7 +314,7 @@ class FrmAddNewEquipments extends Component {
         <Form.Group>
           <IInput
             name="txtSupplierCity"
-            value={this.state.formData.txtSupplierCity.value}
+            value={formData.txtSupplierCity.value}
             onChange={this.changeHandler}
             id={"txtSupplierCity"}
             label={"City"}
@@ -321,7 +322,7 @@ class FrmAddNewEquipments extends Component {
           />
           <IInput
             name="txtSupplierProvince"
-            value={this.state.formData.txtSupplierProvince.value}
+            value={formData.txtSupplierProvince.value}
             onChange={this.changeHandler}
             id={"txtSupplierProvince"}
             label={"Prov/State"}
@@ -329,7 +330,7 @@ class FrmAddNewEquipments extends Component {
           />
           <IInput
             name="txtSupplierAddress"
-            value={this.state.formData.txtSupplierAddress.value}
+            value={formData.txtSupplierAddress.value}
             onChange={this.changeHandler}
             id={"txtSupplierAddress"}
             label={"Address"}
@@ -337,7 +338,7 @@ class FrmAddNewEquipments extends Component {
           />
           <IInput
             name="txtSupplierCountry"
-            value={this.state.formData.txtSupplierCountry.value}
+            value={formData.txtSupplierCountry.value}
             onChange={this.changeHandler}
             id={"txtSupplierCountry"}
             label={"Country"}
@@ -347,7 +348,7 @@ class FrmAddNewEquipments extends Component {
         <Form.Group>
           <IInput
             name="txtSupplierEmail"
-            value={this.state.formData.txtSupplierEmail.value}
+            value={formData.txtSupplierEmail.value}
             onChange={this.changeHandler}
             id={"txtSupplierEmail"}
             label={"Email"}
@@ -355,7 +356,7 @@ class FrmAddNewEquipments extends Component {
           />
           <IInput
             name="txtSupplierTelephone1"
-            value={this.state.formData.txtSupplierTelephone1.value}
+            value={formData.txtSupplierTelephone1.value}
             onChange={this.changeHandler}
             id={"txtSupplierTelephone1"}
             label={"Telephone"}
@@ -363,7 +364,7 @@ class FrmAddNewEquipments extends Component {
           />
           <IInput
             name="txtSupplierFax"
-            value={this.state.formData.txtSupplierFax.value}
+            value={formData.txtSupplierFax.value}
             onChange={this.changeHandler}
             id={"txtSupplierFax"}
             label={"Fax"}
@@ -374,7 +375,7 @@ class FrmAddNewEquipments extends Component {
         <Form.Group>
           <IInput
             name="txtSupplierTollFree"
-            value={this.state.formData.txtSupplierTollFree.value}
+            value={formData.txtSupplierTollFree.value}
             onChange={this.changeHandler}
             id={"txtSupplierTollFree"}
             label={"Toll Free"}
@@ -382,7 +383,7 @@ class FrmAddNewEquipments extends Component {
           />
           <IInput
             name="txtSupplierTelephone"
-            value={this.state.formData.txtSupplierTelephone.value}
+            value={formData.txtSupplierTelephone.value}
             onChange={this.changeHandler}
             id={"txtSupplierTelephone"}
             label={"Telephone"}
@@ -390,7 +391,7 @@ class FrmAddNewEquipments extends Component {
           />
           <IInput
             name="txtSupplierExtension"
-            value={this.state.formData.txtSupplierExtension.value}
+            value={formData.txtSupplierExtension.value}
             onChange={this.changeHandler}
             id={"txtSupplierExtension"}
             label={"Extension"}

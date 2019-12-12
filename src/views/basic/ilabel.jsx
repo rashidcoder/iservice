@@ -4,8 +4,10 @@ export class ILabel extends Component {
   render() {
     return (
       <div>
-        <label class={this.props.class} for={this.props.for}>
-        <i class={this.props.icon}></i> 
+        <label 
+        {...this.props}
+        >
+        <i className={this.props.icon}></i> 
           {this.props.text}
         </label>
       </div>
@@ -14,3 +16,6 @@ export class ILabel extends Component {
 }
 
 export default ILabel;
+
+// class={this.props.class} 
+// for={this.props.for}

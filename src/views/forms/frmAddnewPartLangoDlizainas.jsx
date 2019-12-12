@@ -146,11 +146,13 @@ class FrmAddnewPartLangoDlizainas extends Component {
     console.log(JSON.stringify(this.state.formData))
   }
 
+  
   render() {
+    const {isSubmit,formData}=this.state
     let control;
-    if (this.state.isSubmit) {
+    if (isSubmit) {
       control =
-        <ControllerAddNewParts formData={this.state.formData}>
+        <ControllerAddNewParts formData={formData}>
           { getdata =>
             <div>
               <p>returned value: {getdata.obj.msg}</p>
@@ -173,7 +175,7 @@ class FrmAddnewPartLangoDlizainas extends Component {
         <Form.Group widths={4}>
           <IInput
             name="txtBillingCity"
-            value={this.state.formData.txtBillingCity.value}
+            value={formData.txtBillingCity.value}
             onChange={this.changeHandler}
             id={"txtBillingCity"}
             label={"City"}
@@ -181,7 +183,7 @@ class FrmAddnewPartLangoDlizainas extends Component {
           />
           <IInput
             name="txtBillingProvince"
-            value={this.state.formData.txtBillingProvince.value}
+            value={formData.txtBillingProvince.value}
             onChange={this.changeHandler}
             id={"txtBillingProvince"}
             label={"Prov/State"}
@@ -191,18 +193,18 @@ class FrmAddnewPartLangoDlizainas extends Component {
         <Form.Group widths={4}>
           <ISelect
             name="selectCategory"
-            value={this.state.formData.selectCategory.value}
+            value={formData.selectCategory.value}
             onChange={this.selectchangeHandler}
-            options={this.state.formData.selectCategory.options}
+            options={formData.selectCategory.options}
             id={"selectCategory"}
             text={"Select Category"}
             placeholder={"Category"}
           />
           <ISelect
             name="selectTypes"
-            value={this.state.formData.selectTypes.value}
+            value={formData.selectTypes.value}
             onChange={this.selectchangeHandler}
-            options={this.state.formData.selectTypes.options}
+            options={formData.selectTypes.options}
             id={"selectTypes"}
             text={"Select Types"}
             placeholder={"Types"}
@@ -210,15 +212,15 @@ class FrmAddnewPartLangoDlizainas extends Component {
         </Form.Group>
         <Form.Group>
           <IInput name="txtModel"
-            value={this.state.formData.txtModel.value}
+            value={formData.txtModel.value}
             onChange={this.changeHandler} id={"txtModel"} label={"Model"} width={4} />
           <IInput name="txtMake"
-            value={this.state.formData.txtMake.value}
+            value={formData.txtMake.value}
             onChange={this.changeHandler} id={"txtMake"} label={"Make"} width={4} />
           <IInput name={"txtStyle"} id={"txtStyle"} label={"Style"} width={4} />
           <IInput
             name="txtQuality"
-            value={this.state.formData.txtQuality.value}
+            value={formData.txtQuality.value}
             onChange={this.changeHandler}
             id={"txtQuality"}
             label={"Quality"}
@@ -231,7 +233,7 @@ class FrmAddnewPartLangoDlizainas extends Component {
         <Form.Group>
           <ITextArea
             rows={10}
-            name="txtDescription" value={this.state.formData.txtDescription.value}
+            name="txtDescription" value={formData.txtDescription.value}
             onChange={this.changeHandler}
             id={"txtDescription"}
             label={"Description"}
@@ -289,7 +291,7 @@ class FrmAddnewPartLangoDlizainas extends Component {
         <Form.Group width={4}>
           <IInput
             name="txtGarageLocation"
-            value={this.state.formData.txtGarageLocation.value}
+            value={formData.txtGarageLocation.value}
             onChange={this.changeHandler}
             id={"txtGarageLocation"}
             label={"Garage Location"}
@@ -302,11 +304,11 @@ class FrmAddnewPartLangoDlizainas extends Component {
         </Form.Group>
         <Form.Group width={4}>
           <IInput  name="txtTime"
-            value={this.state.formData.txtTime.value}
+            value={formData.txtTime.value}
             onChange={this.changeHandler} id={"txtTime"} label={"Time"} width={4} />
           <IInput
             name="txtInterval"
-            value={this.state.formData.txtInterval.value}
+            value={formData.txtInterval.value}
             onChange={this.changeHandler}
             id={"txtInterval"}
             label={"Interval"}
@@ -319,7 +321,7 @@ class FrmAddnewPartLangoDlizainas extends Component {
         <Form.Group width={4}>
           <IInput
             name="txtPartPrice"
-            value={this.state.formData.txtPartPrice.value}
+            value={formData.txtPartPrice.value}
             onChange={this.changeHandler}
             id={"txtPartPrice"}
             label={"Part Price"}
@@ -332,7 +334,7 @@ class FrmAddnewPartLangoDlizainas extends Component {
           />
           <IInput
             name="txtPrice"
-            value={this.state.formData.txtPrice.value}
+            value={formData.txtPrice.value}
             onChange={this.changeHandler}
             id={"txtPrice"}
             label={"Price"}
@@ -346,7 +348,7 @@ class FrmAddnewPartLangoDlizainas extends Component {
         <Form.Group width={6}>
           <IInput
             name="txtSupplierName"
-            value={this.state.formData.txtSupplierName.value}
+            value={formData.txtSupplierName.value}
             onChange={this.changeHandler}
             id={"txtSupplierName"}
             label={"Name"}
@@ -354,7 +356,7 @@ class FrmAddnewPartLangoDlizainas extends Component {
           />
           <IInput
             name="txtSupplierCompany"
-            value={this.state.formData.txtSupplierCompany.value}
+            value={formData.txtSupplierCompany.value}
             onChange={this.changeHandler}
             id={"txtSupplierCompany"}
             label={"Company"}
@@ -364,7 +366,7 @@ class FrmAddnewPartLangoDlizainas extends Component {
         <Form.Group>
           <IInput
             name="txtSupplierCity"
-            value={this.state.formData.txtSupplierCity.value}
+            value={formData.txtSupplierCity.value}
             onChange={this.changeHandler}
             id={"txtSupplierCity"}
             label={"City"}
@@ -372,7 +374,7 @@ class FrmAddnewPartLangoDlizainas extends Component {
           />
           <IInput
             name="txtSupplierProvince"
-            value={this.state.formData.txtSupplierProvince.value}
+            value={formData.txtSupplierProvince.value}
             onChange={this.changeHandler}
             id={"txtSupplierProvince"}
             label={"Prov/State"}
@@ -380,7 +382,7 @@ class FrmAddnewPartLangoDlizainas extends Component {
           />
           <IInput
             name="txtSupplierAddress"
-            value={this.state.formData.txtSupplierAddress.value}
+            value={formData.txtSupplierAddress.value}
             onChange={this.changeHandler}
             id={"txtSupplierAddress"}
             label={"Address"}
@@ -388,7 +390,7 @@ class FrmAddnewPartLangoDlizainas extends Component {
           />
           <IInput
             name="txtSupplierCountry"
-            value={this.state.formData.txtSupplierCountry.value}
+            value={formData.txtSupplierCountry.value}
             onChange={this.changeHandler}
             id={"txtSupplierCountry"}
             label={"Country"}
@@ -398,7 +400,7 @@ class FrmAddnewPartLangoDlizainas extends Component {
         <Form.Group>
           <IInput
             name="txtSupplierEmail"
-            value={this.state.formData.txtSupplierEmail.value}
+            value={formData.txtSupplierEmail.value}
             onChange={this.changeHandler}
             id={"txtSupplierEmail"}
             label={"Email"}
@@ -406,7 +408,7 @@ class FrmAddnewPartLangoDlizainas extends Component {
           />
           <IInput
             name="txtSupplierTelephone1"
-            value={this.state.formData.txtSupplierTelephone1.value}
+            value={formData.txtSupplierTelephone1.value}
             onChange={this.changeHandler}
             id={"txtSupplierTelephone1"}
             label={"Telephone"}
@@ -414,7 +416,7 @@ class FrmAddnewPartLangoDlizainas extends Component {
           />
           <IInput
             name="txtSupplierFax"
-            value={this.state.formData.txtSupplierFax.value}
+            value={formData.txtSupplierFax.value}
             onChange={this.changeHandler}
             id={"txtSupplierFax"}
             label={"Fax"}
@@ -425,7 +427,7 @@ class FrmAddnewPartLangoDlizainas extends Component {
         <Form.Group>
           <IInput
             name="txtSupplierTollFree"
-            value={this.state.formData.txtSupplierTollFree.value}
+            value={formData.txtSupplierTollFree.value}
             onChange={this.changeHandler}
             id={"txtSupplierTollFree"}
             label={"Toll Free"}
@@ -433,7 +435,7 @@ class FrmAddnewPartLangoDlizainas extends Component {
           />
           <IInput
             name="txtSupplierTelephone2"
-            value={this.state.formData.txtSupplierTelephone2.value}
+            value={formData.txtSupplierTelephone2.value}
             onChange={this.changeHandler}
             id={"txtSupplierTelephone2"}
             label={"Telephone"}
@@ -441,7 +443,7 @@ class FrmAddnewPartLangoDlizainas extends Component {
           />
           <IInput
             name="txtSupplierExtension"
-            value={this.state.formData.txtSupplierExtension.value}
+            value={formData.txtSupplierExtension.value}
             onChange={this.changeHandler}
             id={"txtSupplierExtension"}
             label={"Extension"}

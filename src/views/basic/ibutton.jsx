@@ -7,14 +7,7 @@ export class IButton extends Component {
       
         <Button
           type='submit'
-          id={this.props.id}
-          class={this.props.class}
-          floated={this.props.align}
-          name={this.props.name}
-          value={this.props.value}
-          width={this.props.width}
-          onClick={this.props.onClick}
-          
+         {...this.props} 
         >
 <i class={this.props.icon}></i>
           {this.props.text}
@@ -26,3 +19,11 @@ export class IButton extends Component {
 }
 
 export default IButton;
+
+// id={this.props.id}
+// class={this.props.class}
+// floated={this.props.align}
+// name={this.props.name}
+// value={this.props.value}
+// width={this.props.width}
+// onClick={this.props.onClick}

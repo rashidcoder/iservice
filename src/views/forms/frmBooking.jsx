@@ -134,7 +134,6 @@ class FrmBooking extends Component {
     };
   }
   
-  
   checkedhandleChange = event => {    
     const name = event.target.name;
     const value = event.target.checked;
@@ -191,12 +190,13 @@ class FrmBooking extends Component {
     console.log(JSON.stringify(this.state.formData))
   }
   
+  
    render() {
-     
+  const {isSubmit,formData}   =this.state
     let control;
-    if (this.state.isSubmit) {
+    if (isSubmit) {
       control =
-        <ControllerfrmBooking formData={this.state.formData}>
+        <ControllerfrmBooking formData={formData}>
           { getdata =>
             <div>
               <p>returned value: {getdata.obj.msg}</p>
@@ -215,9 +215,9 @@ class FrmBooking extends Component {
         <Form.Group >
           <ISelect
             name="selectTypes"
-            value={this.state.formData.selectTypes.value}
+            value={formData.selectTypes.value}
             onChange={this.selectchangeHandler}
-            options={this.state.formData.selectTypes.options}
+            options={formData.selectTypes.options}
             id={"selectTypes"}
             text={"Select Type"}
             placeholder={"Truck"}
@@ -225,9 +225,9 @@ class FrmBooking extends Component {
           
           <ISelect
             name="selectPriority"
-            value={this.state.formData.selectPriority.value}
+            value={formData.selectPriority.value}
             onChange={this.selectchangeHandler}
-            options={this.state.formData.selectPriority.options}
+            options={formData.selectPriority.options}
             id={"selectPriority"}
             text={"Priority"}
             placeholder={"Priority"}
@@ -239,9 +239,9 @@ class FrmBooking extends Component {
         <Form.Group>
           <ISelect
             name="selectTruckTypes"
-            value={this.state.formData.selectTruckTypes.value}
+            value={formData.selectTruckTypes.value}
             onChange={this.selectchangeHandler}
-            options={this.state.formData.selectTruckTypes.options}
+            options={formData.selectTruckTypes.options}
             id={"selectTruckTypes"}
             text={"Select Truck Types"}
             placeholder={"Truck Types"}
@@ -250,29 +250,29 @@ class FrmBooking extends Component {
         <Form.Group widths={4}>
           <IInput
             name="txtTruckBrand"
-            value={this.state.formData.txtTruckBrand.value}
+            value={formData.txtTruckBrand.value}
             onChange={this.changeHandler}
             id={"txtTruckBrand"}
             label={"Truck Brand"}
           />
           <IInput name="txtmodel"
-            value={this.state.formData.txtmodel.value}
+            value={formData.txtmodel.value}
             onChange={this.changeHandler} id={"txtmodel"} label={"Model"} />
           <IInput name="txtUniteId"
-            value={this.state.formData.txtUniteId.value}
+            value={formData.txtUniteId.value}
             onChange={this.changeHandler} id={"txtUniteId"} label={"Unite ID"} />
         </Form.Group>
         <Form.Group widths={4}>
           <IInput name="txtLicense"
-            value={this.state.formData.txtLicense.value}
+            value={formData.txtLicense.value}
             onChange={this.changeHandler} id={"txtLicense"} label={"License"} />
           <IInput name="txtVIN"
-            value={this.state.formData.txtVIN.value}
+            value={formData.txtVIN.value}
             onChange={this.changeHandler} id={"txtVIN"} label={"V.I.N"} />
           <IInput
         
             name="txtEngineNumber"
-            value={this.state.formData.txtEngineNumber.value}
+            value={formData.txtEngineNumber.value}
             onChange={this.changeHandler}
             id={"txtEngineNumber"}
             label={"Engine Number"}
@@ -281,7 +281,7 @@ class FrmBooking extends Component {
         <Form.Group widths={4}>
           <IInput
             name="txtManufactureYear"
-            value={this.state.formData.txtManufactureYear.value}
+            value={formData.txtManufactureYear.value}
             onChange={this.changeHandler}
             id={"txtManufactureYear"}
             label={"Manufacture Year"}
@@ -289,14 +289,14 @@ class FrmBooking extends Component {
         
           <IInput
            name="txtEngineCapacity"
-           value={this.state.formData.txtEngineCapacity.value}
+           value={formData.txtEngineCapacity.value}
            onChange={this.changeHandler}
             id={"txtEngineCapacity"}
             label={"Engine Capacity"}
           />
           <IInput
            name="txtTruckColor"
-           value={this.state.formData.txtTruckColor.value}
+           value={formData.txtTruckColor.value}
            onChange={this.changeHandler}
             id={"txtTruckColor"}
             label={"Truck Color"}
@@ -310,11 +310,11 @@ class FrmBooking extends Component {
         </Form.Group>
         <Form.Group width={6}>
           <IInput name="txtName"
-           value={this.state.formData.txtName.value}
+           value={formData.txtName.value}
            onChange={this.changeHandler} id={"txtName"} label={"Name"} width={4} />
           <IInput
             name="txtCompany"
-            value={this.state.formData.txtCompany.value}
+            value={formData.txtCompany.value}
             onChange={this.changeHandler}
             id={"txtCompany"}
             label={"Company"}
@@ -325,19 +325,19 @@ class FrmBooking extends Component {
             placeholder={"Customer Type"}
             width={4}
             name="selectCustomerType"
-            value={this.state.formData.selectCustomerType.value}
+            value={formData.selectCustomerType.value}
             onChange={this.selectchangeHandler}
-            options={this.state.formData.selectCustomerType.options}
+            options={formData.selectCustomerType.options}
             id={"selectCustomerType"}
           />
         </Form.Group>
         <Form.Group>
           <IInput name="txtCity"
-            value={this.state.formData.txtCity.value}
+            value={formData.txtCity.value}
             onChange={this.changeHandler} id={"txtCity"} label={"City"} width={4} />
           <IInput
             name="txtProvince"
-            value={this.state.formData.txtProvince.value}
+            value={formData.txtProvince.value}
             onChange={this.changeHandler}
             id={"txtProvince"}
             label={"Prov/State"}
@@ -345,7 +345,7 @@ class FrmBooking extends Component {
           />
           <IInput
             name="txtAddress"
-            value={this.state.formData.txtAddress.value}
+            value={formData.txtAddress.value}
             onChange={this.changeHandler}
             id={"txtAddress"}
             label={"Address"}
@@ -354,7 +354,7 @@ class FrmBooking extends Component {
           
           <IInput
             name="txtZip"
-            value={this.state.formData.txtZip.value}
+            value={formData.txtZip.value}
             onChange={this.changeHandler}
             id={"txtZip"}
             label={"Zip/Postal code"}
@@ -362,7 +362,7 @@ class FrmBooking extends Component {
           />
           <IInput
             name="txtCountry"
-            value={this.state.formData.txtCountry.value}
+            value={formData.txtCountry.value}
             onChange={this.changeHandler}
             id={"txtCountry"}
             label={"Country"}
@@ -371,24 +371,24 @@ class FrmBooking extends Component {
         </Form.Group>
         <Form.Group>
           <IInput  name="txtEmail"
-            value={this.state.formData.txtEmail.value}
+            value={formData.txtEmail.value}
             onChange={this.changeHandler} id={"txtEmail"} label={"Email"} width={4} />
           <IInput
             name="txtTelephone1"
-            value={this.state.formData.txtTelephone1.value}
+            value={formData.txtTelephone1.value}
             onChange={this.changeHandler}
             id={"txtTelephone1"}
             label={"Telephone"}
             width={4}
           />
           <IInput  name="txtFax"
-            value={this.state.formData.txtFax.value}
+            value={formData.txtFax.value}
             onChange={this.changeHandler} id={"txtFax"} label={"Fax"} width={4} />
         </Form.Group>
         <Form.Group>
           <IInput
             name="txtTollFree"
-            value={this.state.formData.txtTollFree.value}
+            value={formData.txtTollFree.value}
             onChange={this.changeHandler}
             id={"txtTollFree"}
             label={"Toll Free"}
@@ -396,7 +396,7 @@ class FrmBooking extends Component {
           />
           <IInput
             name="txtTelephone2"
-            value={this.state.formData.txtTelephone2.value}
+            value={formData.txtTelephone2.value}
             onChange={this.changeHandler}
             id={"txtTelephone2"}
             label={"Telephone"}
@@ -404,7 +404,7 @@ class FrmBooking extends Component {
           />
           <IInput
             name="txtExtension"
-            value={this.state.formData.txtExtension.value}
+            value={formData.txtExtension.value}
             onChange={this.changeHandler}
             id={"txtExtension"}
             label={"Extension"}
@@ -419,7 +419,7 @@ class FrmBooking extends Component {
           <IInput 
           name={"txtDate"}
           type={"date"}
-          value={this.state.formData.txtDate.value}
+          value={formData.txtDate.value}
           onChange={this.changeHandler}
           id={"txtDate"}
           label={"Date"}
@@ -428,7 +428,7 @@ class FrmBooking extends Component {
           <IInput 
           name={"txtTime"}
           type={"Time"}
-          value={this.state.formData.txtTime.value}
+          value={formData.txtTime.value}
           onChange={this.changeHandler}
           id={"txtTime"}
           label={"Time"}
@@ -438,7 +438,7 @@ class FrmBooking extends Component {
         <Form.Group>
           <ICheckBox
             name="checkReminderforGacage"
-            checked={this.state.formData.checkReminderforGacage.value}
+            checked={formData.checkReminderforGacage.value}
             onChange={this.checkedhandleChange}
             id={"checkReminderforGacage"}
             label={"Reminder for Gacage"}
@@ -448,7 +448,7 @@ class FrmBooking extends Component {
         <Form.Group>
           <ICheckBox
             name="checkSmsEmail"
-            value={this.state.formData.checkSmsEmail.value}
+            value={formData.checkSmsEmail.value}
             onChange={this.checkedhandleChange}
             id={"checkSmsEmail"}
             label={"Send Reminder SMS/Email to Customer"}
@@ -457,7 +457,7 @@ class FrmBooking extends Component {
          
           <ICheckBox
             name="checkSms"
-            value={this.state.formData.checkSms.value}
+            value={formData.checkSms.value}
             onChange={this.checkedhandleChange}
             id={"checkSms"}
             class={"checkSms"}
@@ -466,7 +466,7 @@ class FrmBooking extends Component {
           
           <ICheckBox
             name="checkEmail"
-            value={this.state.formData.checkEmail.value}
+            value={formData.checkEmail.value}
             onChange={this.checkedhandleChange}
             id={"checkEmail"}
             class={"checkEmail"}
@@ -478,7 +478,7 @@ class FrmBooking extends Component {
           <ILabel text={"Comments"} class={"ui header"} />
         </Form.Group>
         <Form.Group>
-          <ITextArea name="txtComment" value={this.state.formData.txtComment.value} onChange={this.changeHandler} id={"txtComment"} label={"Comments"} />
+          <ITextArea name="txtComment" value={formData.txtComment.value} onChange={this.changeHandler} id={"txtComment"} label={"Comments"} />
         </Form.Group>
         <Grid>
           <Grid.Row>

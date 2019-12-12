@@ -8,11 +8,7 @@ import IButton from "../basic/ibutton";
 import IAdd from "../basic/iadd";
 
 class FrmPreviewNewEquipments extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {};
-  }
   render() {
     return (
       <Form>

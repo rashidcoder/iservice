@@ -27,92 +27,92 @@ class FrmAddNewCustomer extends Component {
       },
       formData: {
         check: 0,
-        customername: {
+        txtCustomerName: {
           value: ''
         },
-        customercompany: {
+        txtCustomerCompany: {
           value: ''
         },
-        customertype: {
+        selectCustomerType: {
           value: '',
           options: [
-           
+
             { key: "local", value: "1", text: "Local" },
             { key: "external", value: "2", text: "External" },
           ]
         },
-        customercity: {
+        txtCustomerCity: {
           value: ''
         },
-        customerprovince: {
+        txtCustomerProvince: {
           value: ''
         },
-        customeraddress: {
+        txtCustomerAddress: {
           value: ''
         },
-        customerzip: {
+        txtCustomerzip: {
           value: ''
         },
-        customercountry: {
+        txtCustomerCountry: {
           value: ''
         },
-        customeremail: {
+        txtCustomerEmail: {
           value: ''
         },
-        customertelephone1: {
+        txtCustomerTelephone1: {
           value: ''
         },
-        txtfax: {
+        txtFax: {
           value: ''
         },
-        customertollfree: {
+        txtCustomerTollFree: {
           value: ''
         },
-        customertelephone2: {
+        txtCustomerTelephone2: {
           value: ''
         },
-        customerextension: {
+        txtCustomerExtension: {
           value: ''
         },
 
         //Billing
 
-        creditlimit: {
+        txtCreditLimit: {
           value: ''
         },
-        laborprice: {
+        txtLaborPrice: {
           value: ''
         },
-        partsdiscount: {
+        txtPartsDiscount: {
           value: ''
         },
-        labordiscount: {
+        txtLaborDiscount: {
           value: ''
         },
         //Add More Contact
-        additionalname: {
+        txtAdditionalName: {
           value: ''
         },
-        additionalemail: {
+        txtAdditionalEmail: {
           value: ''
         },
-        additionaltelephone1: {
+        txtAdditionalTelephone1: {
           value: ''
         },
-        additionalfax: {
+        txtAdditionalFax: {
           value: ''
         },
-        additionaltollfree: {
+        txtAdditionalTollFree: {
           value: ''
         },
-        additionaltelephone2: {
+        txtAdditionalTelephone2: {
           value: ''
         },
-        additionalextension: {
+        txtAdditionalExtension: {
           value: ''
         },
         //comments
-        txtcomments: {
+        txtComments: {
           value: ''
 
         },
@@ -163,11 +163,12 @@ class FrmAddNewCustomer extends Component {
     console.log(JSON.stringify(this.state.formData))
   }
   render() {
+    const { isSubmit, formData, table } = this.state
     let control;
-    if (this.state.isSubmit) {
+    if (isSubmit) {
       control =
-        <ControllerAddNewCustomer formData={this.state.formData}>
-          { getdata =>
+        <ControllerAddNewCustomer formData={formData}>
+          {getdata =>
             <div>
               <p>returned value: {getdata.obj.msg}</p>
             </div>
@@ -191,109 +192,109 @@ class FrmAddNewCustomer extends Component {
           </Form.Group>
           <Form.Group width={6}>
             <IInput
-              id={"customername"}
+              id={"txtCustomerName"}
               label={"Name"}
               width={4}
-              name="customername"
-              value={this.state.formData.customername.value}
+              name="txtCustomerName"
+              value={formData.txtCustomerName.value}
               onChange={this.changeHandler}
 
             />
             <IInput
-              name="customercompany"
-              value={this.state.formData.customercompany.value}
+              name="txtCustomerCompany"
+              value={formData.txtCustomerCompany.value}
               onChange={this.changeHandler}
-              id={"customercompany"}
+              id={"txtCustomerCompany"}
               label={"Company"}
               width={4}
             />
             <ISelect
-              name="customertype"
-              value={this.state.formData.customertype.value}
+              name="selectCustomerType"
+              value={formData.selectCustomerType.value}
               onChange={this.selectchangeHandler}
-              options={this.state.formData.customertype.options}
+              options={formData.selectCustomerType.options}
               text={"Customer Type"}
               placeholder={"Customer Type"}
               width={4}
-              id={"customertype"}
+              id={"selectCustomerType"}
             />
           </Form.Group>
           <Form.Group>
-            <IInput name="customercity"
-              value={this.state.formData.customercity.value}
-              onChange={this.changeHandler} id={"customercity"} label={"City"} width={4} />
+            <IInput name="txtCustomerCity"
+              value={formData.txtCustomerCity.value}
+              onChange={this.changeHandler} id={"txtCustomerCity"} label={"City"} width={4} />
             <IInput
-              name="customerprovince"
-              value={this.state.formData.customerprovince.value}
+              name="txtCustomerProvince"
+              value={formData.txtCustomerProvince.value}
               onChange={this.changeHandler}
-              id={"customerprovince"}
+              id={"txtCustomerProvince"}
               label={"Prov/State"}
               width={2}
             />
             <IInput
-              name="customeraddress"
-              value={this.state.formData.customeraddress.value}
+              name="txtCustomerAddress"
+              value={formData.txtCustomerAddress.value}
               onChange={this.changeHandler}
-              id={"customeraddress"}
+              id={"txtCustomerAddress"}
               label={"Address"}
               width={6}
             />
             <IInput
-              name="customerzip"
-              value={this.state.formData.customerzip.value}
+              name="txtCustomerzip"
+              value={formData.txtCustomerzip.value}
               onChange={this.changeHandler}
-              id={"customerzip"}
+              id={"txtCustomerzip"}
               label={"Zip/Postal code"}
               width={2}
             />
             <IInput
-              name="customercountry"
-              value={this.state.formData.customercountry.value}
+              name="txtCustomerCountry"
+              value={formData.txtCustomerCountry.value}
               onChange={this.changeHandler}
-              id={"customercountry"}
+              id={"txtCustomerCountry"}
               label={"Country"}
               width={2}
             />
           </Form.Group>
           <Form.Group>
-            <IInput name="customeremail"
-              value={this.state.formData.customeremail.value}
-              onChange={this.changeHandler} id={"customeremail"} label={"Email"} width={4} />
+            <IInput name="txtCustomerEmail"
+              value={formData.txtCustomerEmail.value}
+              onChange={this.changeHandler} id={"txtCustomerEmail"} label={"Email"} width={4} />
             <IInput
-              name="customertelephone1"
-              value={this.state.formData.customertelephone1.value}
+              name="txtCustomerTelephone1"
+              value={formData.txtCustomerTelephone1.value}
               onChange={this.changeHandler}
-              id={"customertelephone1"}
+              id={"txtCustomerTelephone1"}
               label={"Telephone"}
               width={4}
             />
-            <IInput name="txtfax"
-              value={this.state.formData.txtfax.value}
-              onChange={this.changeHandler} id={"txtfax"} label={"Fax"} width={4} />
+            <IInput name="txtFax"
+              value={formData.txtFax.value}
+              onChange={this.changeHandler} id={"txtFax"} label={"Fax"} width={4} />
           </Form.Group>
 
           <Form.Group>
             <IInput
-              name="customertollfree"
-              value={this.state.formData.customertollfree.value}
+              name="txtCustomerTollFree"
+              value={formData.txtCustomerTollFree.value}
               onChange={this.changeHandler}
-              id={"customertollfree"}
+              id={"txtCustomerTollFree"}
               label={"Toll Free"}
               width={4}
             />
             <IInput
-              name="customertelephone2"
-              value={this.state.formData.customertelephone2.value}
+              name="txtCustomerTelephone2"
+              value={formData.txtCustomerTelephone2.value}
               onChange={this.changeHandler}
-              id={"customertelephone2"}
+              id={"txtCustomerTelephone2"}
               label={"Telephone"}
               width={4}
             />
             <IInput
-              name="customerextension"
-              value={this.state.formData.customerextension.value}
+              name="txtCustomerExtension"
+              value={formData.txtCustomerExtension.value}
               onChange={this.changeHandler}
-              id={"customerextension"}
+              id={"txtCustomerExtension"}
               label={"Extension"}
               width={2}
             />
@@ -305,20 +306,20 @@ class FrmAddNewCustomer extends Component {
           <Form.Group>
 
             <IInput
-              name="creditlimit"
-              value={this.state.formData.creditlimit.value}
+              name="txtCreditLimit"
+              value={formData.txtCreditLimit.value}
               onChange={this.changeHandler}
-              id={"creditlimit"}
+              id={"txtCreditLimit"}
               label={"Credit Limit"}
               width={4}
             />
           </Form.Group>
           <Form.Group>
             <IInput
-              name="laborprice"
-              value={this.state.formData.laborprice.value}
+              name="txtLaborPrice"
+              value={formData.txtLaborPrice.value}
               onChange={this.changeHandler}
-              id={"laborprice"}
+              id={"txtLaborPrice"}
               label={"Labor Price"}
             />
             <IAdd
@@ -329,10 +330,10 @@ class FrmAddNewCustomer extends Component {
             />
 
             <IInput
-              name="partsdiscount"
-              value={this.state.formData.partsdiscount.value}
+              name="txtPartsDiscount"
+              value={formData.txtPartsDiscount.value}
               onChange={this.changeHandler}
-              id={"partsdiscount"}
+              id={"txtPartsDiscount"}
               label={"Parts Discount"}
             />
             <IAdd
@@ -343,10 +344,10 @@ class FrmAddNewCustomer extends Component {
             />
 
             <IInput
-              name="labordiscount"
-              value={this.state.formData.labordiscount.value}
+              name="txtLaborDiscount"
+              value={formData.txtLaborDiscount.value}
               onChange={this.changeHandler}
-              id={"labordiscount"}
+              id={"txtLaborDiscount"}
               label={"Labor Discount"}
             />
             <IAdd
@@ -362,49 +363,49 @@ class FrmAddNewCustomer extends Component {
           </Form.Group>
           <Form.Group>
 
-            <IInput name="additionalname"
-              value={this.state.formData.additionalname.value}
-              onChange={this.changeHandler} id={"additionalname"} label={"Name"} width={4} />
+            <IInput name="txtAdditionalName"
+              value={formData.txtAdditionalName.value}
+              onChange={this.changeHandler} id={"txtAdditionalName"} label={"Name"} width={4} />
           </Form.Group>
           <Form.Group>
-            <IInput name="additionalemail"
-              value={this.state.formData.additionalemail.value}
-              onChange={this.changeHandler} id={"additionalemail"} label={"Email"} width={4} />
+            <IInput name="txtAdditionalEmail"
+              value={formData.txtAdditionalEmail.value}
+              onChange={this.changeHandler} id={"txtAdditionalEmail"} label={"Email"} width={4} />
             <IInput
-              name="additionaltelephone1"
-              value={this.state.formData.additionaltelephone1.value}
+              name="txtAdditionalTelephone1"
+              value={formData.txtAdditionalTelephone1.value}
               onChange={this.changeHandler}
-              id={"additionaltelephone1"}
+              id={"txtAdditionalTelephone1"}
               label={"Telephone"}
               width={4}
             />
-            <IInput name="additionalfax"
-              value={this.state.formData.additionalfax.value}
-              onChange={this.changeHandler} id={"additionalfax"} label={"Fax"} width={4} />
+            <IInput name="txtAdditionalFax"
+              value={formData.txtAdditionalFax.value}
+              onChange={this.changeHandler} id={"txtAdditionalFax"} label={"Fax"} width={4} />
           </Form.Group>
 
           <Form.Group>
             <IInput
-              name="additionaltollfree"
-              value={this.state.formData.additionaltollfree.value}
+              name="txtAdditionalTollFree"
+              value={formData.txtAdditionalTollFree.value}
               onChange={this.changeHandler}
-              id={"additionaltollfree"}
+              id={"txtAdditionalTollFree"}
               label={"Toll Free"}
               width={4}
             />
             <IInput
-              name="additionaltelephone2"
-              value={this.state.formData.additionaltelephone2.value}
+              name="txtAdditionalTelephone2"
+              value={formData.txtAdditionalTelephone2.value}
               onChange={this.changeHandler}
-              id={"additionaltelephone2"}
+              id={"txtAdditionalTelephone2"}
               label={"Telephone"}
               width={4}
             />
             <IInput
-              name="additionalextension"
-              value={this.state.formData.additionalextension.value}
+              name="txtAdditionalExtension"
+              value={formData.txtAdditionalExtension.value}
               onChange={this.changeHandler}
-              id={"additionalextension"}
+              id={"txtAdditionalExtension"}
               label={"Extension"}
               width={2}
             />
@@ -416,7 +417,7 @@ class FrmAddNewCustomer extends Component {
             />
           </Form.Group>
           <ITable
-            data={this.state.table}
+            data={table}
             name={"tblAddNewCustomer"}
             id={"tblAddNewCustomer"}
           />
@@ -427,10 +428,10 @@ class FrmAddNewCustomer extends Component {
           </Form.Group>
           <Form.Group>
             <ITextArea
-              name="txtcomments"
-              value={this.state.formData.txtcomments.value}
+              name="txtComments"
+              value={formData.txtComments.value}
               onChange={this.changeHandler}
-              id={"txtcomments"}
+              id={"txtComments"}
               label={"Comments"}
             />
           </Form.Group>
@@ -440,7 +441,7 @@ class FrmAddNewCustomer extends Component {
               <Grid.Column width={14}></Grid.Column>
               <Grid.Column width={2}>
                 <Form.Group>
-                  <h1>{this.state.formData.customername.value}</h1>
+                  <h1>{formData.txtCustomerName.value}</h1>
                   <IButton
                     text="Save"
                     id={"btnSave"}
@@ -458,6 +459,12 @@ class FrmAddNewCustomer extends Component {
 }
 
 export default FrmAddNewCustomer;
+
+
+
+
+
+
 
 
 

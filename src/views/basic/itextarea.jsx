@@ -4,13 +4,6 @@ export class ITextArea extends Component {
   render() {
     return (
       <TextArea
-        id={this.props.id}
-        cols={this.props.cols}
-        rows={this.props.rows}
-        class={this.props.class}
-        placeholder={this.props.label}
-        //value={this.props.value}
-        name={this.props.name}
         {...this.props}
       />
     );
@@ -18,3 +11,11 @@ export class ITextArea extends Component {
 }
 
 export default ITextArea;
+
+// id = { this.props.id }
+// cols = { this.props.cols }
+// rows = { this.props.rows }
+// class={ this.props.class }
+// placeholder = { this.props.label }
+// //value={this.props.value}
+// name = { this.props.name }

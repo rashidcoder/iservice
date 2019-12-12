@@ -261,7 +261,7 @@ export class ISidebar extends Component {
               {item.text}
             </Accordion.Title>
             <Accordion.Content active={activeIndex === item.activeIndex}>
-              {/*<Route exactpath="/" component={(props)=><ITabs {...props} title ={item_ch.text[props.match]}/>} />*/}
+
               {childItems}
             </Accordion.Content>
           </Accordion>

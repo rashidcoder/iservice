@@ -122,7 +122,7 @@ class FrmNewWorkOrderTruck extends Component {
           txtTollFree: {
             value:''
         },
-          TxtTelephone2: {
+          txtTelephone2: {
             value:''
         },
           txtExtension: {
@@ -192,10 +192,11 @@ class FrmNewWorkOrderTruck extends Component {
     console.log(JSON.stringify(this.state.formData))
   }
   render() {
+    const {isSubmit,formData,table}=this.state
     let control;
-    if (this.state.isSubmit) {
+    if (isSubmit) {
       control =
-        <ControllerAddNewWorkOrder formData={this.state.formData}>
+        <ControllerAddNewWorkOrder formData={formData}>
           { getdata =>
             <div>
               <p>returned value: {getdata.obj.msg}</p>
@@ -213,9 +214,9 @@ class FrmNewWorkOrderTruck extends Component {
         <ILabel text={"Create New Work Order"} class={"ui header"} />
         <Form.Group widths={2}>
           <ISelect name="selectMainTypes"
-              value={this.state.formData.selectMainTypes.value}
+              value={formData.selectMainTypes.value}
               onChange={this.selectchangeHandler} id={"selectMainTypes"} text={"Select Types"} placeholder={"Truck"} 
-              options={this.state.formData.selectMainTypes.options}
+              options={formData.selectMainTypes.options}
               />
         </Form.Group>
         <Form.Group>
@@ -223,24 +224,24 @@ class FrmNewWorkOrderTruck extends Component {
         </Form.Group>
         <Form.Group>
           <ISelect name="selectTruckTypes"
-              value={this.state.formData.selectTruckTypes.value}
-              onChange={this.selectchangeHandler} options={this.state.formData.selectTruckTypes.options} id={"selectTruckTypes"} text={"Select Truck Types"} placeholder={"Truck Types"} />
+              value={formData.selectTruckTypes.value}
+              onChange={this.selectchangeHandler} options={formData.selectTruckTypes.options} id={"selectTruckTypes"} text={"Select Truck Types"} placeholder={"Truck Types"} />
         </Form.Group>
 
         <Form.Group widths={4}>
-          <IInput name="txtTruckBrand" value={this.state.formData.txtTruckBrand.value} onChange={this.changeHandler} id={"txtTruckBrand"} label={"Truck Brand"} />
-          <IInput name="txtmodel" value={this.state.formData.txtmodel.value} onChange={this.changeHandler} id={"txtmodel"} label={"Model"} />
-          <IInput name="txtUniteId" value={this.state.formData.txtUniteId.value} onChange={this.changeHandler} id={"txtUniteId"} label={"Unite ID"} />
+          <IInput name="txtTruckBrand" value={formData.txtTruckBrand.value} onChange={this.changeHandler} id={"txtTruckBrand"} label={"Truck Brand"} />
+          <IInput name="txtmodel" value={formData.txtmodel.value} onChange={this.changeHandler} id={"txtmodel"} label={"Model"} />
+          <IInput name="txtUniteId" value={formData.txtUniteId.value} onChange={this.changeHandler} id={"txtUniteId"} label={"Unite ID"} />
         </Form.Group>
         <Form.Group widths={4}>
-          <IInput name="txtLicense" value={this.state.formData.txtLicense.value} onChange={this.changeHandler} id={"txtLicense"} label={"License"} />
-          <IInput name="txtVIN" value={this.state.formData.txtVIN.value} onChange={this.changeHandler} id={"txtVIN"} label={"V.I.N"} />
-          <IInput name="txtEngineNumber" value={this.state.formData.txtEngineNumber.value} onChange={this.changeHandler} id={"txtEngineNumber"} label={"Engine Number"} />
+          <IInput name="txtLicense" value={formData.txtLicense.value} onChange={this.changeHandler} id={"txtLicense"} label={"License"} />
+          <IInput name="txtVIN" value={formData.txtVIN.value} onChange={this.changeHandler} id={"txtVIN"} label={"V.I.N"} />
+          <IInput name="txtEngineNumber" value={formData.txtEngineNumber.value} onChange={this.changeHandler} id={"txtEngineNumber"} label={"Engine Number"} />
         </Form.Group>
         <Form.Group widths={4}>
-          <IInput name="txtManufactureYear" value={this.state.formData.txtManufactureYear.value} onChange={this.changeHandler} id={"txtManufactureYear"} label={"Manufacture Year"} />
-          <IInput name="txtEngineCapacity" value={this.state.formData.txtEngineCapacity.value} onChange={this.changeHandler} id={"txtEngineCapacity"} label={"Engine Capacity"} />
-          <IInput name="txtTruckColor" value={this.state.formData.txtTruckColor.value} onChange={this.changeHandler} id={"txtTruckColor"} label={"Truck Color"} />
+          <IInput name="txtManufactureYear" value={formData.txtManufactureYear.value} onChange={this.changeHandler} id={"txtManufactureYear"} label={"Manufacture Year"} />
+          <IInput name="txtEngineCapacity" value={formData.txtEngineCapacity.value} onChange={this.changeHandler} id={"txtEngineCapacity"} label={"Engine Capacity"} />
+          <IInput name="txtTruckColor" value={formData.txtTruckColor.value} onChange={this.changeHandler} id={"txtTruckColor"} label={"Truck Color"} />
         </Form.Group>
         <Grid>
           <Grid.Row>
@@ -248,19 +249,19 @@ class FrmNewWorkOrderTruck extends Component {
               <ILabel text={"Current"} class={"ui header"} />
               <Form.Group inline>
 
-                <IInput name="txtCurrentOrdmeter" value={this.state.formData.txtCurrentOrdmeter.value} onChange={this.changeHandler} id={"txtCurrentOrdmeter"} label={"Odometer"} />
+                <IInput name="txtCurrentOrdmeter" value={formData.txtCurrentOrdmeter.value} onChange={this.changeHandler} id={"txtCurrentOrdmeter"} label={"Odometer"} />
               </Form.Group>
               <Form.Group inline>
-                <IInput name="txtCurrentHours" value={this.state.formData.txtCurrentHours.value} onChange={this.changeHandler} id={"txtCurrentHours"} label={"Hours"} />
+                <IInput name="txtCurrentHours" value={formData.txtCurrentHours.value} onChange={this.changeHandler} id={"txtCurrentHours"} label={"Hours"} />
               </Form.Group>
             </Grid.Column>
             <Grid.Column width={6}>
               <ILabel text={"Last Read"} class={"ui header"} />
               <Form.Group inline>
-                <IInput name="txtLastOdometer" value={this.state.formData.txtLastOdometer.value} onChange={this.changeHandler} id={"txtLastOdometer"} label={"Odometer"} />
+                <IInput name="txtLastOdometer" value={formData.txtLastOdometer.value} onChange={this.changeHandler} id={"txtLastOdometer"} label={"Odometer"} />
               </Form.Group>
               <Form.Group inline>
-                <IInput name="txtLastHours" value={this.state.formData.txtLastHours.value} onChange={this.changeHandler} id={"txtLastHours"} label={"Hours"} />
+                <IInput name="txtLastHours" value={formData.txtLastHours.value} onChange={this.changeHandler} id={"txtLastHours"} label={"Hours"} />
               </Form.Group>
             </Grid.Column>
           </Grid.Row>
@@ -270,10 +271,10 @@ class FrmNewWorkOrderTruck extends Component {
         </Form.Group>
         <Form.Group widths={4}>
           <ISelect name="selectPriority"
-              value={this.state.formData.selectPriority.value}
-              onChange={this.selectchangeHandler} options={this.state.formData.selectPriority.options} id={"selectPriority"} text={"Priority"} placeholder={"Priority"} />
-          <IInput name="txtPlaneServiceData" value={this.state.formData.txtPlaneServiceData.value} onChange={this.changeHandler} id={"txtPlaneServiceData"} label={"Plan service Data"} />
-          <IInput name="txtBudget" value={this.state.formData.txtBudget.value} onChange={this.changeHandler} id={"txtBudget"} label={"Budget"} />
+              value={formData.selectPriority.value}
+              onChange={this.selectchangeHandler} options={formData.selectPriority.options} id={"selectPriority"} text={"Priority"} placeholder={"Priority"} />
+          <IInput name="txtPlaneServiceData" value={formData.txtPlaneServiceData.value} onChange={this.changeHandler} id={"txtPlaneServiceData"} label={"Plan service Data"} />
+          <IInput name="txtBudget" value={formData.txtBudget.value} onChange={this.changeHandler} id={"txtBudget"} label={"Budget"} />
         </Form.Group>
 
         <Grid>
@@ -287,42 +288,42 @@ class FrmNewWorkOrderTruck extends Component {
             </Grid.Column>
           </Grid.Row>
         </Grid>
-        <ITable name={"tblWorkOrderTruck"} id={"tblWorkOrderTruck"} data={this.state.table} />
+        <ITable name={"tblWorkOrderTruck"} id={"tblWorkOrderTruck"} data={table} />
         <Form.Group>
           <ILabel text={"Client Information"} class={"ui header"} />
         </Form.Group>
         <Form.Group width={6}>
      
-          <IInput name="txtName" value={this.state.formData.txtName.value} onChange={this.changeHandler} id={"txtName"} label={"Name"} width={4} />
-          <IInput name="txtCompany" value={this.state.formData.txtCompany.value} onChange={this.changeHandler} id={"txtCompany"} label={"Company"} width={4} />
+          <IInput name="txtName" value={formData.txtName.value} onChange={this.changeHandler} id={"txtName"} label={"Name"} width={4} />
+          <IInput name="txtCompany" value={formData.txtCompany.value} onChange={this.changeHandler} id={"txtCompany"} label={"Company"} width={4} />
           <ISelect
             text={"Customer Type"}
             placeholder={"Customer Type"}
             width={4}
             name="selectCustomerType"
-              value={this.state.formData.selectCustomerType.value}
+              value={formData.selectCustomerType.value}
               onChange={this.selectchangeHandler} id={"selectCustomerType"}
-              options={this.state.formData.selectCustomerType.options}
+              options={formData.selectCustomerType.options}
           />
 
         </Form.Group>
         <Form.Group>
-          <IInput name="txtCity" value={this.state.formData.txtCity.value} onChange={this.changeHandler} id={"txtCity"} label={"City"} width={4} />
-          <IInput name="txtProvince" value={this.state.formData.txtProvince.value} onChange={this.changeHandler} id={"txtProvince"} label={"Prov/State"} width={2} />
-          <IInput name="txtAddress" value={this.state.formData.txtAddress.value} onChange={this.changeHandler} id={"txtAddress"} label={"Address"} width={6} />
-          <IInput name="txtZip" value={this.state.formData.txtZip.value} onChange={this.changeHandler} id={"txtZip"} label={"Zip/Postal code"} width={2} />
-          <IInput name="txtCountry" value={this.state.formData.txtCountry.value} onChange={this.changeHandler} id={"txtCountry"} label={"Country"} width={2} />
+          <IInput name="txtCity" value={formData.txtCity.value} onChange={this.changeHandler} id={"txtCity"} label={"City"} width={4} />
+          <IInput name="txtProvince" value={formData.txtProvince.value} onChange={this.changeHandler} id={"txtProvince"} label={"Prov/State"} width={2} />
+          <IInput name="txtAddress" value={formData.txtAddress.value} onChange={this.changeHandler} id={"txtAddress"} label={"Address"} width={6} />
+          <IInput name="txtZip" value={formData.txtZip.value} onChange={this.changeHandler} id={"txtZip"} label={"Zip/Postal code"} width={2} />
+          <IInput name="txtCountry" value={formData.txtCountry.value} onChange={this.changeHandler} id={"txtCountry"} label={"Country"} width={2} />
         </Form.Group>
         <Form.Group>
           <IInput
-            name="txtEmail" value={this.state.formData.txtEmail.value} onChange={this.changeHandler} id={"txtEmail"} label={"Email"} width={4} />
-          <IInput name="txtTelephone1" value={this.state.formData.txtTelephone1.value} onChange={this.changeHandler} id={"txtTelephone1"} label={"Telephone"} width={4} />
-          <IInput name="txtFax" value={this.state.formData.txtFax.value} onChange={this.changeHandler} id={"txtFax"} label={"Fax"} width={4} />
+            name="txtEmail" value={formData.txtEmail.value} onChange={this.changeHandler} id={"txtEmail"} label={"Email"} width={4} />
+          <IInput name="txtTelephone1" value={formData.txtTelephone1.value} onChange={this.changeHandler} id={"txtTelephone1"} label={"Telephone"} width={4} />
+          <IInput name="txtFax" value={formData.txtFax.value} onChange={this.changeHandler} id={"txtFax"} label={"Fax"} width={4} />
         </Form.Group>
         <Form.Group>
-          <IInput name="txtTollFree" value={this.state.formData.txtTollFree.value} onChange={this.changeHandler} id={"txtTollFree"} label={"Toll Free"} width={4} />
-          <IInput name="txtTelephone2" value={this.state.formData.TxtTelephone2.value} onChange={this.changeHandler} id={"TxtTelephone2"} label={"Telephone"} width={4} />
-          <IInput name="txtExtension" value={this.state.formData.txtExtension.value} onChange={this.changeHandler} id={"txtExtension"} label={"Extension"} width={2} />
+          <IInput name="txtTollFree" value={formData.txtTollFree.value} onChange={this.changeHandler} id={"txtTollFree"} label={"Toll Free"} width={4} />
+          <IInput name="txtTelephone2" value={formData.txtTelephone2.value} onChange={this.changeHandler} id={"txtTelephone2"} label={"Telephone"} width={4} />
+          <IInput name="txtExtension" value={formData.txtExtension.value} onChange={this.changeHandler} id={"txtExtension"} label={"Extension"} width={2} />
         </Form.Group>
         <Grid>
           <Grid.Row >
@@ -352,7 +353,7 @@ class FrmNewWorkOrderTruck extends Component {
           <ILabel text={"Comments"} class={"ui header"} />
         </Form.Group>
         <Form.Group>
-          <ITextArea name="txtComment" value={this.state.formData.txtComment.value} onChange={this.changeHandler} id={"txtComment"} label={"Comments"} />
+          <ITextArea name="txtComment" value={formData.txtComment.value} onChange={this.changeHandler} id={"txtComment"} label={"Comments"} />
         </Form.Group>
         <Grid>
           <Grid.Row >
