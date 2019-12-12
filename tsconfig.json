@@ -17,7 +17,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "out":"build"
+    
   },
   "include": [
     "src", "src/views/calendar/.jsx"
