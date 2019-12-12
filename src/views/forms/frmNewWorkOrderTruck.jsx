@@ -321,7 +321,7 @@ class FrmNewWorkOrderTruck extends Component {
         </Form.Group>
         <Form.Group>
           <IInput name="txtTollFree" value={this.state.formData.txtTollFree.value} onChange={this.changeHandler} id={"txtTollFree"} label={"Toll Free"} width={4} />
-          <IInput name="TxtTelephone2" value={this.state.formData.TxtTelephone2.value} onChange={this.changeHandler} id={"TxtTelephone2"} label={"Telephone"} width={4} />
+          <IInput name="txtTelephone2" value={this.state.formData.TxtTelephone2.value} onChange={this.changeHandler} id={"TxtTelephone2"} label={"Telephone"} width={4} />
           <IInput name="txtExtension" value={this.state.formData.txtExtension.value} onChange={this.changeHandler} id={"txtExtension"} label={"Extension"} width={2} />
         </Form.Group>
         <Grid>
