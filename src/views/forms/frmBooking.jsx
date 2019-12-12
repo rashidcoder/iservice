@@ -114,7 +114,7 @@ class FrmBooking extends Component {
         txtTime: {
           value: ''
         },
-           checkReminderforGacage: {
+        checkReminderforGacage: {
           value: false
         },
         checkSmsEmail: {
@@ -133,14 +133,9 @@ class FrmBooking extends Component {
 
     };
   }
-<<<<<<< HEAD
-  
-  checkedhandleChange = event => {    
-=======
 
 
   checkedhandleChange = event => {
->>>>>>> 6574429fcfc789ef90a454e2f92fa7133a123f77
     const name = event.target.name;
     const value = event.target.checked;
     this.setState({
@@ -195,621 +190,610 @@ class FrmBooking extends Component {
     })
     console.log(JSON.stringify(this.state.formData))
   }
-<<<<<<< HEAD
-  
-  
-   render() {
-  const {isSubmit,formData}   =this.state
-=======
 
-  render() {
 
->>>>>>> 6574429fcfc789ef90a454e2f92fa7133a123f77
-    let control;
-    if (isSubmit) {
-      control =
-<<<<<<< HEAD
-        <ControllerfrmBooking formData={formData}>
-          { getdata =>
-=======
-        <ControllerfrmBooking formData={this.state.formData}>
-          {getdata =>
->>>>>>> 6574429fcfc789ef90a454e2f92fa7133a123f77
-            <div>
-              <p>returned value: {getdata.obj.msg}</p>
-            </div>
-          }
-        </ControllerfrmBooking>
-    } else {
-      control = <div></div>
+  
+
+    render() {
+      const {isSubmit,formData}=this.state
+        
+      let control
+      if (isSubmit) {
+        control =
+          <ControllerfrmBooking formData={this.state.formData}>
+            {getdata =>
+              <div>
+                <p>returned value: {getdata.obj.msg}</p>
+              </div>
+            }
+          </ControllerfrmBooking>
+      } else {
+        control = <div></div>
+      }
+      return (
+        <div>
+          {control}
+
+          <Form onSubmit={this.handleSubmit}>
+            <ILabel text={"Booking"} class={"ui header"} />
+            <Form.Group >
+              <ISelect
+                name="selectTypes"
+                value={formData.selectTypes.value}
+                onChange={this.selectchangeHandler}
+                options={formData.selectTypes.options}
+                id={"selectTypes"}
+                text={"Select Type"}
+                placeholder={"Truck"}
+              />
+
+              <ISelect
+                name="selectPriority"
+                value={formData.selectPriority.value}
+                onChange={this.selectchangeHandler}
+                options={formData.selectPriority.options}
+                id={"selectPriority"}
+                text={"Priority"}
+                placeholder={"Priority"}
+              />
+            </Form.Group>
+            <Form.Group>
+              <ILabel text={"Truck Information"} class={"ui header"} />
+            </Form.Group>
+            <Form.Group>
+              <ISelect
+                name="selectTruckTypes"
+                value={formData.selectTruckTypes.value}
+                onChange={this.selectchangeHandler}
+                options={formData.selectTruckTypes.options}
+                id={"selectTruckTypes"}
+                text={"Select Truck Types"}
+                placeholder={"Truck Types"}
+              />
+            </Form.Group>
+            <Form.Group widths={4}>
+              <IInput
+                name="txtTruckBrand"
+                value={formData.txtTruckBrand.value}
+                onChange={this.changeHandler}
+                id={"txtTruckBrand"}
+                label={"Truck Brand"}
+              />
+              <IInput name="txtmodel"
+                value={formData.txtmodel.value}
+                onChange={this.changeHandler} id={"txtmodel"} label={"Model"} />
+              <IInput name="txtUniteId"
+                value={formData.txtUniteId.value}
+                onChange={this.changeHandler} id={"txtUniteId"} label={"Unite ID"} />
+            </Form.Group>
+            <Form.Group widths={4}>
+              <IInput name="txtLicense"
+                value={formData.txtLicense.value}
+                onChange={this.changeHandler} id={"txtLicense"} label={"License"} />
+              <IInput name="txtVIN"
+                value={formData.txtVIN.value}
+                onChange={this.changeHandler} id={"txtVIN"} label={"V.I.N"} />
+              <IInput
+
+                name="txtEngineNumber"
+                value={formData.txtEngineNumber.value}
+                onChange={this.changeHandler}
+                id={"txtEngineNumber"}
+                label={"Engine Number"}
+              />
+            </Form.Group>
+            <Form.Group widths={4}>
+              <IInput
+                name="txtManufactureYear"
+                value={formData.txtManufactureYear.value}
+                onChange={this.changeHandler}
+                id={"txtManufactureYear"}
+                label={"Manufacture Year"}
+              />
+
+              <IInput
+                name="txtEngineCapacity"
+                value={formData.txtEngineCapacity.value}
+                onChange={this.changeHandler}
+                id={"txtEngineCapacity"}
+                label={"Engine Capacity"}
+              />
+              <IInput
+                name="txtTruckColor"
+                value={formData.txtTruckColor.value}
+                onChange={this.changeHandler}
+                id={"txtTruckColor"}
+                label={"Truck Color"}
+              />
+            </Form.Group>
+
+            {/* Client Info */}
+
+            <Form.Group>
+              <ILabel text={"Client Information"} class={"ui header"} />
+            </Form.Group>
+            <Form.Group width={6}>
+              <IInput name="txtName"
+                value={formData.txtName.value}
+                onChange={this.changeHandler} id={"txtName"} label={"Name"} width={4} />
+              <IInput
+                name="txtCompany"
+                value={formData.txtCompany.value}
+                onChange={this.changeHandler}
+                id={"txtCompany"}
+                label={"Company"}
+                width={4}
+              />
+              <ISelect
+                text={"Customer Type"}
+                placeholder={"Customer Type"}
+                width={4}
+                name="selectCustomerType"
+                value={formData.selectCustomerType.value}
+                onChange={this.selectchangeHandler}
+                options={formData.selectCustomerType.options}
+                id={"selectCustomerType"}
+              />
+            </Form.Group>
+            <Form.Group>
+              <IInput name="txtCity"
+                value={formData.txtCity.value}
+                onChange={this.changeHandler} id={"txtCity"} label={"City"} width={4} />
+              <IInput
+                name="txtProvince"
+                value={formData.txtProvince.value}
+                onChange={this.changeHandler}
+                id={"txtProvince"}
+                label={"Prov/State"}
+                width={2}
+              />
+              <IInput
+                name="txtAddress"
+                value={formData.txtAddress.value}
+                onChange={this.changeHandler}
+                id={"txtAddress"}
+                label={"Address"}
+                width={6}
+              />
+
+              <IInput
+                name="txtZip"
+                value={formData.txtZip.value}
+                onChange={this.changeHandler}
+                id={"txtZip"}
+                label={"Zip/Postal code"}
+                width={2}
+              />
+              <IInput
+                name="txtCountry"
+                value={formData.txtCountry.value}
+                onChange={this.changeHandler}
+                id={"txtCountry"}
+                label={"Country"}
+                width={2}
+              />
+            </Form.Group>
+            <Form.Group>
+              <IInput name="txtEmail"
+                value={formData.txtEmail.value}
+                onChange={this.changeHandler} id={"txtEmail"} label={"Email"} width={4} />
+              <IInput
+                name="txtTelephone1"
+                value={formData.txtTelephone1.value}
+                onChange={this.changeHandler}
+                id={"txtTelephone1"}
+                label={"Telephone"}
+                width={4}
+              />
+              <IInput name="txtFax"
+                value={formData.txtFax.value}
+                onChange={this.changeHandler} id={"txtFax"} label={"Fax"} width={4} />
+            </Form.Group>
+            <Form.Group>
+              <IInput
+                name="txtTollFree"
+                value={formData.txtTollFree.value}
+                onChange={this.changeHandler}
+                id={"txtTollFree"}
+                label={"Toll Free"}
+                width={4}
+              />
+              <IInput
+                name="txtTelephone2"
+                value={formData.txtTelephone2.value}
+                onChange={this.changeHandler}
+                id={"txtTelephone2"}
+                label={"Telephone"}
+                width={4}
+              />
+              <IInput
+                name="txtExtension"
+                value={formData.txtExtension.value}
+                onChange={this.changeHandler}
+                id={"txtExtension"}
+                label={"Extension"}
+                width={2}
+              />
+            </Form.Group>
+
+            <Form.Group>
+              <ILabel text={"Date And Time "} class={"ui header"} />
+            </Form.Group>
+            <Form.Group widths={3}>
+              <IInput
+                name={"txtDate"}
+                type={"date"}
+                value={formData.txtDate.value}
+                onChange={this.changeHandler}
+                id={"txtDate"}
+                label={"Date"}
+                width={4}
+              />
+              <IInput
+                name={"txtTime"}
+                type={"Time"}
+                value={formData.txtTime.value}
+                onChange={this.changeHandler}
+                id={"txtTime"}
+                label={"Time"}
+                width={4}
+              />
+            </Form.Group>
+            <Form.Group>
+              <ICheckBox
+                name="checkReminderforGacage"
+                checked={formData.checkReminderforGacage.value}
+                onChange={this.checkedhandleChange}
+                id={"checkReminderforGacage"}
+                label={"Reminder for Gacage"}
+                class={"checkReminderforGacage"}
+              />
+            </Form.Group>
+            <Form.Group>
+              <ICheckBox
+                name="checkSmsEmail"
+                value={formData.checkSmsEmail.value}
+                onChange={this.checkedhandleChange}
+                id={"checkSmsEmail"}
+                label={"Send Reminder SMS/Email to Customer"}
+                class={"checkSmsEmail"}
+              />
+
+              <ICheckBox
+                name="checkSms"
+                value={formData.checkSms.value}
+                onChange={this.checkedhandleChange}
+                id={"checkSms"}
+                class={"checkSms"}
+                label={"SMS"}
+              />
+
+              <ICheckBox
+                name="checkEmail"
+                value={formData.checkEmail.value}
+                onChange={this.checkedhandleChange}
+                id={"checkEmail"}
+                class={"checkEmail"}
+                label={"Email"}
+              />
+            </Form.Group>
+
+            <Form.Group>
+              <ILabel text={"Comments"} class={"ui header"} />
+            </Form.Group>
+            <Form.Group>
+              <ITextArea name="txtComment" value={formData.txtComment.value} onChange={this.changeHandler} id={"txtComment"} label={"Comments"} />
+            </Form.Group>
+            <Grid>
+              <Grid.Row>
+                <Grid.Column width={14}></Grid.Column>
+                <Grid.Column width={2}>
+                  <Form.Group>
+                    <IButton
+                      text="Save"
+                      id={"btnSave"}
+                      align={"right"}
+                      name={"btnSave"}
+                    />
+                  </Form.Group>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+
+          </Form>
+          {control}
+
+          <Form onSubmit={this.handleSubmit}>
+            <ILabel text={"Booking"} class={"ui header"} />
+            <Form.Group >
+              <ISelect
+                name="selectTypes"
+                value={this.state.formData.selectTypes.value}
+                onChange={this.selectchangeHandler}
+                options={this.state.formData.selectTypes.options}
+                id={"selectTypes"}
+                text={"Select Type"}
+                placeholder={"Truck"}
+              />
+
+              <ISelect
+                name="selectPriority"
+                value={this.state.formData.selectPriority.value}
+                onChange={this.selectchangeHandler}
+                options={this.state.formData.selectPriority.options}
+                id={"selectPriority"}
+                text={"Priority"}
+                placeholder={"Priority"}
+              />
+            </Form.Group>
+            <Form.Group>
+              <ILabel text={"Truck Information"} class={"ui header"} />
+            </Form.Group>
+            <Form.Group>
+              <ISelect
+                name="selectTruckTypes"
+                value={this.state.formData.selectTruckTypes.value}
+                onChange={this.selectchangeHandler}
+                options={this.state.formData.selectTruckTypes.options}
+                id={"selectTruckTypes"}
+                text={"Select Truck Types"}
+                placeholder={"Truck Types"}
+              />
+            </Form.Group>
+            <Form.Group widths={4}>
+              <IInput
+                name="txtTruckBrand"
+                value={this.state.formData.txtTruckBrand.value}
+                onChange={this.changeHandler}
+                id={"txtTruckBrand"}
+                label={"Truck Brand"}
+              />
+              <IInput name="txtmodel"
+                value={this.state.formData.txtmodel.value}
+                onChange={this.changeHandler} id={"txtmodel"} label={"Model"} />
+              <IInput name="txtUniteId"
+                value={this.state.formData.txtUniteId.value}
+                onChange={this.changeHandler} id={"txtUniteId"} label={"Unite ID"} />
+            </Form.Group>
+            <Form.Group widths={4}>
+              <IInput name="txtLicense"
+                value={this.state.formData.txtLicense.value}
+                onChange={this.changeHandler} id={"txtLicense"} label={"License"} />
+              <IInput name="txtVIN"
+                value={this.state.formData.txtVIN.value}
+                onChange={this.changeHandler} id={"txtVIN"} label={"V.I.N"} />
+              <IInput
+
+                name="txtEngineNumber"
+                value={this.state.formData.txtEngineNumber.value}
+                onChange={this.changeHandler}
+                id={"txtEngineNumber"}
+                label={"Engine Number"}
+              />
+            </Form.Group>
+            <Form.Group widths={4}>
+              <IInput
+                name="txtManufactureYear"
+                value={this.state.formData.txtManufactureYear.value}
+                onChange={this.changeHandler}
+                id={"txtManufactureYear"}
+                label={"Manufacture Year"}
+              />
+
+              <IInput
+                name="txtEngineCapacity"
+                value={this.state.formData.txtEngineCapacity.value}
+                onChange={this.changeHandler}
+                id={"txtEngineCapacity"}
+                label={"Engine Capacity"}
+              />
+              <IInput
+                name="txtTruckColor"
+                value={this.state.formData.txtTruckColor.value}
+                onChange={this.changeHandler}
+                id={"txtTruckColor"}
+                label={"Truck Color"}
+              />
+            </Form.Group>
+
+            {/* Client Info */}
+
+            <Form.Group>
+              <ILabel text={"Client Information"} class={"ui header"} />
+            </Form.Group>
+            <Form.Group width={6}>
+              <IInput name="txtName"
+                value={this.state.formData.txtName.value}
+                onChange={this.changeHandler} id={"txtName"} label={"Name"} width={4} />
+              <IInput
+                name="txtCompany"
+                value={this.state.formData.txtCompany.value}
+                onChange={this.changeHandler}
+                id={"txtCompany"}
+                label={"Company"}
+                width={4}
+              />
+              <ISelect
+                text={"Customer Type"}
+                placeholder={"Customer Type"}
+                width={4}
+                name="selectCustomerType"
+                value={this.state.formData.selectCustomerType.value}
+                onChange={this.selectchangeHandler}
+                options={this.state.formData.selectCustomerType.options}
+                id={"selectCustomerType"}
+              />
+            </Form.Group>
+            <Form.Group>
+              <IInput name="txtCity"
+                value={this.state.formData.txtCity.value}
+                onChange={this.changeHandler} id={"txtCity"} label={"City"} width={4} />
+              <IInput
+                name="txtProvince"
+                value={this.state.formData.txtProvince.value}
+                onChange={this.changeHandler}
+                id={"txtProvince"}
+                label={"Prov/State"}
+                width={2}
+              />
+              <IInput
+                name="txtAddress"
+                value={this.state.formData.txtAddress.value}
+                onChange={this.changeHandler}
+                id={"txtAddress"}
+                label={"Address"}
+                width={6}
+              />
+
+              <IInput
+                name="txtZip"
+                value={this.state.formData.txtZip.value}
+                onChange={this.changeHandler}
+                id={"txtZip"}
+                label={"Zip/Postal code"}
+                width={2}
+              />
+              <IInput
+                name="txtCountry"
+                value={this.state.formData.txtCountry.value}
+                onChange={this.changeHandler}
+                id={"txtCountry"}
+                label={"Country"}
+                width={2}
+              />
+            </Form.Group>
+            <Form.Group>
+              <IInput name="txtEmail"
+                value={this.state.formData.txtEmail.value}
+                onChange={this.changeHandler} id={"txtEmail"} label={"Email"} width={4} />
+              <IInput
+                name="txtTelephone1"
+                value={this.state.formData.txtTelephone1.value}
+                onChange={this.changeHandler}
+                id={"txtTelephone1"}
+                label={"Telephone"}
+                width={4}
+              />
+              <IInput name="txtFax"
+                value={this.state.formData.txtFax.value}
+                onChange={this.changeHandler} id={"txtFax"} label={"Fax"} width={4} />
+            </Form.Group>
+            <Form.Group>
+              <IInput
+                name="txtTollFree"
+                value={this.state.formData.txtTollFree.value}
+                onChange={this.changeHandler}
+                id={"txtTollFree"}
+                label={"Toll Free"}
+                width={4}
+              />
+              <IInput
+                name="txtTelephone2"
+                value={this.state.formData.txtTelephone2.value}
+                onChange={this.changeHandler}
+                id={"txtTelephone2"}
+                label={"Telephone"}
+                width={4}
+              />
+              <IInput
+                name="txtExtension"
+                value={this.state.formData.txtExtension.value}
+                onChange={this.changeHandler}
+                id={"txtExtension"}
+                label={"Extension"}
+                width={2}
+              />
+            </Form.Group>
+
+            <Form.Group>
+              <ILabel text={"Date And Time "} class={"ui header"} />
+            </Form.Group>
+            <Form.Group widths={3}>
+              <IInput
+                name={"txtDate"}
+                type={"date"}
+                value={this.state.formData.txtDate.value}
+                onChange={this.changeHandler}
+                id={"txtDate"}
+                label={"Date"}
+                width={4}
+              />
+              <IInput
+                name={"txtTime"}
+                type={"Time"}
+                value={this.state.formData.txtTime.value}
+                onChange={this.changeHandler}
+                id={"txtTime"}
+                label={"Time"}
+                width={4}
+              />
+            </Form.Group>
+            <Form.Group>
+              <ICheckBox
+                name="checkReminderforGacage"
+                checked={this.state.formData.checkReminderforGacage.value}
+                onChange={this.checkedhandleChange}
+                id={"checkReminderforGacage"}
+                label={"Reminder for Gacage"}
+                class={"checkReminderforGacage"}
+              />
+            </Form.Group>
+            <Form.Group>
+              <ICheckBox
+                name="checkSmsEmail"
+                value={this.state.formData.checkSmsEmail.value}
+                onChange={this.checkedhandleChange}
+                id={"checkSmsEmail"}
+                label={"Send Reminder SMS/Email to Customer"}
+                class={"checkSmsEmail"}
+              />
+
+              <ICheckBox
+                name="checkSms"
+                value={this.state.formData.checkSms.value}
+                onChange={this.checkedhandleChange}
+                id={"checkSms"}
+                class={"checkSms"}
+                label={"SMS"}
+              />
+
+              <ICheckBox
+                name="checkEmail"
+                value={this.state.formData.checkEmail.value}
+                onChange={this.checkedhandleChange}
+                id={"checkEmail"}
+                class={"checkEmail"}
+                label={"Email"}
+              />
+            </Form.Group>
+
+            <Form.Group>
+              <ILabel text={"Comments"} class={"ui header"} />
+            </Form.Group>
+            <Form.Group>
+              <ITextArea name="txtComment" value={this.state.formData.txtComment.value} onChange={this.changeHandler} id={"txtComment"} label={"Comments"} />
+            </Form.Group>
+            <Grid>
+              <Grid.Row>
+                <Grid.Column width={14}></Grid.Column>
+                <Grid.Column width={2}>
+                  <Form.Group>
+                    <IButton
+                      text="Save"
+                      id={"btnSave"}
+                      align={"right"}
+                      name={"btnSave"}
+                    />
+                  </Form.Group>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+
+          </Form>
+        </div>
+      );
     }
-    return (
-      <div>
-<<<<<<< HEAD
-      {control}
-
-      <Form onSubmit={this.handleSubmit}>
-        <ILabel text={"Booking"} class={"ui header"} />
-        <Form.Group >
-          <ISelect
-            name="selectTypes"
-            value={formData.selectTypes.value}
-            onChange={this.selectchangeHandler}
-            options={formData.selectTypes.options}
-            id={"selectTypes"}
-            text={"Select Type"}
-            placeholder={"Truck"}
-          />
-          
-          <ISelect
-            name="selectPriority"
-            value={formData.selectPriority.value}
-            onChange={this.selectchangeHandler}
-            options={formData.selectPriority.options}
-            id={"selectPriority"}
-            text={"Priority"}
-            placeholder={"Priority"}
-          />
-        </Form.Group>
-        <Form.Group>
-          <ILabel text={"Truck Information"} class={"ui header"} />
-        </Form.Group>
-        <Form.Group>
-          <ISelect
-            name="selectTruckTypes"
-            value={formData.selectTruckTypes.value}
-            onChange={this.selectchangeHandler}
-            options={formData.selectTruckTypes.options}
-            id={"selectTruckTypes"}
-            text={"Select Truck Types"}
-            placeholder={"Truck Types"}
-          />
-        </Form.Group>
-        <Form.Group widths={4}>
-          <IInput
-            name="txtTruckBrand"
-            value={formData.txtTruckBrand.value}
-            onChange={this.changeHandler}
-            id={"txtTruckBrand"}
-            label={"Truck Brand"}
-          />
-          <IInput name="txtmodel"
-            value={formData.txtmodel.value}
-            onChange={this.changeHandler} id={"txtmodel"} label={"Model"} />
-          <IInput name="txtUniteId"
-            value={formData.txtUniteId.value}
-            onChange={this.changeHandler} id={"txtUniteId"} label={"Unite ID"} />
-        </Form.Group>
-        <Form.Group widths={4}>
-          <IInput name="txtLicense"
-            value={formData.txtLicense.value}
-            onChange={this.changeHandler} id={"txtLicense"} label={"License"} />
-          <IInput name="txtVIN"
-            value={formData.txtVIN.value}
-            onChange={this.changeHandler} id={"txtVIN"} label={"V.I.N"} />
-          <IInput
-        
-            name="txtEngineNumber"
-            value={formData.txtEngineNumber.value}
-            onChange={this.changeHandler}
-            id={"txtEngineNumber"}
-            label={"Engine Number"}
-          />
-        </Form.Group>
-        <Form.Group widths={4}>
-          <IInput
-            name="txtManufactureYear"
-            value={formData.txtManufactureYear.value}
-            onChange={this.changeHandler}
-            id={"txtManufactureYear"}
-            label={"Manufacture Year"}
-          />
-        
-          <IInput
-           name="txtEngineCapacity"
-           value={formData.txtEngineCapacity.value}
-           onChange={this.changeHandler}
-            id={"txtEngineCapacity"}
-            label={"Engine Capacity"}
-          />
-          <IInput
-           name="txtTruckColor"
-           value={formData.txtTruckColor.value}
-           onChange={this.changeHandler}
-            id={"txtTruckColor"}
-            label={"Truck Color"}
-          />
-        </Form.Group>
-
-        {/* Client Info */}
-        
-        <Form.Group>
-          <ILabel text={"Client Information"} class={"ui header"} />
-        </Form.Group>
-        <Form.Group width={6}>
-          <IInput name="txtName"
-           value={formData.txtName.value}
-           onChange={this.changeHandler} id={"txtName"} label={"Name"} width={4} />
-          <IInput
-            name="txtCompany"
-            value={formData.txtCompany.value}
-            onChange={this.changeHandler}
-            id={"txtCompany"}
-            label={"Company"}
-            width={4}
-          />
-          <ISelect
-            text={"Customer Type"}
-            placeholder={"Customer Type"}
-            width={4}
-            name="selectCustomerType"
-            value={formData.selectCustomerType.value}
-            onChange={this.selectchangeHandler}
-            options={formData.selectCustomerType.options}
-            id={"selectCustomerType"}
-          />
-        </Form.Group>
-        <Form.Group>
-          <IInput name="txtCity"
-            value={formData.txtCity.value}
-            onChange={this.changeHandler} id={"txtCity"} label={"City"} width={4} />
-          <IInput
-            name="txtProvince"
-            value={formData.txtProvince.value}
-            onChange={this.changeHandler}
-            id={"txtProvince"}
-            label={"Prov/State"}
-            width={2}
-          />
-          <IInput
-            name="txtAddress"
-            value={formData.txtAddress.value}
-            onChange={this.changeHandler}
-            id={"txtAddress"}
-            label={"Address"}
-            width={6}
-          />
-          
-          <IInput
-            name="txtZip"
-            value={formData.txtZip.value}
-            onChange={this.changeHandler}
-            id={"txtZip"}
-            label={"Zip/Postal code"}
-            width={2}
-          />
-          <IInput
-            name="txtCountry"
-            value={formData.txtCountry.value}
-            onChange={this.changeHandler}
-            id={"txtCountry"}
-            label={"Country"}
-            width={2}
-          />
-        </Form.Group>
-        <Form.Group>
-          <IInput  name="txtEmail"
-            value={formData.txtEmail.value}
-            onChange={this.changeHandler} id={"txtEmail"} label={"Email"} width={4} />
-          <IInput
-            name="txtTelephone1"
-            value={formData.txtTelephone1.value}
-            onChange={this.changeHandler}
-            id={"txtTelephone1"}
-            label={"Telephone"}
-            width={4}
-          />
-          <IInput  name="txtFax"
-            value={formData.txtFax.value}
-            onChange={this.changeHandler} id={"txtFax"} label={"Fax"} width={4} />
-        </Form.Group>
-        <Form.Group>
-          <IInput
-            name="txtTollFree"
-            value={formData.txtTollFree.value}
-            onChange={this.changeHandler}
-            id={"txtTollFree"}
-            label={"Toll Free"}
-            width={4}
-          />
-          <IInput
-            name="txtTelephone2"
-            value={formData.txtTelephone2.value}
-            onChange={this.changeHandler}
-            id={"txtTelephone2"}
-            label={"Telephone"}
-            width={4}
-          />
-          <IInput
-            name="txtExtension"
-            value={formData.txtExtension.value}
-            onChange={this.changeHandler}
-            id={"txtExtension"}
-            label={"Extension"}
-            width={2}
-          />
-        </Form.Group>
-
-        <Form.Group>
-          <ILabel text={"Date And Time "} class={"ui header"} />
-        </Form.Group>
-        <Form.Group widths={3}>
-          <IInput 
-          name={"txtDate"}
-          type={"date"}
-          value={formData.txtDate.value}
-          onChange={this.changeHandler}
-          id={"txtDate"}
-          label={"Date"}
-          width={4}
-          />
-          <IInput 
-          name={"txtTime"}
-          type={"Time"}
-          value={formData.txtTime.value}
-          onChange={this.changeHandler}
-          id={"txtTime"}
-          label={"Time"}
-          width={4}
-          />
-        </Form.Group>
-        <Form.Group>
-          <ICheckBox
-            name="checkReminderforGacage"
-            checked={formData.checkReminderforGacage.value}
-            onChange={this.checkedhandleChange}
-            id={"checkReminderforGacage"}
-            label={"Reminder for Gacage"}
-            class={"checkReminderforGacage"}
-          />
-        </Form.Group>
-        <Form.Group>
-          <ICheckBox
-            name="checkSmsEmail"
-            value={formData.checkSmsEmail.value}
-            onChange={this.checkedhandleChange}
-            id={"checkSmsEmail"}
-            label={"Send Reminder SMS/Email to Customer"}
-            class={"checkSmsEmail"}
-          />
-         
-          <ICheckBox
-            name="checkSms"
-            value={formData.checkSms.value}
-            onChange={this.checkedhandleChange}
-            id={"checkSms"}
-            class={"checkSms"}
-            label={"SMS"}
-          />
-          
-          <ICheckBox
-            name="checkEmail"
-            value={formData.checkEmail.value}
-            onChange={this.checkedhandleChange}
-            id={"checkEmail"}
-            class={"checkEmail"}
-            label={"Email"}
-          />
-        </Form.Group>
-
-        <Form.Group>
-          <ILabel text={"Comments"} class={"ui header"} />
-        </Form.Group>
-        <Form.Group>
-          <ITextArea name="txtComment" value={formData.txtComment.value} onChange={this.changeHandler} id={"txtComment"} label={"Comments"} />
-        </Form.Group>
-        <Grid>
-          <Grid.Row>
-            <Grid.Column width={14}></Grid.Column>
-            <Grid.Column width={2}>
-              <Form.Group>
-                <IButton
-                  text="Save"
-                  id={"btnSave"}
-                  align={"right"}
-                  name={"btnSave"}
-                />
-              </Form.Group>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-
-      </Form>
-=======
-        {control}
-
-        <Form onSubmit={this.handleSubmit}>
-          <ILabel text={"Booking"} class={"ui header"} />
-          <Form.Group >
-            <ISelect
-              name="selectTypes"
-              value={this.state.formData.selectTypes.value}
-              onChange={this.selectchangeHandler}
-              options={this.state.formData.selectTypes.options}
-              id={"selectTypes"}
-              text={"Select Type"}
-              placeholder={"Truck"}
-            />
-
-            <ISelect
-              name="selectPriority"
-              value={this.state.formData.selectPriority.value}
-              onChange={this.selectchangeHandler}
-              options={this.state.formData.selectPriority.options}
-              id={"selectPriority"}
-              text={"Priority"}
-              placeholder={"Priority"}
-            />
-          </Form.Group>
-          <Form.Group>
-            <ILabel text={"Truck Information"} class={"ui header"} />
-          </Form.Group>
-          <Form.Group>
-            <ISelect
-              name="selectTruckTypes"
-              value={this.state.formData.selectTruckTypes.value}
-              onChange={this.selectchangeHandler}
-              options={this.state.formData.selectTruckTypes.options}
-              id={"selectTruckTypes"}
-              text={"Select Truck Types"}
-              placeholder={"Truck Types"}
-            />
-          </Form.Group>
-          <Form.Group widths={4}>
-            <IInput
-              name="txtTruckBrand"
-              value={this.state.formData.txtTruckBrand.value}
-              onChange={this.changeHandler}
-              id={"txtTruckBrand"}
-              label={"Truck Brand"}
-            />
-            <IInput name="txtmodel"
-              value={this.state.formData.txtmodel.value}
-              onChange={this.changeHandler} id={"txtmodel"} label={"Model"} />
-            <IInput name="txtUniteId"
-              value={this.state.formData.txtUniteId.value}
-              onChange={this.changeHandler} id={"txtUniteId"} label={"Unite ID"} />
-          </Form.Group>
-          <Form.Group widths={4}>
-            <IInput name="txtLicense"
-              value={this.state.formData.txtLicense.value}
-              onChange={this.changeHandler} id={"txtLicense"} label={"License"} />
-            <IInput name="txtVIN"
-              value={this.state.formData.txtVIN.value}
-              onChange={this.changeHandler} id={"txtVIN"} label={"V.I.N"} />
-            <IInput
-
-              name="txtEngineNumber"
-              value={this.state.formData.txtEngineNumber.value}
-              onChange={this.changeHandler}
-              id={"txtEngineNumber"}
-              label={"Engine Number"}
-            />
-          </Form.Group>
-          <Form.Group widths={4}>
-            <IInput
-              name="txtManufactureYear"
-              value={this.state.formData.txtManufactureYear.value}
-              onChange={this.changeHandler}
-              id={"txtManufactureYear"}
-              label={"Manufacture Year"}
-            />
-
-            <IInput
-              name="txtEngineCapacity"
-              value={this.state.formData.txtEngineCapacity.value}
-              onChange={this.changeHandler}
-              id={"txtEngineCapacity"}
-              label={"Engine Capacity"}
-            />
-            <IInput
-              name="txtTruckColor"
-              value={this.state.formData.txtTruckColor.value}
-              onChange={this.changeHandler}
-              id={"txtTruckColor"}
-              label={"Truck Color"}
-            />
-          </Form.Group>
-
-          {/* Client Info */}
-
-          <Form.Group>
-            <ILabel text={"Client Information"} class={"ui header"} />
-          </Form.Group>
-          <Form.Group width={6}>
-            <IInput name="txtName"
-              value={this.state.formData.txtName.value}
-              onChange={this.changeHandler} id={"txtName"} label={"Name"} width={4} />
-            <IInput
-              name="txtCompany"
-              value={this.state.formData.txtCompany.value}
-              onChange={this.changeHandler}
-              id={"txtCompany"}
-              label={"Company"}
-              width={4}
-            />
-            <ISelect
-              text={"Customer Type"}
-              placeholder={"Customer Type"}
-              width={4}
-              name="selectCustomerType"
-              value={this.state.formData.selectCustomerType.value}
-              onChange={this.selectchangeHandler}
-              options={this.state.formData.selectCustomerType.options}
-              id={"selectCustomerType"}
-            />
-          </Form.Group>
-          <Form.Group>
-            <IInput name="txtCity"
-              value={this.state.formData.txtCity.value}
-              onChange={this.changeHandler} id={"txtCity"} label={"City"} width={4} />
-            <IInput
-              name="txtProvince"
-              value={this.state.formData.txtProvince.value}
-              onChange={this.changeHandler}
-              id={"txtProvince"}
-              label={"Prov/State"}
-              width={2}
-            />
-            <IInput
-              name="txtAddress"
-              value={this.state.formData.txtAddress.value}
-              onChange={this.changeHandler}
-              id={"txtAddress"}
-              label={"Address"}
-              width={6}
-            />
-
-            <IInput
-              name="txtZip"
-              value={this.state.formData.txtZip.value}
-              onChange={this.changeHandler}
-              id={"txtZip"}
-              label={"Zip/Postal code"}
-              width={2}
-            />
-            <IInput
-              name="txtCountry"
-              value={this.state.formData.txtCountry.value}
-              onChange={this.changeHandler}
-              id={"txtCountry"}
-              label={"Country"}
-              width={2}
-            />
-          </Form.Group>
-          <Form.Group>
-            <IInput name="txtEmail"
-              value={this.state.formData.txtEmail.value}
-              onChange={this.changeHandler} id={"txtEmail"} label={"Email"} width={4} />
-            <IInput
-              name="txtTelephone1"
-              value={this.state.formData.txtTelephone1.value}
-              onChange={this.changeHandler}
-              id={"txtTelephone1"}
-              label={"Telephone"}
-              width={4}
-            />
-            <IInput name="txtFax"
-              value={this.state.formData.txtFax.value}
-              onChange={this.changeHandler} id={"txtFax"} label={"Fax"} width={4} />
-          </Form.Group>
-          <Form.Group>
-            <IInput
-              name="txtTollFree"
-              value={this.state.formData.txtTollFree.value}
-              onChange={this.changeHandler}
-              id={"txtTollFree"}
-              label={"Toll Free"}
-              width={4}
-            />
-            <IInput
-              name="txtTelephone2"
-              value={this.state.formData.txtTelephone2.value}
-              onChange={this.changeHandler}
-              id={"txtTelephone2"}
-              label={"Telephone"}
-              width={4}
-            />
-            <IInput
-              name="txtExtension"
-              value={this.state.formData.txtExtension.value}
-              onChange={this.changeHandler}
-              id={"txtExtension"}
-              label={"Extension"}
-              width={2}
-            />
-          </Form.Group>
-
-          <Form.Group>
-            <ILabel text={"Date And Time "} class={"ui header"} />
-          </Form.Group>
-          <Form.Group widths={3}>
-            <IInput
-              name={"txtDate"}
-              type={"date"}
-              value={this.state.formData.txtDate.value}
-              onChange={this.changeHandler}
-              id={"txtDate"}
-              label={"Date"}
-              width={4}
-            />
-            <IInput
-              name={"txtTime"}
-              type={"Time"}
-              value={this.state.formData.txtTime.value}
-              onChange={this.changeHandler}
-              id={"txtTime"}
-              label={"Time"}
-              width={4}
-            />
-          </Form.Group>
-          <Form.Group>
-            <ICheckBox
-              name="checkReminderforGacage"
-              checked={this.state.formData.checkReminderforGacage.value}
-              onChange={this.checkedhandleChange}
-              id={"checkReminderforGacage"}
-              label={"Reminder for Gacage"}
-              class={"checkReminderforGacage"}
-            />
-          </Form.Group>
-          <Form.Group>
-            <ICheckBox
-              name="checkSmsEmail"
-              value={this.state.formData.checkSmsEmail.value}
-              onChange={this.checkedhandleChange}
-              id={"checkSmsEmail"}
-              label={"Send Reminder SMS/Email to Customer"}
-              class={"checkSmsEmail"}
-            />
-
-            <ICheckBox
-              name="checkSms"
-              value={this.state.formData.checkSms.value}
-              onChange={this.checkedhandleChange}
-              id={"checkSms"}
-              class={"checkSms"}
-              label={"SMS"}
-            />
-               
-            <ICheckBox
-              name="checkEmail"
-              value={this.state.formData.checkEmail.value}
-              onChange={this.checkedhandleChange}
-              id={"checkEmail"}
-              class={"checkEmail"}
-              label={"Email"}
-            />
-          </Form.Group>
-
-          <Form.Group>
-            <ILabel text={"Comments"} class={"ui header"} />
-          </Form.Group>
-          <Form.Group>
-            <ITextArea name="txtComment" value={this.state.formData.txtComment.value} onChange={this.changeHandler} id={"txtComment"} label={"Comments"} />
-          </Form.Group>
-          <Grid>
-            <Grid.Row>
-              <Grid.Column width={14}></Grid.Column>
-              <Grid.Column width={2}>
-                <Form.Group>
-                  <IButton
-                    text="Save"
-                    id={"btnSave"}
-                    align={"right"}
-                    name={"btnSave"}
-                  />
-                </Form.Group>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-
-        </Form>
->>>>>>> 6574429fcfc789ef90a454e2f92fa7133a123f77
-      </div>
-    );
   }
-}
 
 export default FrmBooking;
 

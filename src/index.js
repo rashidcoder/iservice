@@ -7,6 +7,4 @@
 // serviceWorker.unregister()
 
 
-let { Database } = require('./data/db')
 
-console.log(Database.get())
