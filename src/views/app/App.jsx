@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import "../../sass/App.css";
 import ISidebar from "../navigation/isidebar";
 import Workshops from "../../controllers/Test"
@@ -6,6 +6,10 @@ import HomeController from "../../controllers/danishControler";
 import IButton from "../basic/ibutton";
 import RefsForm from "../forms/dummyform";
 import DummyFileUpload from "../forms/dummyFileUpload";
+import { conditionalExpression } from "@babel/types";
+import IInput from "../basic/input";
+import ISelect from "../basic/iselect";
+import { number } from "prop-types";
 
 //import * as Database from '../../data/dbsqlite'
 class App extends Component {
@@ -14,6 +18,7 @@ class App extends Component {
     super(props)
 
     this.state = {
+      conditionalbit:true,
       data: 0,
       brand: 'br',
       color: 'red'
@@ -48,8 +53,10 @@ class App extends Component {
   componentDidCatch(){
     console.log(" 5 this is componentDidCatch")
   }
-  render() {
-    
+  
+  
+render() {
+ 
     console.log("2 this is render")
     console.log("the set value is " + this.state.data)
     // this.addHero()
@@ -97,7 +104,12 @@ class App extends Component {
        <RefsForm />
         danish ali khan
        <DummyFileUpload />
+        <Fragment>
+          {this.state.conditionalbit?<ISelect name="ali"/>:<IInput name ="danish"/>}
+        </Fragment>
+              
       </div>
     );
   }
 } export default App;
+
