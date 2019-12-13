@@ -2,9 +2,7 @@ import sequelize from '../config/_db'
 import { User } from '../models/User'
 import { STRING } from 'sequelize'
 export function create(user: any): Promise<any> {
-
   // User.define();
-
   User.init(
     {
       title: STRING,
