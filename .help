@@ -11,3 +11,5 @@ yarn add semantic-ui-css
 
 
 \"pouchdb-server -d ./db\" 
+
+electron-rebuild -f -w sqlite3
