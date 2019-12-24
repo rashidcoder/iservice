@@ -13,3 +13,69 @@ yarn add semantic-ui-css
 \"pouchdb-server -d ./db\" 
 
 electron-rebuild -f -w sqlite3
+
+
+
+--------------------    INDEXED DB ---------------------------------
+
+                            Error Handling 
+when we insert the data use this line to avoid the code from error 
+                            
+                            ************
+
+var request = store.put({title: "Water Buffaloes", author: "Slate", isbn: 987654});
+
+request.onerror = function(event) {
+
+  report(request.error);
+
+};
+tx.onabort = function() {
+
+  report(tx.error);
+};
+
+
+                            ***********
+
+                            to get single row from db 
+                            if we use this line of code cursor.continue();
+                            it will return the data of all rows untill condition remanins true against the value which is given to getdata
+
+    var tx = db.transaction("books", "readonly");
+    var store = tx.objectStore("books");
+    var index = store.index("by_author");
+
+    var request = index.openCursor(IDBKeyRange.only("Fred"));
+                    ********condsole.log("inside the getdata function");
+    request.onsuccess = function() {
+        var cursor = request.result;
+        if (cursor) {
+            
+                    ****** condsole.log("inside the cursor");
+            report(cursor.value.isbn, cursor.value.title, cursor.value.author);
+            cursor.continue();
+        } else {
+
+            report(null);
+        }
+    };
+}
+
+
+
+                            ***********
+                            get whole object data 
+
+let transaction = this.db.transaction(["table"]);
+let object_store = transaction.objectStore("table");
+
+request = object_store.getAll(); /* or getAllKeys() */
+
+request.onerror = (event) => {
+    console.err("error fetching data");
+};
+request.onsuccess = (event) => {
+    console.log(request.result);
+}; 
+                            ************

@@ -6,11 +6,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <ISidebar />
-          <h1>
-            ISERVICES
+        <ISidebar />
+        <h1>
+          ISERVICES
           </h1>
-       {/* <DummyFileUpload /> */}
+        {/* <DummyFileUpload /> */}
       </div>
     );
   }
